@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LAP — Loud And Proud | Fashion, shown as it actually is</title>
+<meta name="description" content="LAP is a curated fashion discovery concept built around one idea: what you see should be what you get. This is an early look — join the waitlist.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; script-src 'self'; connect-src 'self' https://formspree.io; base-uri 'self'; form-action 'self' https://formspree.io; frame-ancestors 'none'; object-src 'none'">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ================= TICKER ================= -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>REAL PHOTOS, NOT FILTERED ONES</span>
+    <span>•</span>
+    <span>NO 10,000-TAB SCROLL</span>
+    <span>•</span>
+    <span>LOUD AND PROUD</span>
+    <span>•</span>
+    <span>CONCEPT PREVIEW — WAITLIST OPEN</span>
+    <span>•</span>
+    <span>REAL PHOTOS, NOT FILTERED ONES</span>
+    <span>•</span>
+    <span>NO 10,000-TAB SCROLL</span>
+    <span>•</span>
+    <span>LOUD AND PROUD</span>
+    <span>•</span>
+    <span>CONCEPT PREVIEW — WAITLIST OPEN</span>
+    <span>•</span>
+  </div>
+</div>
+
+<!-- ================= NAV ================= -->
+<header class="site-header">
+  <div class="wrap header-row">
+    <a href="#top" class="wordmark">LAP<span class="dot">.</span></a>
+    <nav class="primary-nav" aria-label="Primary">
+      <a href="#problem">The Problem</a>
+      <a href="#tribes">Tribes</a>
+      <a href="#preview">Preview</a>
+      <a href="#styling">AI Styling</a>
+      <a href="#tell-us">Tell Us</a>
+    </nav>
+    <a href="#waitlist" class="btn btn-solid nav-cta">Join Waitlist</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">A PROJECT BY THE BACKUP PLAN — CONCEPT PREVIEW</p>
+        <h1 class="hero-headline">
+          Fashion that stops <span class="strike">lying</span> to you.
+        </h1>
+        <p class="hero-sub">
+          Loud And Proud. No filters, no fake lighting, no ten-thousand-tab
+          scroll. Just what you searched for, shown exactly how it looks —
+          and a platform that says the quiet part loud about what's broken.
+        </p>
+        <div class="hero-actions">
+          <a href="#waitlist" class="btn btn-solid btn-lg">Join the waitlist</a>
+          <a href="#problem" class="btn btn-ghost btn-lg">See the problem ↓</a>
+        </div>
+        <div class="hero-stats">
+          <div><span>25–40%</span>return rate on fashion in India</div>
+          <div><span>80%+</span>carts abandoned before checkout</div>
+          <div><span>0</span>filters on anything we show you</div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <p class="slider-label">DRAG TO SEE THE DIFFERENCE</p>
+        <div class="compare" id="compare">
+          <div class="compare-side compare-filtered">
+            <span class="compare-tag">ON THE APP</span>
+            <span class="compare-caption">Filtered. Overlit. Not real.</span>
+          </div>
+          <div class="compare-side compare-real" id="compareReal">
+            <span class="compare-tag compare-tag-real">AT YOUR DOOR</span>
+            <span class="compare-caption">Actual fabric. Actual light.</span>
+          </div>
+          <input type="range" min="0" max="100" value="50" class="compare-range" id="compareRange" aria-label="Drag to compare filtered image against real image">
+          <div class="compare-handle" id="compareHandle" aria-hidden="true">
+            <span>↔</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TRENDING PROBLEMS ================= -->
+  <section class="problem" id="problem">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow eyebrow-dark">TRENDING RIGHT NOW</p>
+          <h2 class="section-title">What's actually broken, ranked by how much it costs you.</h2>
+        </div>
+        <p class="section-sub">Not vibes — numbers pulled from India-specific apparel e-commerce research. This is the thesis LAP is built to attack.</p>
+      </div>
+
+      <div class="stat-grid">
+        <div class="stat-card stat-card-featured">
+          <span class="stat-tag">#1 MOST COSTLY</span>
+          <span class="stat-num">25<span class="stat-unit">–40%</span></span>
+          <p class="stat-label">of fashion orders in India get returned — well above the global average. Mostly because what arrives doesn't match what you saw.</p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-tag">#2</span>
+          <span class="stat-num">80<span class="stat-unit">%+</span></span>
+          <p class="stat-label">of apparel carts are abandoned before checkout, most left because the buyer couldn't tell what they'd actually receive.</p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-tag">#3</span>
+          <span class="stat-num">74<span class="stat-unit">%</span></span>
+          <p class="stat-label">of shoppers say they've walked away from a purchase purely from the sheer volume of choice thrown at them.</p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-tag">#4</span>
+          <span class="stat-num">47<span class="stat-unit">%</span></span>
+          <p class="stat-label">of young shoppers name one issue above all: they can't tell how a product will actually look in real life.</p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-tag">#5</span>
+          <span class="stat-num">15+</span>
+          <p class="stat-label">separate D2C sites the average indie-fashion follower juggles — new account, new address, new tracking link, every single time.</p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-tag">#6</span>
+          <span class="stat-num">0</span>
+          <p class="stat-label">platforms in India currently built to guide taste, not just sell volume — which is exactly why styling influencers exist at all.</p>
+        </div>
+      </div>
+      <p class="problem-footnote">Sources: industry return-rate studies, cart abandonment reporting, McKinsey consumer research — figures reflect ranges reported across recent Indian &amp; global apparel e-commerce studies, not a single platform.</p>
+    </div>
+  </section>
+
+  <!-- ================= TRIBES / MOOD GRID ================= -->
+  <section class="tribes" id="tribes">
+    <div class="wrap">
+      <p class="eyebrow eyebrow-dark">WHO THIS IS FOR</p>
+      <h2 class="section-title">Built for your tribe, not the algorithm's.</h2>
+      <div class="tribe-grid">
+        <a href="#waitlist" class="tribe-card tribe-1">
+          <span class="tribe-name">Indie Hunters</span>
+          <span class="tribe-line">Follows 20 small labels. Tired of 20 different checkouts.</span>
+        </a>
+        <a href="#waitlist" class="tribe-card tribe-2">
+          <span class="tribe-name">Comment-Section Shoppers</span>
+          <span class="tribe-line">"Drop the link" is their love language. We're building the link.</span>
+        </a>
+        <a href="#waitlist" class="tribe-card tribe-3">
+          <span class="tribe-name">Budget Icons</span>
+          <span class="tribe-line">Good taste, tighter wallet. Wants premium without the premium markup.</span>
+        </a>
+        <a href="#waitlist" class="tribe-card tribe-4">
+          <span class="tribe-name">Return-Rate Refugees</span>
+          <span class="tribe-line">Burned by filtered photos one too many times. Wants the truth first.</span>
+        </a>
+        <a href="#waitlist" class="tribe-card tribe-5">
+          <span class="tribe-name">Style-Curious</span>
+          <span class="tribe-line">Has the money, not the taste guidance. Wants a stylist, not a search bar.</span>
+        </a>
+        <a href="#waitlist" class="tribe-card tribe-6">
+          <span class="tribe-name">Global Drop Chasers</span>
+          <span class="tribe-line">Wants Seoul and Tokyo labels without the customs headache.</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FEATURED CONCEPT ================= -->
+  <section class="featured">
+    <div class="wrap featured-grid">
+      <div class="featured-copy">
+        <p class="eyebrow">THE CORE BET</p>
+        <h2 class="section-title section-title-light">One rule this platform never breaks.</h2>
+        <p class="featured-line">If a photo is filtered, retouched, or shot to flatter more than it informs — it doesn't go up. Every product image is the product, under real light, full stop.</p>
+        <a href="#waitlist" class="btn btn-accent btn-lg">Hold me to it</a>
+      </div>
+      <div class="featured-visual">
+        <div class="featured-swatch"></div>
+        <span class="featured-badge">NO FILTER. NO APOLOGIES.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PREVIEW / CATALOG DEMO ================= -->
+  <section class="preview" id="preview">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow eyebrow-dark">EARLY PREVIEW — NOTHING HERE IS FOR SALE YET</p>
+          <h2 class="section-title">This is a demo. Every "Add to Bag" leads to the waitlist, not a cart.</h2>
+        </div>
+      </div>
+
+      <div class="product-grid" id="productGrid">
+        <!-- populated by js/main.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= REELS-STYLE DISCOVERY STRIP ================= -->
+  <section class="drops" id="drops">
+    <div class="wrap wrap-flush">
+      <p class="eyebrow eyebrow-dark wrap-pad">HOW DISCOVERY COULD WORK</p>
+      <h2 class="section-title wrap-pad">Swipe for fits, not just feeds.</h2>
+      <p class="drops-sub wrap-pad">A vertical, algorithm-fed styling feed — the same scroll instinct you already have, pointed at real outfits instead of ads.</p>
+    </div>
+    <div class="drops-strip" id="dropsStrip" tabindex="0" aria-label="Scrollable style drop previews">
+      <!-- populated by js/main.js -->
+    </div>
+  </section>
+
+  <!-- ================= AI STYLING GUIDE ================= -->
+  <section class="styling" id="styling">
+    <div class="wrap styling-grid">
+      <div class="styling-copy">
+        <p class="eyebrow">CONCEPT PREVIEW</p>
+        <h2 class="section-title section-title-light">An honest stylist, not a search bar.</h2>
+        <p class="styling-sub">
+          Tell it what you own, your budget, your body type, the occasion.
+          It tells you exactly what to add next — and why — instead of
+          burying you under ten thousand results that all look the same.
+        </p>
+        <ul class="styling-points">
+          <li>Built around what's already in your wardrobe</li>
+          <li>Explains the "why," not just the "buy"</li>
+          <li>No sponsored placements disguised as suggestions</li>
+        </ul>
+      </div>
+
+      <div class="chat-mock" aria-hidden="true">
+        <div class="chat-window">
+          <div class="chat-row chat-user">
+            <p>I have a wedding reception, budget's ₹4,000, I mostly wear black</p>
+          </div>
+          <div class="chat-row chat-ai">
+            <p>Go for a sage-green kurta set — it breaks your black streak without
+            fighting it, and it photographs better under warm reception lighting
+            than black does. Pair with a darker mojari, not black shoes.</p>
+          </div>
+          <div class="chat-row chat-user">
+            <p>Why not black shoes?</p>
+          </div>
+          <div class="chat-row chat-ai">
+            <p>Black shoes with sage-green flatten the outfit in photos. A brown
+            or oxblood mojari gives it contrast without clashing.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DATA / RESEARCH PROOF ================= -->
+  <section class="proof">
+    <div class="wrap">
+      <p class="eyebrow eyebrow-dark">WHAT THE DATA SAYS</p>
+      <h2 class="section-title">This isn't a hunch. It's a pattern.</h2>
+      <div class="proof-grid">
+        <div class="proof-card">
+          <p class="proof-quote">"For 47% of young consumers, the inability to see products in person is the most pressing issue in online fashion."</p>
+          <span class="proof-source">— Consumer behaviour research, apparel e-commerce</span>
+        </div>
+        <div class="proof-card">
+          <p class="proof-quote">"74% of consumers have walked away from a purchase due to the sheer volume of choice."</p>
+          <span class="proof-source">— McKinsey consumer research</span>
+        </div>
+        <div class="proof-card">
+          <p class="proof-quote">"Crepdog Crew's offline average order value runs near ₹22,000 versus roughly ₹4,000 for apparel online — proof people spend more when they trust what they're buying."</p>
+          <span class="proof-source">— India curated-retail case data</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TELL US YOUR FRUSTRATION ================= -->
+  <section class="tell-us" id="tell-us">
+    <div class="wrap tell-us-grid">
+      <div>
+        <p class="eyebrow eyebrow-dark">BEFORE WE BUILD MORE</p>
+        <h2 class="section-title">What's the last thing that annoyed you buying fashion online?</h2>
+        <p class="tell-us-sub">
+          Late delivery, fake photos, endless scroll, nothing in your size,
+          no brand you actually wanted — tell us straight. This shapes what
+          gets built first, not a comments section nobody reads.
+        </p>
+      </div>
+
+      <form class="feedback-form" id="feedbackForm" novalidate>
+        <div class="form-row">
+          <label for="fb-email">Email <span class="req">*</span></label>
+          <input type="email" id="fb-email" name="email" required autocomplete="email" placeholder="you@example.com">
+        </div>
+        <div class="form-row">
+          <label for="fb-message">Your biggest fashion-shopping frustration <span class="req">*</span></label>
+          <textarea id="fb-message" name="message" rows="4" required maxlength="600" placeholder="Be specific — one real moment, not a wishlist."></textarea>
+        </div>
+        <button type="submit" class="btn btn-solid btn-lg form-submit">Send it</button>
+        <p class="form-status" id="feedbackStatus" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ================= WAITLIST ================= -->
+  <section class="waitlist" id="waitlist">
+    <div class="wrap waitlist-inner">
+      <p class="eyebrow">CONCEPT PREVIEW — LAUNCHING SOON</p>
+      <h2 class="waitlist-title">Be first in when we go live.</h2>
+      <p class="waitlist-sub">No spam. One email when LAP actually opens — nothing before that.</p>
+
+      <form class="waitlist-form" id="waitlistForm" novalidate>
+        <label for="wl-email" class="sr-only">Email address</label>
+        <input type="email" id="wl-email" name="email" required autocomplete="email" placeholder="you@example.com">
+        <button type="submit" class="btn btn-accent btn-lg">Join Waitlist</button>
+      </form>
+      <p class="form-status" id="waitlistStatus" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= MODAL (Add to Bag intercept) ================= -->
+<div class="modal-overlay" id="modalOverlay" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+    <p class="eyebrow">NOT LIVE YET</p>
+    <h3 id="modalTitle">We're not selling anything. Yet.</h3>
+    <p class="modal-copy">This is a working preview of what LAP could be. Drop your email and you'll be first to know the moment it's real.</p>
+    <form class="modal-form" id="modalForm" novalidate>
+      <label for="modal-email" class="sr-only">Email address</label>
+      <input type="email" id="modal-email" name="email" required autocomplete="email" placeholder="you@example.com">
+      <button type="submit" class="btn btn-accent">Join Waitlist</button>
+    </form>
+    <p class="form-status" id="modalStatus" role="status" aria-live="polite"></p>
+  </div>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <span class="wordmark wordmark-sm">LAP<span class="dot">.</span></span>
+      <p class="footer-tagline">LAP is a concept for people who want fashion to stop lying to them. Loud And Proud, no filters, no apologies.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Concept</h4>
+      <a href="#problem">The Problem</a>
+      <a href="#tribes">Tribes</a>
+      <a href="#preview">Preview</a>
+      <a href="#styling">AI Styling</a>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <a href="#tell-us">Tell Us</a>
+      <a href="#waitlist">Waitlist</a>
+      <a href="mailto:hello.thebackupplan@gmail.com">Contact</a>
+    </div>
+  </div>
+  <div class="wrap footer-row">
+    <p class="footer-note">A project by The Backup Plan — thebackupplan.in</p>
+    <p class="footer-note">© 2026 LAP. Concept preview — not a live store.</p>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
