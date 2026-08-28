@@ -147,6 +147,7 @@ h1,h2,h3{font-family:var(--serif-display); font-weight:400; letter-spacing:0.2px
 }
 .product-card:hover .product-art{transform:translateY(-4px); box-shadow:0 16px 30px rgba(0,0,0,0.14);}
 .product-art svg{width:52%; height:52%;}
+.product-art .product-photo, .pdp-art .product-photo{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;}
 .product-tag{
   position:absolute; top:10px; left:10px; font-size:10px; font-weight:800; letter-spacing:0.4px;
   padding:4px 9px; border-radius:999px; background:rgba(255,255,255,0.88); text-transform:uppercase;
@@ -199,8 +200,9 @@ h1,h2,h3{font-family:var(--serif-display); font-weight:400; letter-spacing:0.2px
 .pdp-art{aspect-ratio:1/1; border-radius:20px; display:flex; align-items:center; justify-content:center; position:relative;}
 .pdp-art svg{width:44%; height:44%;}
 .pdp-thumbs{display:flex; gap:10px; margin-top:14px;}
-.pdp-thumb{width:64px; height:64px; border-radius:10px; border:2px solid transparent; cursor:pointer;}
+.pdp-thumb{width:64px; height:64px; border-radius:10px; border:2px solid transparent; cursor:pointer; overflow:hidden;}
 .pdp-thumb.active{border-color:var(--ink);}
+.pdp-thumb img{width:100%; height:100%; object-fit:cover; display:block;}
 .pdp-info .p-brand-row{display:flex; align-items:center; gap:10px; margin-bottom:6px;}
 .pdp-info h1{font-family:var(--sans); text-transform:none; font-size:26px; font-weight:700; letter-spacing:0; margin-bottom:10px;}
 .pdp-price{font-size:22px; font-weight:800; margin-bottom:18px;}
@@ -259,8 +261,9 @@ h1,h2,h3{font-family:var(--serif-display); font-weight:400; letter-spacing:0.2px
 .drawer-eta{background:#EAF4EC; color:var(--keep); font-size:12.5px; font-weight:700; padding:10px 22px;}
 .drawer-items{flex:1; overflow-y:auto; padding:14px 22px;}
 .drawer-item{display:flex; gap:12px; padding:14px 0; border-bottom:1px solid var(--line);}
-.drawer-item-art{width:64px; height:78px; border-radius:8px; flex-shrink:0; display:flex; align-items:center; justify-content:center;}
+.drawer-item-art{width:64px; height:78px; border-radius:8px; flex-shrink:0; display:flex; align-items:center; justify-content:center; overflow:hidden;}
 .drawer-item-art svg{width:55%; height:55%;}
+.drawer-item-art img{width:100%; height:100%; object-fit:cover; display:block;}
 .drawer-item-info{flex:1;}
 .drawer-item-info .p-brand{font-size:10.5px; color:var(--muted); font-weight:700; text-transform:uppercase;}
 .drawer-item-info .p-name{font-size:13.5px; font-weight:600; margin:2px 0;}
