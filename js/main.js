@@ -28,32 +28,44 @@ function contrastStroke(hex){
   return lum > 0.62 ? '#1F1D18' : '#F6F1E7';
 }
 
-/* ---------- CATALOGUE ---------- */
-const PRODUCTS = [
-  {id:1, name:'Boxy Oversized Tee', brand:'Kolkata Thread Co.', brandType:'Homegrown', category:'Tops', price:1499, bg:'#3B3A36', sil:'tee', tags:['tee','oversized','black','minimal','everyday','relaxed','streetwear']},
-  {id:2, name:'Ribbed Longline Tee', brand:'Noor Studio', brandType:'Homegrown', category:'Tops', price:1299, bg:'#D9A5A0', sil:'tee', tags:['tee','fitted','pink','minimal','everyday']},
-  {id:3, name:'Heavyweight Graphic Tee', brand:'Gali No. 9', brandType:'Homegrown', category:'Tops', price:1799, bg:'#C97B63', sil:'tee', tags:['tee','streetwear','oversized','graphic','relaxed']},
-  {id:4, name:'Zip Hoodie', brand:'Wolfpack Denim', brandType:'Homegrown', category:'Outerwear', price:2999, bg:'#3B3A36', sil:'hoodie', tags:['hoodie','streetwear','oversized','relaxed','everyday']},
-  {id:5, name:'Cropped Hoodie', brand:'Ombre Atelier', brandType:'Homegrown', category:'Outerwear', price:2599, bg:'#A9B4C0', sil:'hoodie', tags:['hoodie','fitted','minimal','boho']},
-  {id:6, name:'Utility Overshirt', brand:'Fifth Street', brandType:'Homegrown', category:'Outerwear', price:3299, bg:'#8C7B6B', sil:'jacket', tags:['jacket','streetwear','relaxed','everyday']},
-  {id:7, name:'Wide-Leg Denim', brand:'Wolfpack Denim', brandType:'Homegrown', category:'Bottoms', price:2799, bg:'#A9B4C0', sil:'trousers', tags:['denim','trousers','relaxed','streetwear','everyday']},
-  {id:8, name:'Tailored Trouser', brand:'Fifth Street', brandType:'Homegrown', category:'Bottoms', price:2399, bg:'#D8CBB8', sil:'trousers', tags:['trousers','fitted','minimal','event','date night']},
-  {id:9, name:'Chunky Retro Sneaker', brand:'Northstar Athletics', brandType:'Homegrown', category:'Footwear', price:3999, bg:'#E3D5C0', sil:'sneaker', tags:['sneaker','streetwear','relaxed','everyday']},
-  {id:10, name:'Canvas Slip-On', brand:'Gali No. 9', brandType:'Homegrown', category:'Footwear', price:1999, bg:'#B5C4B1', sil:'sneaker', tags:['sneaker','minimal','everyday']},
-  {id:11, name:'Structured Tote', brand:'Noor Studio', brandType:'Homegrown', category:'Accessories', price:2199, bg:'#C97B63', sil:'bag', tags:['bag','minimal','everyday','date night']},
-  {id:12, name:'Corduroy Cap', brand:'Gali No. 9', brandType:'Homegrown', category:'Accessories', price:899, bg:'#8C7B6B', sil:'cap', tags:['cap','streetwear','everyday']},
+/* ---------- PRODUCT PHOTOGRAPHY ----------
+   Freely-licensed (Unsplash) editorial/flat-lay fashion photography —
+   generic stock shots, not the brands' own product photography. Used
+   here as visual stand-ins on this concept prototype. ---------- */
+const IMG_BASE = 'https://images.unsplash.com';
+function productImg(p, w){ return `${IMG_BASE}${p.img}?auto=format&fit=crop&w=${w||800}&q=75`; }
 
-  {id:13, name:'Merino Crewneck', brand:'Hemlock & Co.', brandType:'International', category:'Tops', price:4499, bg:'#D8CBB8', sil:'tee', tags:['tee','minimal','fitted','date night','event']},
-  {id:14, name:'Silk Slip Dress', brand:'Maison Aria', brandType:'International', category:'Tops', price:6999, bg:'#D9A5A0', sil:'dress', tags:['dress','fitted','date night','event','minimal']},
-  {id:15, name:'Boucle Midi Dress', brand:'Maison Aria', brandType:'International', category:'Tops', price:7499, bg:'#B5C4B1', sil:'dress', tags:['dress','boho','event','relaxed']},
-  {id:16, name:'Waxed Field Jacket', brand:'Northmoor', brandType:'International', category:'Outerwear', price:8999, bg:'#3B3A36', sil:'jacket', tags:['jacket','streetwear','relaxed','everyday']},
-  {id:17, name:'Tailored Blazer', brand:'Hemlock & Co.', brandType:'International', category:'Outerwear', price:9499, bg:'#3B3A36', sil:'jacket', tags:['jacket','fitted','event','date night','minimal']},
-  {id:18, name:'Straight Cut Denim', brand:'Rue Marchand', brandType:'International', category:'Bottoms', price:5299, bg:'#A9B4C0', sil:'trousers', tags:['denim','trousers','minimal','everyday']},
-  {id:19, name:'Pleated Wide Trouser', brand:'Maison Aria', brandType:'International', category:'Bottoms', price:6299, bg:'#D8CBB8', sil:'trousers', tags:['trousers','fitted','event','minimal']},
-  {id:20, name:'Leather Court Sneaker', brand:'Rue Marchand', brandType:'International', category:'Footwear', price:8499, bg:'#E3D5C0', sil:'sneaker', tags:['sneaker','minimal','everyday','date night']},
-  {id:21, name:'Suede Chelsea Boot', brand:'Northmoor', brandType:'International', category:'Footwear', price:10999, bg:'#8C7B6B', sil:'sneaker', tags:['sneaker','event','date night','fitted']},
-  {id:22, name:'Woven Leather Tote', brand:'Rue Marchand', brandType:'International', category:'Accessories', price:9999, bg:'#C97B63', sil:'bag', tags:['bag','event','date night','minimal']},
-  {id:23, name:'Wool Beret', brand:'Maison Aria', brandType:'International', category:'Accessories', price:2799, bg:'#D9A5A0', sil:'cap', tags:['cap','boho','date night']},
+/* ---------- CATALOGUE ----------
+   Real brand names used for demo/curation flavor on this concept
+   prototype — LAP has no affiliation with these brands. ---------- */
+const PRODUCTS = [
+  {id:1, name:'Overdyed Boxy Tee', brand:'Bonkers Corner', brandType:'Homegrown', category:'Tops', price:1299, bg:'#3B3A36', sil:'tee', img:'/photo-1689044611227-3267fabaf76a', tags:['tee','oversized','black','minimal','everyday','relaxed','streetwear']},
+  {id:2, name:'Washed Zip Hoodie', brand:'Bonkers Corner', brandType:'Homegrown', category:'Outerwear', price:2799, bg:'#3B3A36', sil:'hoodie', img:'/photo-1564557287817-3785e38ec1f5', tags:['hoodie','streetwear','oversized','relaxed','everyday']},
+  {id:3, name:'Desi Grunge Graphic Tee', brand:'Veirdo', brandType:'Homegrown', category:'Tops', price:1199, bg:'#C97B63', sil:'tee', img:'/photo-1576871337674-ce7245cdc53c', tags:['tee','streetwear','oversized','graphic','relaxed']},
+  {id:4, name:'Cargo Utility Pants', brand:'Veirdo', brandType:'Homegrown', category:'Bottoms', price:1799, bg:'#A9B4C0', sil:'trousers', img:'/photo-1718252540558-7b383b52642e', tags:['cargo','trousers','streetwear','relaxed','everyday']},
+  {id:5, name:'Textured Knit Polo', brand:'Snitch', brandType:'Homegrown', category:'Tops', price:1499, bg:'#D8CBB8', sil:'tee', img:'/photo-1625910513413-c23b8bb81cba', tags:['polo','knit','fitted','minimal','date night']},
+  {id:6, name:'Slim Fit Chinos', brand:'Snitch', brandType:'Homegrown', category:'Bottoms', price:1699, bg:'#A9B4C0', sil:'trousers', img:'/photo-1746591847545-33d872de8411', tags:['trousers','fitted','minimal','everyday','event']},
+  {id:7, name:'Anime Oversized Tee', brand:'The Souled Store', brandType:'Homegrown', category:'Tops', price:899, bg:'#3B3A36', sil:'tee', img:'/photo-1576871337650-d711e9c0470b', tags:['tee','graphic','oversized','streetwear','everyday']},
+  {id:8, name:'Graphic Print Sweatshirt', brand:'Bewakoof', brandType:'Homegrown', category:'Outerwear', price:1399, bg:'#D9A5A0', sil:'hoodie', img:'/photo-1609873814058-a8928924184a', tags:['sweatshirt','graphic','relaxed','everyday']},
+  {id:9, name:'Skate Cargo Shorts', brand:'Six5Six Street', brandType:'Homegrown', category:'Bottoms', price:1599, bg:'#8C7B6B', sil:'trousers', img:'/photo-1742472471415-d07eb913371d', tags:['cargo','shorts','streetwear','relaxed','everyday']},
+  {id:10, name:'Original Print Crop Tee', brand:'CommonGround', brandType:'Homegrown', category:'Tops', price:999, bg:'#D9A5A0', sil:'tee', img:'/photo-1602100685024-c052aed5975a', tags:['tee','crop','fitted','graphic','everyday']},
+  {id:11, name:'Limited Drop Varsity Jacket', brand:'Back Alley Bodega', brandType:'Homegrown', category:'Outerwear', price:3499, bg:'#3B3A36', sil:'jacket', img:'/photo-1682354163828-d1d56c380431', tags:['jacket','streetwear','oversized','event']},
+  {id:12, name:'Canvas Low-Top Sneaker', brand:'Bonkers Corner', brandType:'Homegrown', category:'Footwear', price:2499, bg:'#E3D5C0', sil:'sneaker', img:'/photo-1560769629-975ec94e6a86', tags:['sneaker','minimal','everyday','streetwear']},
+  {id:13, name:'Canvas Tote Bag', brand:'Veirdo', brandType:'Homegrown', category:'Accessories', price:1299, bg:'#C97B63', sil:'bag', img:'/photo-1687433207116-14081c5c716c', tags:['bag','everyday','minimal']},
+
+  {id:14, name:'Camo Shark Full-Zip Hoodie', brand:'BAPE', brandType:'International', category:'Outerwear', price:18999, bg:'#3B3A36', sil:'hoodie', img:'/photo-1578768079052-aa76e52ff62e', tags:['hoodie','streetwear','graphic','oversized','event']},
+  {id:15, name:'Ape Head Sneaker', brand:'BAPE', brandType:'International', category:'Footwear', price:24999, bg:'#E3D5C0', sil:'sneaker', img:'/photo-1600185365483-26d7a4cc7519', tags:['sneaker','streetwear','event','date night']},
+  {id:16, name:'Graphic Motorcycle Tee', brand:'Neighborhood', brandType:'International', category:'Tops', price:6499, bg:'#8C7B6B', sil:'tee', img:'/photo-1724161172970-04b9819f6181', tags:['tee','graphic','streetwear','relaxed']},
+  {id:17, name:'Military Cargo Trousers', brand:'WTAPS', brandType:'International', category:'Bottoms', price:14999, bg:'#8C7B6B', sil:'trousers', img:'/photo-1746591847547-200f313178c9', tags:['cargo','trousers','streetwear','relaxed']},
+  {id:18, name:'Heart Logo Tee', brand:'Comme des Garçons PLAY', brandType:'International', category:'Tops', price:8999, bg:'#D8CBB8', sil:'tee', img:'/photo-1714144069905-f9bd839184af', tags:['tee','minimal','graphic','date night','event']},
+  {id:19, name:'Punk Deconstructed Jacket', brand:'Undercover', brandType:'International', category:'Outerwear', price:22999, bg:'#3B3A36', sil:'jacket', img:'/photo-1663374723561-885d23959717', tags:['jacket','event','date night','boho']},
+  {id:20, name:'Color-Block Sweatshirt', brand:'Ader Error', brandType:'International', category:'Outerwear', price:12499, bg:'#A9B4C0', sil:'hoodie', img:'/photo-1601754664414-aa3e4f42e6d4', tags:['sweatshirt','minimal','graphic','everyday']},
+  {id:21, name:'Typography Tech Jacket', brand:'thisisneverthat', brandType:'International', category:'Outerwear', price:9999, bg:'#8C7B6B', sil:'jacket', img:'/photo-1771310972847-dbda0c860cab', tags:['jacket','streetwear','relaxed','everyday']},
+  {id:22, name:'Y2K Oversized Denim', brand:'We11done', brandType:'International', category:'Bottoms', price:11499, bg:'#A9B4C0', sil:'trousers', img:'/photo-1746399565178-4ff950f81b45', tags:['denim','trousers','oversized','streetwear']},
+  {id:23, name:'Asymmetric Knit Top', brand:'Andersson Bell', brandType:'International', category:'Tops', price:10999, bg:'#D9A5A0', sil:'tee', img:'/photo-1625910513394-ea511bed44ca', tags:['knit','fitted','minimal','date night','event']},
+  {id:24, name:'8-Ball Graphic Tee', brand:'Stüssy', brandType:'International', category:'Tops', price:5499, bg:'#3B3A36', sil:'tee', img:'/photo-1544441892-715e8df46144', tags:['tee','graphic','streetwear','relaxed','everyday']},
+  {id:25, name:'Detroit Chore Jacket', brand:'Carhartt WIP', brandType:'International', category:'Outerwear', price:9499, bg:'#8C7B6B', sil:'jacket', img:'/photo-1771310961705-c8b34eddbe9e', tags:['jacket','streetwear','relaxed','everyday']},
+  {id:26, name:'Classic Logo Cap', brand:'Stüssy', brandType:'International', category:'Accessories', price:2999, bg:'#D8CBB8', sil:'cap', img:'/photo-1622445272054-ef281b3b8639', tags:['cap','streetwear','everyday']},
 ];
 
 const SIZES_APPAREL = ['XS','S','M','L','XL'];
@@ -73,13 +85,12 @@ let timerInterval = null;
 function money(n){ return '₹' + n.toLocaleString('en-IN'); }
 
 function productCard(p){
-  const stroke = contrastStroke(p.bg);
   const tagClass = p.brandType === 'International' ? 'intl' : 'home';
   return `
   <div class="product-card" data-id="${p.id}">
     <div class="product-art" style="background:${p.bg}">
       <span class="product-tag ${tagClass}">${p.brandType}</span>
-      ${silhouetteSVG(p.sil, stroke)}
+      <img class="product-photo" src="${productImg(p,800)}" alt="${p.name} — ${p.brand}" loading="lazy">
       <span class="product-nofilter">No filter</span>
     </div>
     <div class="product-info">
@@ -232,7 +243,6 @@ document.addEventListener('click', (e)=>{
 function openPDP(id){
   const p = PRODUCTS.find(x=>x.id===id);
   if(!p) return;
-  const stroke = contrastStroke(p.bg);
   const related = PRODUCTS.filter(x=>x.id!==p.id && x.category===p.category).slice(0,3);
   const sizes = sizesFor(p);
 
@@ -243,10 +253,10 @@ function openPDP(id){
     <div class="pdp-media">
       <div class="pdp-art" style="background:${p.bg}">
         <span class="product-tag ${p.brandType==='International'?'intl':'home'}" style="position:absolute;top:14px;left:14px;">${p.brandType}</span>
-        ${silhouetteSVG(p.sil, stroke)}
+        <img class="product-photo" src="${productImg(p,1000)}" alt="${p.name} — ${p.brand}">
       </div>
       <div class="pdp-thumbs">
-        ${[0,1,2].map(i=>`<div class="pdp-thumb ${i===0?'active':''}" style="background:${p.bg}"></div>`).join('')}
+        ${[0,1,2].map(i=>`<div class="pdp-thumb ${i===0?'active':''}" style="background:${p.bg}"><img src="${productImg(p,140)}" alt=""></div>`).join('')}
       </div>
     </div>
     <div class="pdp-info">
@@ -340,10 +350,9 @@ function renderDrawer(){
   itemsEl.innerHTML = cart.map((c,idx)=>{
     const p = PRODUCTS.find(x=>x.id===c.id);
     subtotal += p.price * c.qty;
-    const stroke = contrastStroke(p.bg);
     return `
     <div class="drawer-item">
-      <div class="drawer-item-art" style="background:${p.bg}">${silhouetteSVG(p.sil, stroke)}</div>
+      <div class="drawer-item-art" style="background:${p.bg}"><img src="${productImg(p,140)}" alt=""></div>
       <div class="drawer-item-info">
         <div class="p-brand">${p.brand}</div>
         <div class="p-name">${p.name}</div>
