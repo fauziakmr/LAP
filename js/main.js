@@ -39,7 +39,7 @@ const PRODUCTS = [
   {id:7, name:'Wide-Leg Denim', brand:'Wolfpack Denim', brandType:'Homegrown', category:'Bottoms', price:2799, bg:'#A9B4C0', sil:'trousers', tags:['denim','trousers','relaxed','streetwear','everyday']},
   {id:8, name:'Tailored Trouser', brand:'Fifth Street', brandType:'Homegrown', category:'Bottoms', price:2399, bg:'#D8CBB8', sil:'trousers', tags:['trousers','fitted','minimal','event','date night']},
   {id:9, name:'Chunky Retro Sneaker', brand:'Northstar Athletics', brandType:'Homegrown', category:'Footwear', price:3999, bg:'#E3D5C0', sil:'sneaker', tags:['sneaker','streetwear','relaxed','everyday']},
-  {id:10, name:'Canvas Slip-On', bran:'Gali No. 9', brandType:'Homegrown', category:'Footwear', price:1999, bg:'#B5C4B1', sil:'sneaker', tags:['sneaker','minimal','everyday']},
+  {id:10, name:'Canvas Slip-On', brand:'Gali No. 9', brandType:'Homegrown', category:'Footwear', price:1999, bg:'#B5C4B1', sil:'sneaker', tags:['sneaker','minimal','everyday']},
   {id:11, name:'Structured Tote', brand:'Noor Studio', brandType:'Homegrown', category:'Accessories', price:2199, bg:'#C97B63', sil:'bag', tags:['bag','minimal','everyday','date night']},
   {id:12, name:'Corduroy Cap', brand:'Gali No. 9', brandType:'Homegrown', category:'Accessories', price:899, bg:'#8C7B6B', sil:'cap', tags:['cap','streetwear','everyday']},
 
