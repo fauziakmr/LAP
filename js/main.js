@@ -53,19 +53,34 @@ const PRODUCTS = [
   {id:12, name:'Canvas Low-Top Sneaker', brand:'Bonkers Corner', brandType:'Homegrown', category:'Footwear', price:2499, bg:'#E3D5C0', sil:'sneaker', img:'/photo-1560769629-975ec94e6a86', tags:['sneaker','minimal','everyday','streetwear']},
   {id:13, name:'Canvas Tote Bag', brand:'Veirdo', brandType:'Homegrown', category:'Accessories', price:1299, bg:'#C97B63', sil:'bag', img:'/photo-1687433207116-14081c5c716c', tags:['bag','everyday','minimal']},
 
-  {id:14, name:'Camo Shark Full-Zip Hoodie', brand:'BAPE', brandType:'International', category:'Outerwear', price:18999, bg:'#3B3A36', sil:'hoodie', img:'/photo-1578768079052-aa76e52ff62e', tags:['hoodie','streetwear','graphic','oversized','event']},
-  {id:15, name:'Ape Head Sneaker', brand:'BAPE', brandType:'International', category:'Footwear', price:24999, bg:'#E3D5C0', sil:'sneaker', img:'/photo-1564518125914-014ebd5f0346', tags:['sneaker','streetwear','event','date night']},
-  {id:16, name:'Graphic Motorcycle Tee', brand:'Neighborhood', brandType:'International', category:'Tops', price:6499, bg:'#8C7B6B', sil:'tee', img:'/photo-1724161172970-04b9819f6181', tags:['tee','graphic','streetwear','relaxed']},
-  {id:17, name:'Military Cargo Trousers', brand:'WTAPS', brandType:'International', category:'Bottoms', price:14999, bg:'#8C7B6B', sil:'trousers', img:'/photo-1746591847547-200f313178c9', tags:['cargo','trousers','streetwear','relaxed']},
-  {id:18, name:'Heart Logo Tee', brand:'Comme des Garçons PLAY', brandType:'International', category:'Tops', price:8999, bg:'#D8CBB8', sil:'tee', img:'/photo-1714144069905-f9bd839184af', tags:['tee','minimal','graphic','date night','event']},
-  {id:19, name:'Punk Deconstructed Jacket', brand:'Undercover', brandType:'International', category:'Outerwear', price:22999, bg:'#3B3A36', sil:'jacket', img:'/photo-1663374723561-885d23959717', tags:['jacket','event','date night','boho']},
-  {id:20, name:'Color-Block Sweatshirt', brand:'Ader Error', brandType:'International', category:'Outerwear', price:12499, bg:'#A9B4C0', sil:'hoodie', img:'/photo-1601754664414-aa3e4f42e6d4', tags:['sweatshirt','minimal','graphic','everyday']},
-  {id:21, name:'Typography Tech Jacket', brand:'thisisneverthat', brandType:'International', category:'Outerwear', price:9999, bg:'#8C7B6B', sil:'jacket', img:'/photo-1771310972847-dbda0c860cab', tags:['jacket','streetwear','relaxed','everyday']},
-  {id:22, name:'Y2K Oversized Denim', brand:'We11done', brandType:'International', category:'Bottoms', price:11499, bg:'#A9B4C0', sil:'trousers', img:'/photo-1746399565178-4ff950f81b45', tags:['denim','trousers','oversized','streetwear']},
-  {id:23, name:'Asymmetric Knit Top', brand:'Andersson Bell', brandType:'International', category:'Tops', price:10999, bg:'#D9A5A0', sil:'tee', img:'/photo-1625910513394-ea511bed44ca', tags:['knit','fitted','minimal','date night','event']},
-  {id:24, name:'8-Ball Graphic Tee', brand:'Stüssy', brandType:'International', category:'Tops', price:5499, bg:'#3B3A36', sil:'tee', img:'/photo-1544441892-715e8df46144', tags:['tee','graphic','streetwear','relaxed','everyday']},
-  {id:25, name:'Detroit Chore Jacket', brand:'Carhartt WIP', brandType:'International', category:'Outerwear', price:9499, bg:'#8C7B6B', sil:'jacket', img:'/photo-1771310961705-c8b34eddbe9e', tags:['jacket','streetwear','relaxed','everyday']},
-  {id:26, name:'Classic Logo Cap', brand:'Stüssy', brandType:'International', category:'Accessories', price:2999, bg:'#D8CBB8', sil:'cap', img:'/photo-1622445272054-ef281b3b8639', tags:['cap','streetwear','everyday']},
+  {id:14, name:'Camo Shark Full-Zip Hoodie', brand:'BAPE', brandType:'International', category:'Outerwear', price:4999, bg:'#3B3A36', sil:'hoodie', img:'/photo-1578768079052-aa76e52ff62e', tags:['hoodie','streetwear','graphic','oversized','event']},
+  {id:15, name:'Ape Head Sneaker', brand:'BAPE', brandType:'International', category:'Footwear', price:5999, bg:'#E3D5C0', sil:'sneaker', img:'/photo-1564518125914-014ebd5f0346', tags:['sneaker','streetwear','event','date night']},
+  {id:16, name:'Graphic Motorcycle Tee', brand:'Neighborhood', brandType:'International', category:'Tops', price:2499, bg:'#8C7B6B', sil:'tee', img:'/photo-1724161172970-04b9819f6181', tags:['tee','graphic','streetwear','relaxed']},
+  {id:17, name:'Military Cargo Trousers', brand:'WTAPS', brandType:'International', category:'Bottoms', price:3999, bg:'#8C7B6B', sil:'trousers', img:'/photo-1746591847547-200f313178c9', tags:['cargo','trousers','streetwear','relaxed']},
+  {id:18, name:'Heart Logo Tee', brand:'Comme des Garçons PLAY', brandType:'International', category:'Tops', price:3499, bg:'#D8CBB8', sil:'tee', img:'/photo-1714144069905-f9bd839184af', tags:['tee','minimal','graphic','date night','event']},
+  {id:19, name:'Punk Deconstructed Jacket', brand:'Undercover', brandType:'International', category:'Outerwear', price:5499, bg:'#3B3A36', sil:'jacket', img:'/photo-1663374723561-885d23959717', tags:['jacket','event','date night','boho']},
+  {id:20, name:'Color-Block Sweatshirt', brand:'Ader Error', brandType:'International', category:'Outerwear', price:3799, bg:'#A9B4C0', sil:'hoodie', img:'/photo-1601754664414-aa3e4f42e6d4', tags:['sweatshirt','minimal','graphic','everyday']},
+  {id:21, name:'Typography Tech Jacket', brand:'thisisneverthat', brandType:'International', category:'Outerwear', price:3299, bg:'#8C7B6B', sil:'jacket', img:'/photo-1771310972847-dbda0c860cab', tags:['jacket','streetwear','relaxed','everyday']},
+  {id:22, name:'Y2K Oversized Denim', brand:'We11done', brandType:'International', category:'Bottoms', price:3599, bg:'#A9B4C0', sil:'trousers', img:'/photo-1746399565178-4ff950f81b45', tags:['denim','trousers','oversized','streetwear']},
+  {id:23, name:'Asymmetric Knit Top', brand:'Andersson Bell', brandType:'International', category:'Tops', price:2999, bg:'#D9A5A0', sil:'tee', img:'/photo-1625910513394-ea511bed44ca', tags:['knit','fitted','minimal','date night','event']},
+  {id:24, name:'8-Ball Graphic Tee', brand:'Stüssy', brandType:'International', category:'Tops', price:1999, bg:'#3B3A36', sil:'tee', img:'/photo-1544441892-715e8df46144', tags:['tee','graphic','streetwear','relaxed','everyday']},
+  {id:25, name:'Detroit Chore Jacket', brand:'Carhartt WIP', brandType:'International', category:'Outerwear', price:3199, bg:'#8C7B6B', sil:'jacket', img:'/photo-1771310961705-c8b34eddbe9e', tags:['jacket','streetwear','relaxed','everyday']},
+  {id:26, name:'Classic Logo Cap', brand:'Stüssy', brandType:'International', category:'Accessories', price:1499, bg:'#D8CBB8', sil:'cap', img:'/photo-1622445272054-ef281b3b8639', tags:['cap','streetwear','everyday']},
+
+  /* ---- WOMEN'S EDIT ---- brand names used for demo/curation flavor;
+     LAP has no affiliation with these brands. Photography verified
+     free-to-use editorial/product shots with no visible competing
+     logos or branding on the garments. ---- */
+  {id:27, name:'Floral Wrap Midi Dress', brand:'Global Desi', brandType:'Homegrown', category:'Dresses', price:1799, bg:'#D9A5A0', sil:'dress', dept:'Women', img:'/photo-1583316174775-bd6dc0e9f298', tags:['dress','fitted','date night','event','relaxed']},
+  {id:28, name:'Block-Print Kurta Set', brand:'W for Woman', brandType:'Homegrown', category:'Ethnic', price:1999, bg:'#C97B63', sil:'dress', dept:'Women', img:'/photo-1741847639057-b51a25d42892', tags:['ethnic','kurta','relaxed','everyday','festive']},
+  {id:29, name:'High-Rise Straight Jeans', brand:'Only', brandType:'International', category:'Bottoms', price:1999, bg:'#A9B4C0', sil:'trousers', dept:'Women', img:'/photo-1475178626620-a4d074967452', tags:['denim','trousers','fitted','everyday','minimal']},
+  {id:30, name:'Pleated Satin Blouse', brand:'Vero Moda', brandType:'International', category:'Tops', price:1599, bg:'#D8CBB8', sil:'tee', dept:'Women', img:'/photo-1546102597-4ac3be10560e', tags:['top','blouse','fitted','minimal','date night','event']},
+  {id:31, name:'Strappy Block Heels', brand:'Mochi', brandType:'Homegrown', category:'Footwear', price:1799, bg:'#E3D5C0', sil:'sneaker', dept:'Women', img:'/photo-1457972899686-77aec5e247ce', tags:['heels','event','date night']},
+  {id:32, name:'Gold-Plated Drop Earrings', brand:'Accessorize', brandType:'International', category:'Accessories', price:799, bg:'#D8CBB8', sil:'bag', dept:'Women', img:'/photo-1758995115682-1452a1a9e35b', tags:['jewellery','minimal','date night','event','festive']},
+  {id:33, name:'Zari-Embroidered Saree', brand:'Biba', brandType:'Homegrown', category:'Ethnic', price:2999, bg:'#C97B63', sil:'dress', dept:'Women', img:'/photo-1769500804057-ca1391bf4617', tags:['ethnic','saree','festive','event']},
+  {id:34, name:'Matching Denim Co-ord Set', brand:'Newme', brandType:'Homegrown', category:'Co-ords', price:2299, bg:'#A9B4C0', sil:'jacket', dept:'Women', img:'/photo-1756865271059-af17c35f368d', tags:['denim','co-ord','streetwear','everyday','relaxed']},
+  {id:35, name:'Classic White Sneaker', brand:'Forever New', brandType:'International', category:'Footwear', price:2199, bg:'#E3D5C0', sil:'sneaker', dept:'Women', img:'/photo-1535463861654-838685c8e158', tags:['sneaker','minimal','everyday']},
+  {id:36, name:'Structured Blazer', brand:'Mango', brandType:'International', category:'Outerwear', price:2799, bg:'#D9A5A0', sil:'jacket', dept:'Women', img:'/photo-1571513722275-4b41940f54b8', tags:['blazer','fitted','minimal','event','everyday']},
 ];
 
 const SIZES_APPAREL = ['XS','S','M','L','XL'];
@@ -78,7 +93,8 @@ let cart = []; // {id, size, qty}
 let currentFilter = 'all';
 let currentCategory = 'all';
 let currentSearch = '';
-let quizAnswers = {occasion:null, vibe:null, fit:null};
+let quizAnswers = {occasion:null, vibe:null};
+let measurements = {heightCm:null, weightKg:null};
 let timerInterval = null;
 
 /* ---------- RENDER HELPERS ---------- */
@@ -124,7 +140,7 @@ document.addEventListener('click', (e)=>{
   if(!navEl) return;
   e.preventDefault();
   const nav = navEl.dataset.nav;
-  if(nav === 'style'){ openStyleModal(); return; }
+  if(nav === 'style'){ openStyleModal(); document.getElementById('mainNav').classList.remove('mobile-open'); return; }
   if(nav === 'shop'){
     currentFilter = navEl.dataset.filter || 'all';
     currentCategory = 'all';
@@ -132,13 +148,24 @@ document.addEventListener('click', (e)=>{
     document.getElementById('searchInput').value = '';
     renderShop();
   }
+  document.getElementById('mainNav').classList.remove('mobile-open');
   showView(nav === 'style' ? 'home' : nav);
+});
+
+document.getElementById('menuBtn').addEventListener('click', ()=>{
+  document.getElementById('mainNav').classList.toggle('mobile-open');
 });
 
 /* ---------- HOME ---------- */
 function renderHome(){
+  renderGrid('grid-women', PRODUCTS.filter(p=>p.dept==='Women').slice(0,8));
   renderGrid('grid-homegrown', PRODUCTS.filter(p=>p.brandType==='Homegrown').slice(0,8));
   renderGrid('grid-international', PRODUCTS.filter(p=>p.brandType==='International').slice(0,8));
+  const brandCount = new Set(PRODUCTS.map(p=>p.brand)).size;
+  const pieceCountEl = document.getElementById('statPieces');
+  const brandCountEl = document.getElementById('statBrands');
+  if(pieceCountEl) pieceCountEl.textContent = PRODUCTS.length;
+  if(brandCountEl) brandCountEl.textContent = brandCount;
 }
 
 /* ---------- SHOP / SEARCH RESULTS ---------- */
@@ -151,7 +178,8 @@ function matchesSearch(p, q){
 
 function renderShop(){
   let list = PRODUCTS.filter(p=>{
-    const byBrand = currentFilter === 'all' || p.brandType === currentFilter;
+    const byBrand = currentFilter === 'all' || p.brandType === currentFilter ||
+      (currentFilter === 'Women' && p.dept === 'Women');
     const byCat = currentCategory === 'all' || p.category === currentCategory;
     const bySearch = matchesSearch(p, currentSearch);
     return byBrand && byCat && bySearch;
@@ -411,26 +439,94 @@ document.querySelectorAll('.quiz-opts').forEach(group=>{
     group.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
     btn.classList.add('active');
     quizAnswers[group.dataset.key] = btn.dataset.val.toLowerCase();
-    const allSet = quizAnswers.occasion && quizAnswers.vibe && quizAnswers.fit;
-    document.getElementById('revealEdit').disabled = !allSet;
+    checkQuizComplete();
   });
 });
 
+const heightInput = document.getElementById('heightInput');
+const weightInput = document.getElementById('weightInput');
+[heightInput, weightInput].forEach(el=>{
+  if(!el) return;
+  el.addEventListener('input', ()=>{
+    measurements.heightCm = parseFloat(heightInput.value) || null;
+    measurements.weightKg = parseFloat(weightInput.value) || null;
+    checkQuizComplete();
+  });
+});
+
+function checkQuizComplete(){
+  const allSet = quizAnswers.occasion && quizAnswers.vibe &&
+    measurements.heightCm > 0 && measurements.weightKg > 0;
+  document.getElementById('revealEdit').disabled = !allSet;
+}
+
+/* ---------- Rules-based body-type calculator ----------
+   Deterministic BMI + height banding mapped to a fit + colour-note
+   recommendation. This is NOT a real AI / computer-vision model —
+   just simple, transparent rule-matching, disclosed below. ---------- */
+function computeBodyProfile(heightCm, weightKg){
+  const heightM = heightCm / 100;
+  const bmi = weightKg / (heightM * heightM);
+
+  let fitRec, buildNote;
+  if(bmi < 18.5){
+    fitRec = 'fitted';
+    buildNote = 'On a leaner frame, fitted and tailored pieces tend to define your shape best — very oversized cuts can swallow it.';
+  } else if(bmi < 25){
+    fitRec = 'relaxed';
+    buildNote = 'Your proportions carry both fitted and relaxed cuts well — we\'re leaning relaxed here for everyday ease.';
+  } else {
+    fitRec = 'relaxed';
+    buildNote = 'Relaxed, structured pieces (a chore jacket, a straight-leg trouser) skim rather than cling — comfortable without losing shape.';
+  }
+
+  let heightNote;
+  if(heightCm < 160){
+    heightNote = 'At your height, a higher waistline and a cropped or ankle-length hem will read taller and elongate the leg line.';
+  } else if(heightCm <= 172){
+    heightNote = 'That\'s an average frame to dress — most proportions on LAP will sit true to how they\'re shown.';
+  } else {
+    heightNote = 'With a taller frame, oversized and longline pieces will hang the way they\'re actually designed to.';
+  }
+
+  const colorNotes = {
+    minimal: 'Stick to a tight, monochrome palette — black, ink, and stone — for a clean, elongating line.',
+    streetwear: 'One contrast colour-block against a relaxed silhouette reads intentional, not busy.',
+    boho: 'Warm, earthy tones — rust, olive, terracotta — suit relaxed, flowing fits best.'
+  };
+
+  return {
+    bmi: Math.round(bmi * 10) / 10,
+    fitRec,
+    label: `${heightCm < 160 ? 'Petite' : heightCm <= 172 ? 'Average-height' : 'Tall'} frame`,
+    note: `${buildNote} ${heightNote}`,
+    colorNote: colorNotes[quizAnswers.vibe] || 'Neutral tones work as a base — add one accent piece for personality.'
+  };
+}
+
 document.getElementById('revealEdit').addEventListener('click', ()=>{
-  const wanted = [quizAnswers.occasion, quizAnswers.vibe, quizAnswers.fit];
+  const profile = computeBodyProfile(measurements.heightCm, measurements.weightKg);
+  const wanted = [quizAnswers.occasion, quizAnswers.vibe, profile.fitRec];
   const scored = PRODUCTS.map(p=>{
     const score = wanted.reduce((s,w)=> s + (p.tags.includes(w) ? 1 : 0), 0);
     return {p, score};
   }).sort((a,b)=>b.score-a.score);
-  const top = scored.slice(0,3).map(s=>s.p);
+  const top = scored.slice(0,4).map(s=>s.p);
   renderGrid('styleResultGrid', top);
+  const noteEl = document.getElementById('bodyProfileNote');
+  if(noteEl){
+    noteEl.innerHTML = `<strong>${profile.label} · recommending ${profile.fitRec} fits</strong><br>${profile.note}<br>${profile.colorNote}`;
+  }
   document.getElementById('styleQuiz').hidden = true;
   document.getElementById('styleResult').hidden = false;
   document.getElementById('styleHeading').textContent = 'Your edit is ready';
 });
 
 document.getElementById('restartQuiz').addEventListener('click', ()=>{
-  quizAnswers = {occasion:null, vibe:null, fit:null};
+  quizAnswers = {occasion:null, vibe:null};
+  measurements = {heightCm:null, weightKg:null};
+  if(heightInput) heightInput.value = '';
+  if(weightInput) weightInput.value = '';
   document.querySelectorAll('.quiz-opts button').forEach(b=>b.classList.remove('active'));
   document.getElementById('revealEdit').disabled = true;
   document.getElementById('styleQuiz').hidden = false;
@@ -505,6 +601,53 @@ function finishTimer(kind){
 
 document.getElementById('btnKeep').addEventListener('click', ()=>finishTimer('keep'));
 document.getElementById('btnReturn').addEventListener('click', ()=>finishTimer('return'));
+
+/* ---------- WAITLIST ----------
+   Wired to Formspree. NOTE for the LAP team: replace FORMSPREE_ENDPOINT
+   below with your real form endpoint from formspree.io (free — sign up
+   with the email you want submissions delivered to, e.g.
+   fauzia.kmr@gmail.com, then paste the "https://formspree.io/f/xxxxxxxx"
+   URL it gives you). Until that's done, submissions are saved locally
+   in this browser only, as a working demo. ---------- */
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+
+document.querySelectorAll('.waitlist-form').forEach(form=>{
+  form.addEventListener('submit', async (e)=>{
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    const msgEl = form.querySelector('.waitlist-msg');
+    const data = new FormData(form);
+    const email = (data.get('email') || '').toString().trim();
+    if(!email || !email.includes('@')){
+      if(msgEl){ msgEl.textContent = 'Enter a valid email.'; msgEl.className = 'waitlist-msg error'; }
+      return;
+    }
+    const originalLabel = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Joining…';
+    try{
+      if(FORMSPREE_ENDPOINT.includes('YOUR_FORM_ID')){
+        // Endpoint not configured yet — save locally so the demo still works end-to-end.
+        const saved = JSON.parse(localStorage.getItem('lap_waitlist') || '[]');
+        saved.push({name:data.get('name')||'', email, at:new Date().toISOString()});
+        localStorage.setItem('lap_waitlist', JSON.stringify(saved));
+      } else {
+        await fetch(FORMSPREE_ENDPOINT, {
+          method:'POST',
+          headers:{'Accept':'application/json'},
+          body:data
+        });
+      }
+      form.reset();
+      if(msgEl){ msgEl.textContent = "You're on the list — we'll email you the moment LAP goes live."; msgEl.className = 'waitlist-msg success'; }
+    } catch(err){
+      if(msgEl){ msgEl.textContent = "Couldn't submit right now — please try again in a moment."; msgEl.className = 'waitlist-msg error'; }
+    } finally{
+      btn.disabled = false;
+      btn.textContent = originalLabel;
+    }
+  });
+});
 
 /* ---------- INIT ---------- */
 renderHome();
