@@ -23,6 +23,7 @@
 
       <nav class="main-nav" id="mainNav">
         <a href="#" data-nav="shop" data-filter="all">Shop All</a>
+        <a href="#" data-nav="shop" data-filter="Women">Women</a>
         <a href="#" data-nav="shop" data-filter="Homegrown">Homegrown</a>
         <a href="#" data-nav="shop" data-filter="International">International</a>
         <a href="#" data-nav="style">Style AI</a>
@@ -67,10 +68,60 @@
         </div>
       </div>
       <div class="hero-stats">
-        <div class="stat"><strong>52</strong><span>pieces this drop — not 52,000</span></div>
+        <div class="stat"><strong id="statPieces">36</strong><span>pieces this drop — not 52,000</span></div>
         <div class="stat"><strong>10 min</strong><span>doorstep try-on window</span></div>
         <div class="stat"><strong>0</strong><span>filters on any product photo</span></div>
-        <div class="stat"><strong>18</strong><span>labels, homegrown + international</span></div>
+        <div class="stat"><strong id="statBrands">29</strong><span>labels, homegrown + international</span></div>
+      </div>
+    </section>
+
+    <!-- ================= WAITLIST BANNER ================= -->
+    <section class="waitlist-banner">
+      <div class="waitlist-banner-inner">
+        <div class="waitlist-copy">
+          <p class="eyebrow eyebrow-invert">Not live yet — but almost</p>
+          <h2>Be the first through the door.</h2>
+          <p class="waitlist-sub">LAP hasn't launched delivery yet. Join the list and you'll get first access, founding-member perks, and the first Try‑At‑Door slots in your pincode — before anyone else.</p>
+        </div>
+        <form class="waitlist-form waitlist-form-hero" id="heroWaitlistForm">
+          <div class="waitlist-fields">
+            <input type="text" name="name" placeholder="First name" autocomplete="given-name">
+            <input type="email" name="email" placeholder="you@email.com" autocomplete="email" required>
+            <button class="btn btn-primary" type="submit">Join the waitlist</button>
+          </div>
+          <p class="waitlist-msg" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ================= TRUST / VALUE PROPS ================= -->
+    <section class="trust-strip">
+      <div class="trust-strip-inner">
+        <div class="trust-item">
+          <div class="trust-icon">⚡</div>
+          <h4>Fast delivery</h4>
+          <p>~10 minutes to serviceable pincodes — not 5–7 business days.</p>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">↩</div>
+          <h4>Easy returns &amp; exchange</h4>
+          <p>Decide at the door. No pickup requests, no week-long refund waits.</p>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">✦</div>
+          <h4>Styled for you</h4>
+          <p>Style AI reads your height, weight, and vibe to suggest fits and colours that actually work for you.</p>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">⌕</div>
+          <h4>Curative search</h4>
+          <p>A dozen relevant pieces beats twenty thousand irrelevant ones. We won't pad results.</p>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">◎</div>
+          <h4>Trend-current drops</h4>
+          <p>Curated, up-to-date pieces from homegrown and international labels — refreshed often.</p>
+        </div>
       </div>
     </section>
 
@@ -80,6 +131,17 @@
         <div class="problem"><h3>Filtered photos, real disappointment</h3><p>Studio lighting and heavy retouching are why fashion returns run higher in India than almost anywhere else. We shoot flat, honest, unedited.</p></div>
         <div class="problem"><h3>Days to get your money back</h3><p>Pickup requests, "agent assigned," more waiting. LAP's return decision happens on your doorstep, at delivery — done in the time it takes to try it on.</p></div>
       </div>
+    </section>
+
+    <section class="collection">
+      <div class="collection-head">
+        <div>
+          <p class="eyebrow">The Women's Edit</p>
+          <h2>Dresses, ethnic, denim — actually worth adding to bag</h2>
+        </div>
+        <a href="#" class="view-all" data-nav="shop" data-filter="Women">View all →</a>
+      </div>
+      <div class="product-grid" id="grid-women"></div>
     </section>
 
     <section class="collection">
@@ -148,6 +210,9 @@
       <div class="shop-filters" id="shopFilters">
         <button class="chip active" data-cat="all">All</button>
         <button class="chip" data-cat="Tops">Tops</button>
+        <button class="chip" data-cat="Dresses">Dresses</button>
+        <button class="chip" data-cat="Ethnic">Ethnic</button>
+        <button class="chip" data-cat="Co-ords">Co-ords</button>
         <button class="chip" data-cat="Outerwear">Outerwear</button>
         <button class="chip" data-cat="Bottoms">Bottoms</button>
         <button class="chip" data-cat="Footwear">Footwear</button>
@@ -262,18 +327,25 @@
         </div>
       </div>
       <div class="quiz-q">
-        <p>Fit?</p>
-        <div class="quiz-opts" data-key="fit">
-          <button data-val="Relaxed">Relaxed</button>
-          <button data-val="Fitted">Fitted</button>
+        <p>Your height &amp; weight — so we can suggest a fit and colours that work on you</p>
+        <div class="measure-row">
+          <div class="measure-field">
+            <input type="number" id="heightInput" placeholder="Height" min="120" max="220" inputmode="numeric">
+            <span>cm</span>
+          </div>
+          <div class="measure-field">
+            <input type="number" id="weightInput" placeholder="Weight" min="30" max="180" inputmode="numeric">
+            <span>kg</span>
+          </div>
         </div>
       </div>
       <button class="btn btn-primary full" id="revealEdit" disabled>Reveal my edit</button>
-      <p class="style-disclaimer">Prototype note: this demo edit is generated from simple rule-matching over LAP's catalogue tags, not a live model.</p>
+      <p class="style-disclaimer">Prototype note: this demo edit comes from simple rule-matching over LAP's catalogue tags plus a basic height/weight rule-of-thumb — not a live AI model or real styling advice.</p>
     </div>
 
     <div class="style-result" id="styleResult" hidden>
       <p class="style-result-label">Curated for you by LAP Style AI</p>
+      <p class="body-profile-note" id="bodyProfileNote"></p>
       <div class="product-grid" id="styleResultGrid"></div>
       <button class="btn btn-ghost" id="restartQuiz">Start over</button>
     </div>
@@ -290,6 +362,7 @@
     <div class="footer-col">
       <h4>Shop</h4>
       <a href="#" data-nav="shop" data-filter="all">All pieces</a>
+      <a href="#" data-nav="shop" data-filter="Women">Women</a>
       <a href="#" data-nav="shop" data-filter="Homegrown">Homegrown</a>
       <a href="#" data-nav="shop" data-filter="International">International</a>
     </div>
@@ -301,11 +374,14 @@
     </div>
     <div class="footer-col">
       <h4>Get the app</h4>
-      <p class="muted small">Prototype build — waitlist and app coming soon.</p>
-      <div class="waitlist-row">
-        <input type="email" placeholder="you@email.com">
-        <button class="btn btn-primary">Join</button>
-      </div>
+      <p class="muted small">Prototype build — join the waitlist to hear the moment LAP goes live.</p>
+      <form class="waitlist-form" id="footerWaitlistForm">
+        <div class="waitlist-row">
+          <input type="email" name="email" placeholder="you@email.com" autocomplete="email" required>
+          <button class="btn btn-primary" type="submit">Join</button>
+        </div>
+        <p class="waitlist-msg" aria-live="polite"></p>
+      </form>
     </div>
   </div>
   <div class="footer-bottom">© 2026 LAP. This is a concept prototype.</div>
