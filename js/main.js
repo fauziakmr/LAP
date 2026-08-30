@@ -88,11 +88,82 @@ const SIZES_SHOE = ['UK6','UK7','UK8','UK9','UK10'];
 
 function sizesFor(p){ return p.category === 'Footwear' ? SIZES_SHOE : SIZES_APPAREL; }
 
+/* ---------- AESTHETIC EDITS + SHOP THE LOOK ----------
+   Hand-curated by product id — not algorithmic, not tag-scored.
+   This is the "we already did the scrolling for you" promise made
+   literal: a human (well, this prototype's author) picked exactly
+   these pieces for exactly this vibe. ---------- */
+const CURATED_EDITS = {
+  'tokyo-after-dark': [14,22,15,11],
+  'off-duty': [25,4,35,13],
+  '9-5-good': [36,30,29,6],
+  'clean-fit': [1,12,20,18],
+  'indie-sleaze': [3,19,24,16],
+  'desi-remix': [28,33,34,32],
+  'date-night': [27,31,23,5]
+};
+const EDIT_LABELS = {
+  'tokyo-after-dark': 'Tokyo After Dark',
+  'off-duty': 'Off-Duty',
+  '9-5-good': '9–5, But Make It Good',
+  'clean-fit': 'The Clean Fit',
+  'indie-sleaze': 'Indie Sleaze',
+  'desi-remix': 'Desi Remix',
+  'date-night': 'Date Night, Decoded'
+};
+const LOOKS = [
+  {key:'tokyo-minimal', label:'Look 01 — Tokyo Minimal', ids:[25,10,4,12], heroId:25},
+  {key:'friday-office', label:'Look 02 — Friday Office', ids:[36,30,29,13], heroId:36},
+  {key:'off-duty-look', label:'Look 03 — Off-Duty', ids:[21,24,22,35], heroId:21}
+];
+const CATEGORY_LABEL = {Outerwear:'Jacket', Tops:'Top', Bottoms:'Bottom', Footwear:'Shoes', Accessories:'Bag', Dresses:'Dress', Ethnic:'Ethnic', 'Co-ords':'Co-ord'};
+
+function curatedProducts(key){
+  if(key === 'under-2000') return PRODUCTS.filter(p=>p.price<2000).sort((a,b)=>a.price-b.price).slice(0,8);
+  if(CURATED_EDITS[key]) return CURATED_EDITS[key].map(id=>PRODUCTS.find(p=>p.id===id)).filter(Boolean);
+  const look = LOOKS.find(l=>l.key===key);
+  if(look) return look.ids.map(id=>PRODUCTS.find(p=>p.id===id)).filter(Boolean);
+  return [];
+}
+
+function curatedLabel(key){
+  if(key === 'under-2000') return 'Under ₹2,000';
+  if(EDIT_LABELS[key]) return EDIT_LABELS[key];
+  const look = LOOKS.find(l=>l.key===key);
+  return look ? look.label : 'The Edit';
+}
+
+function lookCard(look){
+  const items = look.ids.map(id=>PRODUCTS.find(p=>p.id===id)).filter(Boolean);
+  const total = items.reduce((s,p)=>s+p.price,0);
+  const heroP = PRODUCTS.find(p=>p.id===look.heroId) || items[0];
+  return `
+  <div class="look-card">
+    <div class="look-hero"><img src="${productImg(heroP,900)}" alt="${look.label}" loading="lazy"></div>
+    <div class="look-info">
+      <p class="eyebrow">Shop the look</p>
+      <h3>${look.label}</h3>
+      <ul class="look-items">
+        ${items.map(p=>`<li><span class="look-item-tag">${CATEGORY_LABEL[p.category]||p.category}</span><span class="look-item-name">${p.name}</span><span class="look-item-price">${money(p.price)}</span></li>`).join('')}
+      </ul>
+      <div class="look-total"><span>Total</span><strong>${money(total)}</strong></div>
+      <button class="btn btn-primary full" data-nav="shop" data-edit="${look.key}">Shop the look →</button>
+    </div>
+  </div>`;
+}
+
+function renderLooks(){
+  const el = document.getElementById('looks-grid');
+  if(!el) return;
+  el.innerHTML = LOOKS.map(lookCard).join('');
+}
+
 /* ---------- STATE ---------- */
 let cart = []; // {id, size, qty}
 let currentFilter = 'all';
 let currentCategory = 'all';
 let currentSearch = '';
+let currentEdit = null;
 let quizAnswers = {occasion:null, vibe:null};
 let measurements = {heightCm:null, weightKg:null};
 let timerInterval = null;
@@ -142,10 +213,21 @@ document.addEventListener('click', (e)=>{
   const nav = navEl.dataset.nav;
   if(nav === 'style'){ openStyleModal(); document.getElementById('mainNav').classList.remove('mobile-open'); return; }
   if(nav === 'shop'){
-    currentFilter = navEl.dataset.filter || 'all';
     currentCategory = 'all';
     currentSearch = '';
     document.getElementById('searchInput').value = '';
+    if(navEl.dataset.edit){
+      currentEdit = navEl.dataset.edit;
+      currentFilter = 'all';
+    } else if(navEl.dataset.brand){
+      currentEdit = null;
+      currentFilter = 'all';
+      currentSearch = navEl.dataset.brand;
+      document.getElementById('searchInput').value = navEl.dataset.brand;
+    } else {
+      currentEdit = null;
+      currentFilter = navEl.dataset.filter || 'all';
+    }
     renderShop();
   }
   document.getElementById('mainNav').classList.remove('mobile-open');
@@ -178,14 +260,19 @@ function matchesSearch(p, q){
 }
 
 function renderShop(){
-  let list = PRODUCTS.filter(p=>{
-    const byBrand = currentFilter === 'all' || p.brandType === currentFilter ||
-      (currentFilter === 'Women' && p.dept === 'Women') ||
-      (currentFilter === 'Office' && p.tags.includes('office'));
-    const byCat = currentCategory === 'all' || p.category === currentCategory;
-    const bySearch = matchesSearch(p, currentSearch);
-    return byBrand && byCat && bySearch;
-  });
+  let list;
+  if(currentEdit){
+    list = curatedProducts(currentEdit);
+  } else {
+    list = PRODUCTS.filter(p=>{
+      const byBrand = currentFilter === 'all' || p.brandType === currentFilter ||
+        (currentFilter === 'Women' && p.dept === 'Women') ||
+        (currentFilter === 'Office' && p.tags.includes('office'));
+      const byCat = currentCategory === 'all' || p.category === currentCategory;
+      const bySearch = matchesSearch(p, currentSearch);
+      return byBrand && byCat && bySearch;
+    });
+  }
 
   document.querySelectorAll('#shopFilters .chip').forEach(c=>{
     c.classList.toggle('active', c.dataset.cat === currentCategory);
@@ -193,7 +280,10 @@ function renderShop(){
 
   const eyebrow = document.getElementById('shopEyebrow');
   const title = document.getElementById('shopTitle');
-  if(currentSearch){
+  if(currentEdit){
+    eyebrow.textContent = 'The Edit';
+    title.textContent = curatedLabel(currentEdit);
+  } else if(currentSearch){
     eyebrow.textContent = 'Search results';
     title.textContent = `“${currentSearch}”`;
   } else if(currentFilter !== 'all'){
@@ -214,6 +304,7 @@ function renderShop(){
 document.getElementById('shopFilters').addEventListener('click', (e)=>{
   const chip = e.target.closest('.chip');
   if(!chip) return;
+  currentEdit = null;
   currentCategory = chip.dataset.cat;
   renderShop();
 });
@@ -229,7 +320,7 @@ searchInput.addEventListener('input', ()=>{
   if(!q){ searchDrop.classList.remove('show'); return; }
   const results = PRODUCTS.filter(p=>matchesSearch(p,q)).slice(0,5);
   if(results.length === 0){
-    searchDrop.innerHTML = `<div class="search-drop-empty">No matches for “${q}” — that's intentional, LAP won't pad results. Try “tee”, “denim”, or “sneaker”.</div>`;
+    searchDrop.innerHTML = `<div class="search-drop-empty">No matches for “${q}” — that's intentional, LAP won't pad results. Try describing the vibe: “date night”, “under 2000”, or “streetwear”.</div>`;
   } else {
     searchDrop.innerHTML = results.map(p=>`
       <div class="search-drop-item" data-id="${p.id}">
@@ -256,6 +347,7 @@ function commitSearch(){
   currentSearch = searchInput.value.trim();
   currentFilter = 'all';
   currentCategory = 'all';
+  currentEdit = null;
   searchDrop.classList.remove('show');
   renderShop();
   showView('shop');
@@ -268,6 +360,27 @@ searchClear.addEventListener('click', ()=>{
 document.addEventListener('click', (e)=>{
   if(!e.target.closest('.search-wrap')) searchDrop.classList.remove('show');
 });
+
+/* ---------- CONVERSATIONAL SEARCH PROMPTS ----------
+   Rotates the search placeholder through aesthetic/occasion-led
+   prompts instead of a static "Search products..." — the copy is
+   what makes it feel conversational, matchesSearch() underneath is
+   unchanged. ---------- */
+const SEARCH_PROMPTS = [
+  'What are you looking for?',
+  "I'm going to a date...",
+  'First day at a new job',
+  'Something that looks expensive',
+  "I don't know what I want",
+  'A Tokyo streetwear vibe',
+  'Under ₹2,000'
+];
+let searchPromptIdx = 0;
+setInterval(()=>{
+  if(document.activeElement === searchInput || searchInput.value) return;
+  searchPromptIdx = (searchPromptIdx + 1) % SEARCH_PROMPTS.length;
+  searchInput.placeholder = SEARCH_PROMPTS[searchPromptIdx];
+}, 3200);
 
 /* ---------- PDP ---------- */
 function openPDP(id){
@@ -441,6 +554,14 @@ document.querySelectorAll('.quiz-opts').forEach(group=>{
     group.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
     btn.classList.add('active');
     quizAnswers[group.dataset.key] = btn.dataset.val.toLowerCase();
+    // Reveal the next question only after this one is answered —
+    // makes the same rule-based quiz feel like a stepped conversation.
+    if(group.dataset.key === 'occasion'){
+      document.getElementById('quizVibe').hidden = false;
+    }
+    if(group.dataset.key === 'vibe'){
+      document.getElementById('quizFinal').hidden = false;
+    }
     checkQuizComplete();
   });
 });
@@ -522,7 +643,7 @@ document.getElementById('revealEdit').addEventListener('click', ()=>{
   }
   document.getElementById('styleQuiz').hidden = true;
   document.getElementById('styleResult').hidden = false;
-  document.getElementById('styleHeading').textContent = 'Your edit is ready';
+  document.getElementById('styleHeading').textContent = "Here's what we'd put you in";
 });
 
 document.getElementById('restartQuiz').addEventListener('click', ()=>{
@@ -532,9 +653,11 @@ document.getElementById('restartQuiz').addEventListener('click', ()=>{
   if(weightInput) weightInput.value = '';
   document.querySelectorAll('.quiz-opts button').forEach(b=>b.classList.remove('active'));
   document.getElementById('revealEdit').disabled = true;
+  document.getElementById('quizVibe').hidden = true;
+  document.getElementById('quizFinal').hidden = true;
   document.getElementById('styleQuiz').hidden = false;
   document.getElementById('styleResult').hidden = true;
-  document.getElementById('styleHeading').textContent = 'Build your edit';
+  document.getElementById('styleHeading').textContent = 'What are we dressing you for?';
 });
 
 /* ---------- TRY-AT-DOOR TIMER DEMO ---------- */
@@ -654,6 +777,7 @@ document.querySelectorAll('.waitlist-form').forEach(form=>{
 
 /* ---------- INIT ---------- */
 renderHome();
+renderLooks();
 renderShop();
 updateCartCount();
 renderDrawer();
