@@ -37,50 +37,61 @@ function productImg(p, w){ return `${IMG_BASE}${p.img}?auto=format&fit=crop&w=${
 
 /* ---------- CATALOGUE ----------
    Real brand names used for demo/curation flavor on this concept
-   prototype — LAP has no affiliation with these brands. ---------- */
+   prototype — LAP has no affiliation with these brands. Curated
+   toward a 2026 editorial / Instagram-discovery point of view:
+   oversized and wide-leg silhouettes, real independent/D2C Indian
+   labels beyond the obvious five, and global reference brands —
+   deliberately NOT a "Myntra with fewer products" catalogue. ---- */
 const PRODUCTS = [
-  {id:1, name:'Overdyed Boxy Tee', brand:'Bonkers Corner', brandType:'Homegrown', category:'Tops', price:1299, bg:'#3B3A36', sil:'tee', img:'/photo-1689044611227-3267fabaf76a', tags:['tee','oversized','black','minimal','everyday','relaxed','streetwear']},
-  {id:2, name:'Washed Zip Hoodie', brand:'Bonkers Corner', brandType:'Homegrown', category:'Outerwear', price:2799, bg:'#3B3A36', sil:'hoodie', img:'/photo-1564557287817-3785e38ec1f5', tags:['hoodie','streetwear','oversized','relaxed','everyday']},
-  {id:3, name:'Desi Grunge Graphic Tee', brand:'Veirdo', brandType:'Homegrown', category:'Tops', price:1199, bg:'#C97B63', sil:'tee', img:'/photo-1576871337674-ce7245cdc53c', tags:['tee','streetwear','oversized','graphic','relaxed']},
-  {id:4, name:'Cargo Utility Pants', brand:'Veirdo', brandType:'Homegrown', category:'Bottoms', price:1799, bg:'#A9B4C0', sil:'trousers', img:'/photo-1718252540558-7b383b52642e', tags:['cargo','trousers','streetwear','relaxed','everyday']},
-  {id:5, name:'Textured Knit Polo', brand:'Snitch', brandType:'Homegrown', category:'Tops', price:1499, bg:'#D8CBB8', sil:'tee', img:'/photo-1625910513413-c23b8bb81cba', tags:['polo','knit','fitted','minimal','date night','office']},
-  {id:6, name:'Slim Fit Chinos', brand:'Snitch', brandType:'Homegrown', category:'Bottoms', price:1699, bg:'#A9B4C0', sil:'trousers', img:'/photo-1746591847545-33d872de8411', tags:['trousers','fitted','minimal','everyday','event','office']},
-  {id:7, name:'Anime Oversized Tee', brand:'The Souled Store', brandType:'Homegrown', category:'Tops', price:899, bg:'#3B3A36', sil:'tee', img:'/photo-1576871337650-d711e9c0470b', tags:['tee','graphic','oversized','streetwear','everyday']},
-  {id:8, name:'Graphic Print Sweatshirt', brand:'Bewakoof', brandType:'Homegrown', category:'Outerwear', price:1399, bg:'#D9A5A0', sil:'hoodie', img:'/photo-1609873814058-a8928924184a', tags:['sweatshirt','graphic','relaxed','everyday']},
-  {id:9, name:'Skate Cargo Shorts', brand:'Six5Six Street', brandType:'Homegrown', category:'Bottoms', price:1599, bg:'#8C7B6B', sil:'trousers', img:'/photo-1742472471415-d07eb913371d', tags:['cargo','shorts','streetwear','relaxed','everyday']},
-  {id:10, name:'Original Print Crop Tee', brand:'CommonGround', brandType:'Homegrown', category:'Tops', price:999, bg:'#D9A5A0', sil:'tee', img:'/photo-1602100685024-c052aed5975a', tags:['tee','crop','fitted','graphic','everyday']},
-  {id:11, name:'Limited Drop Varsity Jacket', brand:'Back Alley Bodega', brandType:'Homegrown', category:'Outerwear', price:3499, bg:'#3B3A36', sil:'jacket', img:'/photo-1682354163828-d1d56c380431', tags:['jacket','streetwear','oversized','event']},
-  {id:12, name:'Canvas Low-Top Sneaker', brand:'Bonkers Corner', brandType:'Homegrown', category:'Footwear', price:2499, bg:'#E3D5C0', sil:'sneaker', img:'/photo-1560769629-975ec94e6a86', tags:['sneaker','minimal','everyday','streetwear']},
-  {id:13, name:'Canvas Tote Bag', brand:'Veirdo', brandType:'Homegrown', category:'Accessories', price:1299, bg:'#C97B63', sil:'bag', img:'/photo-1687433207116-14081c5c716c', tags:['bag','everyday','minimal']},
+  /* ---- HOMEGROWN — Instagram-first / independent Indian labels ---- */
+  {id:1, name:'Oversized Utility Jacket', brand:'Garuda SS', brandType:'Homegrown', category:'Outerwear', price:4499, bg:'#2B2A27', sil:'jacket', img:'/photo-1462430638866-7ad892655344', tags:['jacket','oversized','streetwear','tokyo','relaxed','everyday','techwear']},
+  {id:2, name:'Boxy Graphic Tee', brand:'Huemn', brandType:'Homegrown', category:'Tops', price:1599, bg:'#2B2A27', sil:'tee', img:'/photo-1689044611227-3267fabaf76a', tags:['tee','oversized','graphic','streetwear','everyday','clean','tokyo']},
+  {id:3, name:'Relaxed Wide-Leg Denim', brand:'Freakins', brandType:'Homegrown', category:'Bottoms', price:2299, bg:'#A9B4C0', sil:'trousers', img:'/photo-1608370946545-7d93571b5593', tags:['denim','wide-leg','relaxed','everyday','clean','minimal','off-duty']},
+  {id:4, name:'Unisex Camp Collar Shirt', brand:'Bluorng', brandType:'Homegrown', category:'Tops', price:1999, bg:'#D8CBB8', sil:'tee', img:'/photo-1739652398636-80c7ea73291e', tags:['shirt','relaxed','everyday','office','clean']},
+  {id:5, name:'Reworked Denim Trucker', brand:'Almost Gods', brandType:'Homegrown', category:'Outerwear', price:3799, bg:'#8C7B6B', sil:'jacket', img:'/photo-1600574691453-499962cc0611', tags:['jacket','upcycled','streetwear','relaxed','everyday']},
+  {id:6, name:'Panel Carpenter Trousers', brand:'The Pant Project', brandType:'Homegrown', category:'Bottoms', price:2599, bg:'#8C7B6B', sil:'trousers', img:'/photo-1746591847547-200f313178c9', tags:['trousers','utility','relaxed','streetwear','everyday']},
+  {id:7, name:'Tie-Dye Boxy Shirt', brand:'NorBlack NorWhite', brandType:'Homegrown', category:'Tops', price:2299, bg:'#C97B63', sil:'tee', img:'/photo-1638627433693-604671edcf66', tags:['shirt','tie-dye','streetwear','desi','festive','relaxed','boho']},
+  {id:8, name:'Deconstructed Panel Trousers', brand:'Dhruv Kapoor', brandType:'Homegrown', category:'Bottoms', price:3999, bg:'#D8CBB8', sil:'trousers', img:'/photo-1762793193633-c26f3d34e710', tags:['trousers','tailored','event','office','statement']},
+  {id:9, name:'Structured Two-Way Blazer', brand:'Two Point Two', brandType:'Homegrown', category:'Outerwear', price:3499, bg:'#D8CBB8', sil:'jacket', img:'/photo-1748620754982-0b343a1f7784', tags:['blazer','tailored','office','event','minimal']},
+  {id:10, name:'Ribbed Seamless Top', brand:'Kica', brandType:'Homegrown', category:'Tops', price:1299, bg:'#D9A5A0', sil:'tee', img:'/photo-1592712148824-334083584cc1', tags:['top','fitted','minimal','everyday','clean']},
+  {id:11, name:'Gender-Fluid Utility Overshirt', brand:'BISKIT', brandType:'Homegrown', category:'Outerwear', price:2799, bg:'#8C7B6B', sil:'jacket', img:'/photo-1775443600272-3b66002f3771', tags:['overshirt','utility','relaxed','streetwear']},
+  {id:12, name:'Original Print Graphic Tee', brand:'CommonGround', brandType:'Homegrown', category:'Tops', price:1199, bg:'#2B2A27', sil:'tee', img:'/photo-1600871149968-44ccafa3b32a', tags:['tee','graphic','streetwear','everyday','clean']},
+  {id:13, name:'Desi Grunge Graphic Tee', brand:'Veirdo', brandType:'Homegrown', category:'Tops', price:1299, bg:'#C97B63', sil:'tee', img:'/photo-1721637686340-de9f8cebda5a', tags:['tee','graphic','indie sleaze','streetwear','nostalgia']},
+  {id:14, name:'Canvas Shoulder Bag', brand:'Bluorng', brandType:'Homegrown', category:'Accessories', price:1699, bg:'#8C7B6B', sil:'bag', img:'/photo-1559563458-527698bf5295', tags:['bag','everyday','minimal','streetwear','tokyo']},
+  {id:15, name:'Retro Low-Top Sneaker', brand:'CommonGround', brandType:'Homegrown', category:'Footwear', price:2599, bg:'#E3D5C0', sil:'sneaker', img:'/photo-1560769629-975ec94e6a86', tags:['sneaker','retro','everyday','streetwear','off-duty']},
 
-  {id:14, name:'Camo Shark Full-Zip Hoodie', brand:'BAPE', brandType:'International', category:'Outerwear', price:4999, bg:'#3B3A36', sil:'hoodie', img:'/photo-1578768079052-aa76e52ff62e', tags:['hoodie','streetwear','graphic','oversized','event']},
-  {id:15, name:'Ape Head Sneaker', brand:'BAPE', brandType:'International', category:'Footwear', price:5999, bg:'#E3D5C0', sil:'sneaker', img:'/photo-1564518125914-014ebd5f0346', tags:['sneaker','streetwear','event','date night']},
-  {id:16, name:'Graphic Motorcycle Tee', brand:'Neighborhood', brandType:'International', category:'Tops', price:2499, bg:'#8C7B6B', sil:'tee', img:'/photo-1724161172970-04b9819f6181', tags:['tee','graphic','streetwear','relaxed']},
-  {id:17, name:'Military Cargo Trousers', brand:'WTAPS', brandType:'International', category:'Bottoms', price:3999, bg:'#8C7B6B', sil:'trousers', img:'/photo-1746591847547-200f313178c9', tags:['cargo','trousers','streetwear','relaxed']},
-  {id:18, name:'Heart Logo Tee', brand:'Comme des Garçons PLAY', brandType:'International', category:'Tops', price:3499, bg:'#D8CBB8', sil:'tee', img:'/photo-1714144069905-f9bd839184af', tags:['tee','minimal','graphic','date night','event']},
-  {id:19, name:'Punk Deconstructed Jacket', brand:'Undercover', brandType:'International', category:'Outerwear', price:5499, bg:'#3B3A36', sil:'jacket', img:'/photo-1663374723561-885d23959717', tags:['jacket','event','date night','boho']},
-  {id:20, name:'Color-Block Sweatshirt', brand:'Ader Error', brandType:'International', category:'Outerwear', price:3799, bg:'#A9B4C0', sil:'hoodie', img:'/photo-1601754664414-aa3e4f42e6d4', tags:['sweatshirt','minimal','graphic','everyday']},
-  {id:21, name:'Typography Tech Jacket', brand:'thisisneverthat', brandType:'International', category:'Outerwear', price:3299, bg:'#8C7B6B', sil:'jacket', img:'/photo-1771310972847-dbda0c860cab', tags:['jacket','streetwear','relaxed','everyday']},
-  {id:22, name:'Y2K Oversized Denim', brand:'We11done', brandType:'International', category:'Bottoms', price:3599, bg:'#A9B4C0', sil:'trousers', img:'/photo-1746399565178-4ff950f81b45', tags:['denim','trousers','oversized','streetwear']},
-  {id:23, name:'Asymmetric Knit Top', brand:'Andersson Bell', brandType:'International', category:'Tops', price:2999, bg:'#D9A5A0', sil:'tee', img:'/photo-1625910513394-ea511bed44ca', tags:['knit','fitted','minimal','date night','event','office']},
-  {id:24, name:'8-Ball Graphic Tee', brand:'Stüssy', brandType:'International', category:'Tops', price:1999, bg:'#3B3A36', sil:'tee', img:'/photo-1544441892-715e8df46144', tags:['tee','graphic','streetwear','relaxed','everyday']},
-  {id:25, name:'Detroit Chore Jacket', brand:'Carhartt WIP', brandType:'International', category:'Outerwear', price:3199, bg:'#8C7B6B', sil:'jacket', img:'/photo-1771310961705-c8b34eddbe9e', tags:['jacket','streetwear','relaxed','everyday']},
-  {id:26, name:'Classic Logo Cap', brand:'Stüssy', brandType:'International', category:'Accessories', price:1499, bg:'#D8CBB8', sil:'cap', img:'/photo-1622445272054-ef281b3b8639', tags:['cap','streetwear','everyday']},
+  /* ---- INTERNATIONAL — Tokyo/Seoul streetwear + Western editorial-minimal reference labels ---- */
+  {id:16, name:'Camo Shark Full-Zip Hoodie', brand:'BAPE', brandType:'International', category:'Outerwear', price:4999, bg:'#2B2A27', sil:'hoodie', img:'/photo-1578768079052-aa76e52ff62e', tags:['hoodie','streetwear','graphic','oversized','tokyo','event']},
+  {id:17, name:'Ape Head Low-Top Sneaker', brand:'BAPE', brandType:'International', category:'Footwear', price:5999, bg:'#E3D5C0', sil:'sneaker', img:'/photo-1564518125914-014ebd5f0346', tags:['sneaker','streetwear','tokyo','event']},
+  {id:18, name:'Military Panel Cargo Trousers', brand:'WTAPS', brandType:'International', category:'Bottoms', price:3999, bg:'#8C7B6B', sil:'trousers', img:'/photo-1594035795072-3fcd236b7d83', tags:['cargo','trousers','streetwear','relaxed','tokyo']},
+  {id:19, name:'Heart Logo Boxy Tee', brand:'Comme des Garçons PLAY', brandType:'International', category:'Tops', price:3499, bg:'#D8CBB8', sil:'tee', img:'/photo-1594035795435-be3b09601d40', tags:['tee','minimal','graphic','tokyo','date night']},
+  {id:20, name:'Deconstructed Oversized Jacket', brand:'Undercover', brandType:'International', category:'Outerwear', price:5499, bg:'#2B2A27', sil:'jacket', img:'/photo-1663374723561-885d23959717', tags:['jacket','oversized','event','statement','tokyo','indie sleaze']},
+  {id:21, name:'Color-Block Boxy Sweatshirt', brand:'Ader Error', brandType:'International', category:'Outerwear', price:3799, bg:'#A9B4C0', sil:'hoodie', img:'/photo-1601754664414-aa3e4f42e6d4', tags:['sweatshirt','minimal','graphic','everyday','seoul']},
+  {id:22, name:'Typography Tech Overshirt', brand:'thisisneverthat', brandType:'International', category:'Outerwear', price:3299, bg:'#8C7B6B', sil:'jacket', img:'/photo-1771310972847-dbda0c860cab', tags:['overshirt','streetwear','relaxed','seoul','everyday']},
+  {id:23, name:'Barrel-Leg Washed Denim', brand:'We11done', brandType:'International', category:'Bottoms', price:3599, bg:'#A9B4C0', sil:'trousers', img:'/photo-1746399565178-4ff950f81b45', tags:['denim','barrel-leg','streetwear','seoul','everyday']},
+  {id:24, name:'Asymmetric Knit Top', brand:'Andersson Bell', brandType:'International', category:'Tops', price:2999, bg:'#D9A5A0', sil:'tee', img:'/photo-1625910513394-ea511bed44ca', tags:['knit','fitted','minimal','seoul','date night','office']},
+  {id:25, name:'8-Ball Graphic Tee', brand:'Stüssy', brandType:'International', category:'Tops', price:1999, bg:'#2B2A27', sil:'tee', img:'/photo-1721637635502-b0abaaa75edb', tags:['tee','graphic','streetwear','everyday','indie sleaze','nostalgia']},
+  {id:26, name:'Detroit Chore Jacket', brand:'Carhartt WIP', brandType:'International', category:'Outerwear', price:3199, bg:'#8C7B6B', sil:'jacket', img:'/photo-1608976198709-5e70a09b9ff0', tags:['jacket','chore','streetwear','everyday','off-duty']},
+  {id:27, name:'Structured Mini Shoulder Bag', brand:'JW PEI', brandType:'International', category:'Accessories', price:3299, bg:'#D9A5A0', sil:'bag', img:'/photo-1585488574745-5186ef0f1ddf', tags:['bag','structured','date night','event','minimal','office']},
+  {id:28, name:'Relaxed Straight Trousers', brand:'COS', brandType:'International', category:'Bottoms', price:4499, bg:'#D8CBB8', sil:'trousers', img:'/photo-1627130697816-4d71dbfe6a5b', tags:['trousers','minimal','office','clean','relaxed']},
+  {id:29, name:'Ribbed Baby Tee', brand:'Sporty & Rich', brandType:'International', category:'Tops', price:2199, bg:'#E3D5C0', sil:'tee', img:'/photo-1780566758129-3ec3b2f3b204', tags:['tee','fitted','minimal','clean','everyday','office']},
+  {id:30, name:'Canvas Tote', brand:'Baggu', brandType:'International', category:'Accessories', price:1899, bg:'#C97B63', sil:'bag', img:'/photo-1612902456551-333ac5afa26e', tags:['bag','everyday','minimal','canvas','off-duty']},
+  {id:31, name:'Retro Court Sneaker', brand:'Charles & Keith', brandType:'International', category:'Footwear', price:2999, bg:'#E3D5C0', sil:'sneaker', img:'/photo-1535463861654-838685c8e158', tags:['sneaker','minimal','everyday','retro','clean']},
 
-  /* ---- WOMEN'S EDIT ---- brand names used for demo/curation flavor;
-     LAP has no affiliation with these brands. Photography verified
-     free-to-use editorial/product shots with no visible competing
-     logos or branding on the garments. ---- */
-  {id:27, name:'Floral Wrap Midi Dress', brand:'Global Desi', brandType:'Homegrown', category:'Dresses', price:1799, bg:'#D9A5A0', sil:'dress', dept:'Women', img:'/photo-1583316174775-bd6dc0e9f298', tags:['dress','fitted','date night','event','relaxed']},
-  {id:28, name:'Block-Print Kurta Set', brand:'W for Woman', brandType:'Homegrown', category:'Ethnic', price:1999, bg:'#C97B63', sil:'dress', dept:'Women', img:'/photo-1741847639057-b51a25d42892', tags:['ethnic','kurta','relaxed','everyday','festive']},
-  {id:29, name:'High-Rise Straight Jeans', brand:'Only', brandType:'International', category:'Bottoms', price:1999, bg:'#A9B4C0', sil:'trousers', dept:'Women', img:'/photo-1475178626620-a4d074967452', tags:['denim','trousers','fitted','everyday','minimal','office']},
-  {id:30, name:'Pleated Satin Blouse', brand:'Vero Moda', brandType:'International', category:'Tops', price:1599, bg:'#D8CBB8', sil:'tee', dept:'Women', img:'/photo-1546102597-4ac3be10560e', tags:['top','blouse','fitted','minimal','date night','event','office']},
-  {id:31, name:'Strappy Block Heels', brand:'Mochi', brandType:'Homegrown', category:'Footwear', price:1799, bg:'#E3D5C0', sil:'sneaker', dept:'Women', img:'/photo-1457972899686-77aec5e247ce', tags:['heels','event','date night']},
-  {id:32, name:'Gold-Plated Drop Earrings', brand:'Accessorize', brandType:'International', category:'Accessories', price:799, bg:'#D8CBB8', sil:'bag', dept:'Women', img:'/photo-1758995115682-1452a1a9e35b', tags:['jewellery','minimal','date night','event','festive']},
-  {id:33, name:'Zari-Embroidered Saree', brand:'Biba', brandType:'Homegrown', category:'Ethnic', price:2999, bg:'#C97B63', sil:'dress', dept:'Women', img:'/photo-1769500804057-ca1391bf4617', tags:['ethnic','saree','festive','event']},
-  {id:34, name:'Matching Denim Co-ord Set', brand:'Newme', brandType:'Homegrown', category:'Co-ords', price:2299, bg:'#A9B4C0', sil:'jacket', dept:'Women', img:'/photo-1756865271059-af17c35f368d', tags:['denim','co-ord','streetwear','everyday','relaxed']},
-  {id:35, name:'Classic White Sneaker', brand:'Forever New', brandType:'International', category:'Footwear', price:2199, bg:'#E3D5C0', sil:'sneaker', dept:'Women', img:'/photo-1535463861654-838685c8e158', tags:['sneaker','minimal','everyday']},
-  {id:36, name:'Structured Blazer', brand:'Mango', brandType:'International', category:'Outerwear', price:2799, bg:'#D9A5A0', sil:'jacket', dept:'Women', img:'/photo-1571513722275-4b41940f54b8', tags:['blazer','fitted','minimal','event','everyday','office']},
+  /* ---- WOMEN'S EDIT / DESI REMIX — real brand names used for demo/curation
+     flavor on this concept prototype; LAP has no affiliation with these
+     labels. Photography is licensed editorial street-style, not the
+     brands' own product photography. ---- */
+  {id:32, name:'Draped Sari-Inspired Midi Dress', brand:'Raw Mango', brandType:'Homegrown', category:'Dresses', price:4299, bg:'#C97B63', sil:'dress', dept:'Women', img:'/photo-1769275061786-c33ab1a284c8', tags:['ethnic','dress','drape','festive','event','desi','boho']},
+  {id:33, name:'Wide-Leg Kurta Set', brand:'House of Masaba', brandType:'Homegrown', category:'Ethnic', price:2999, bg:'#C97B63', sil:'dress', dept:'Women', img:'/photo-1768478701507-24b1c8de2df0', tags:['ethnic','kurta','wide-leg','desi','everyday','festive','boho']},
+  {id:34, name:'Bandhani Print Boxy Shirt', brand:'NorBlack NorWhite', brandType:'Homegrown', category:'Tops', price:2199, bg:'#C97B63', sil:'tee', dept:'Women', img:'/photo-1765796513352-a52bcd0c1329', tags:['shirt','desi','print','relaxed','everyday']},
+  {id:35, name:'Silver Statement Jhumka Earrings', brand:'Studio Metallurgy', brandType:'Homegrown', category:'Accessories', price:899, bg:'#D8CBB8', sil:'bag', dept:'Women', img:'/photo-1535632787350-4e68ef0ac584', tags:['jewellery','silver','minimal','date night','desi']},
+  {id:36, name:'Structured Slip Midi Dress', brand:'Reformation', brandType:'International', category:'Dresses', price:3799, bg:'#D9A5A0', sil:'dress', dept:'Women', img:'/photo-1601677083135-5b8c8affad82', tags:['dress','slip','fitted','date night','minimal','event']},
+  {id:37, name:'Asymmetric Draped Dress', brand:'GANNI', brandType:'International', category:'Dresses', price:3299, bg:'#A9B4C0', sil:'dress', dept:'Women', img:'/photo-1692633190293-1295e9b68c63', tags:['dress','asymmetric','event','date night','statement']},
+  {id:38, name:'High-Rise Wide-Leg Jeans', brand:'Damson Madder', brandType:'International', category:'Bottoms', price:2799, bg:'#A9B4C0', sil:'trousers', dept:'Women', img:'/photo-1610241532145-96771e5088e8', tags:['denim','wide-leg','everyday','minimal','clean']},
+  {id:39, name:'Structured Blazer', brand:'Aritzia', brandType:'International', category:'Outerwear', price:3999, bg:'#D9A5A0', sil:'jacket', dept:'Women', img:'/photo-1761661769192-e2315b08717a', tags:['blazer','tailored','office','event','statement']},
+  {id:40, name:'Ballet Flats', brand:'Charles & Keith', brandType:'International', category:'Footwear', price:2299, bg:'#E3D5C0', sil:'sneaker', dept:'Women', img:'/photo-1457972899686-77aec5e247ce', tags:['flats','minimal','date night','office','everyday']},
+  {id:41, name:'Low-Rise Jean — Y2K Revival', brand:'We11done', brandType:'International', category:'Bottoms', price:2999, bg:'#3B3A36', sil:'trousers', dept:'Women', img:'/photo-1787527969253-94c4caf4415f', tags:['denim','skinny','indie sleaze','nostalgia','y2k']},
 ];
 
 const SIZES_APPAREL = ['XS','S','M','L','XL'];
@@ -94,13 +105,13 @@ function sizesFor(p){ return p.category === 'Footwear' ? SIZES_SHOE : SIZES_APPA
    literal: a human (well, this prototype's author) picked exactly
    these pieces for exactly this vibe. ---------- */
 const CURATED_EDITS = {
-  'tokyo-after-dark': [14,22,15,11],
-  'off-duty': [25,4,35,13],
-  '9-5-good': [36,30,29,6],
-  'clean-fit': [1,12,20,18],
-  'indie-sleaze': [3,19,24,16],
-  'desi-remix': [28,33,34,32],
-  'date-night': [27,31,23,5]
+  'tokyo-after-dark': [1,20,18,14,17,2],
+  'off-duty': [26,3,30,15,12],
+  '9-5-good': [39,28,29,27,40],
+  'clean-fit': [10,38,35,31,29],
+  'indie-sleaze': [13,25,41,20],
+  'desi-remix': [33,34,32,35,7],
+  'date-night': [36,37,35,27,40]
 };
 const EDIT_LABELS = {
   'tokyo-after-dark': 'Tokyo After Dark',
@@ -112,9 +123,10 @@ const EDIT_LABELS = {
   'date-night': 'Date Night, Decoded'
 };
 const LOOKS = [
-  {key:'tokyo-minimal', label:'Look 01 — Tokyo Minimal', ids:[25,10,4,12], heroId:25},
-  {key:'friday-office', label:'Look 02 — Friday Office', ids:[36,30,29,13], heroId:36},
-  {key:'off-duty-look', label:'Look 03 — Off-Duty', ids:[21,24,22,35], heroId:21}
+  {key:'tokyo-minimal', label:'Look 01 — Tokyo Minimal', ids:[1,2,18,17], heroId:1},
+  {key:'friday-office', label:'Look 02 — Friday Office', ids:[39,29,28,40], heroId:39},
+  {key:'off-duty-look', label:'Look 03 — Off-Duty', ids:[26,12,3,15], heroId:26},
+  {key:'date-night-look', label:'Look 04 — Date Night, Decoded', ids:[36,35,27,40], heroId:36}
 ];
 const CATEGORY_LABEL = {Outerwear:'Jacket', Tops:'Top', Bottoms:'Bottom', Footwear:'Shoes', Accessories:'Bag', Dresses:'Dress', Ethnic:'Ethnic', 'Co-ords':'Co-ord'};
 
@@ -368,12 +380,13 @@ document.addEventListener('click', (e)=>{
    unchanged. ---------- */
 const SEARCH_PROMPTS = [
   'What are you looking for?',
-  "I'm going to a date...",
-  'First day at a new job',
-  'Something that looks expensive',
-  "I don't know what I want",
-  'A Tokyo streetwear vibe',
-  'Under ₹2,000'
+  'I need a first-day-at-work outfit',
+  'Something like this',
+  'I want Tokyo streetwear',
+  'Something under ₹2,000',
+  'I have a date tonight',
+  'I want to look expensive',
+  "I don't know what I want"
 ];
 let searchPromptIdx = 0;
 setInterval(()=>{
