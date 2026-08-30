@@ -237,6 +237,49 @@ h1,h2,h3{font-family:var(--serif-display); font-weight:400; letter-spacing:0.2px
 .lookbook-caption h3{font-family:var(--sans); text-transform:none; font-size:21px; font-weight:800; letter-spacing:0; margin-bottom:6px;}
 .lookbook-caption p{font-size:13px; color:#E9E4D8; line-height:1.5;}
 
+/* ===================== AESTHETIC EDITS ===================== */
+.edits{max-width:1320px; margin:0 auto; padding:80px 24px 16px;}
+.edits-head{margin-bottom:32px; max-width:640px;}
+.edits-head h2{font-size:clamp(24px,3vw,36px); margin:6px 0 10px;}
+.edits-sub{color:var(--muted); font-size:14.5px; line-height:1.6;}
+.edits-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:18px;}
+.edit-tile{
+  position:relative; border-radius:16px; overflow:hidden; aspect-ratio:3/4; cursor:pointer;
+  box-shadow:0 1px 2px rgba(21,19,15,0.06); transition:transform .3s ease, box-shadow .3s ease;
+}
+.edit-tile:hover{transform:translateY(-5px); box-shadow:0 24px 42px rgba(21,19,15,0.18);}
+.edit-tile img{width:100%; height:100%; object-fit:cover; display:block; transition:transform .6s ease;}
+.edit-tile:hover img{transform:scale(1.06);}
+.edit-tile-caption{
+  position:absolute; left:0; right:0; bottom:0; padding:16px;
+  background:linear-gradient(180deg, rgba(21,19,15,0) 0%, rgba(21,19,15,0.78) 100%); color:#fff;
+}
+.edit-tile-eyebrow{font-size:10px; font-weight:800; letter-spacing:0.5px; text-transform:uppercase; color:#E9E4D8; margin-bottom:4px;}
+.edit-tile-caption h3{font-family:var(--sans); text-transform:none; font-size:16px; font-weight:800; letter-spacing:0;}
+
+/* ===================== SHOP THE LOOK ===================== */
+.looks{max-width:1320px; margin:0 auto; padding:80px 24px 16px;}
+.looks-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:28px;}
+.look-card{background:var(--paper); border:1px solid var(--line); border-radius:20px; overflow:hidden; display:flex; flex-direction:column;}
+.look-hero{aspect-ratio:4/5; overflow:hidden;}
+.look-hero img{width:100%; height:100%; object-fit:cover; display:block; transition:transform .6s ease;}
+.look-card:hover .look-hero img{transform:scale(1.05);}
+.look-info{padding:22px;}
+.look-info .eyebrow{margin-bottom:4px;}
+.look-info h3{font-family:var(--sans); text-transform:none; font-size:18px; font-weight:800; letter-spacing:0; margin-bottom:14px;}
+.look-items{list-style:none; display:flex; flex-direction:column; gap:9px; margin-bottom:16px;}
+.look-items li{display:flex; align-items:baseline; gap:8px; font-size:13px; border-bottom:1px dashed var(--line); padding-bottom:9px;}
+.look-items li:last-child{border-bottom:none; padding-bottom:0;}
+.look-item-tag{font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:0.4px; color:var(--muted); width:64px; flex-shrink:0;}
+.look-item-name{flex:1; font-weight:600;}
+.look-item-price{font-weight:700;}
+.look-total{display:flex; justify-content:space-between; align-items:baseline; padding-top:14px; border-top:1.5px solid var(--ink); margin-bottom:16px; font-size:14px;}
+.look-total strong{font-size:18px;}
+
+/* ===================== BRAND SPOTLIGHT ===================== */
+.brand-disclaimer{font-size:12px; color:var(--muted); margin:-14px 0 28px; max-width:640px;}
+.brand-card-cta{font-size:12px; font-weight:700; color:var(--accent); margin-top:6px;}
+
 /* ===================== STYLE TEASER ===================== */
 .style-teaser{max-width:1320px; margin:70px auto; padding:0 24px;}
 .style-teaser-inner{
@@ -407,6 +450,8 @@ h1,h2,h3{font-family:var(--serif-display); font-weight:400; letter-spacing:0.2px
   .problem-strip-inner{grid-template-columns:1fr;}
   .product-grid{grid-template-columns:repeat(2,1fr);}
   .lookbook-grid{grid-template-columns:1fr;}
+  .edits-grid{grid-template-columns:repeat(2,1fr);}
+  .looks-grid{grid-template-columns:1fr;}
   .how-steps{grid-template-columns:repeat(2,1fr);}
   .style-teaser-inner{grid-template-columns:1fr;}
   .pdp-wrap{grid-template-columns:1fr;}
