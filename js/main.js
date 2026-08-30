@@ -43,8 +43,8 @@ const PRODUCTS = [
   {id:2, name:'Washed Zip Hoodie', brand:'Bonkers Corner', brandType:'Homegrown', category:'Outerwear', price:2799, bg:'#3B3A36', sil:'hoodie', img:'/photo-1564557287817-3785e38ec1f5', tags:['hoodie','streetwear','oversized','relaxed','everyday']},
   {id:3, name:'Desi Grunge Graphic Tee', brand:'Veirdo', brandType:'Homegrown', category:'Tops', price:1199, bg:'#C97B63', sil:'tee', img:'/photo-1576871337674-ce7245cdc53c', tags:['tee','streetwear','oversized','graphic','relaxed']},
   {id:4, name:'Cargo Utility Pants', brand:'Veirdo', brandType:'Homegrown', category:'Bottoms', price:1799, bg:'#A9B4C0', sil:'trousers', img:'/photo-1718252540558-7b383b52642e', tags:['cargo','trousers','streetwear','relaxed','everyday']},
-  {id:5, name:'Textured Knit Polo', brand:'Snitch', brandType:'Homegrown', category:'Tops', price:1499, bg:'#D8CBB8', sil:'tee', img:'/photo-1625910513413-c23b8bb81cba', tags:['polo','knit','fitted','minimal','date night']},
-  {id:6, name:'Slim Fit Chinos', brand:'Snitch', brandType:'Homegrown', category:'Bottoms', price:1699, bg:'#A9B4C0', sil:'trousers', img:'/photo-1746591847545-33d872de8411', tags:['trousers','fitted','minimal','everyday','event']},
+  {id:5, name:'Textured Knit Polo', brand:'Snitch', brandType:'Homegrown', category:'Tops', price:1499, bg:'#D8CBB8', sil:'tee', img:'/photo-1625910513413-c23b8bb81cba', tags:['polo','knit','fitted','minimal','date night','office']},
+  {id:6, name:'Slim Fit Chinos', brand:'Snitch', brandType:'Homegrown', category:'Bottoms', price:1699, bg:'#A9B4C0', sil:'trousers', img:'/photo-1746591847545-33d872de8411', tags:['trousers','fitted','minimal','everyday','event','office']},
   {id:7, name:'Anime Oversized Tee', brand:'The Souled Store', brandType:'Homegrown', category:'Tops', price:899, bg:'#3B3A36', sil:'tee', img:'/photo-1576871337650-d711e9c0470b', tags:['tee','graphic','oversized','streetwear','everyday']},
   {id:8, name:'Graphic Print Sweatshirt', brand:'Bewakoof', brandType:'Homegrown', category:'Outerwear', price:1399, bg:'#D9A5A0', sil:'hoodie', img:'/photo-1609873814058-a8928924184a', tags:['sweatshirt','graphic','relaxed','everyday']},
   {id:9, name:'Skate Cargo Shorts', brand:'Six5Six Street', brandType:'Homegrown', category:'Bottoms', price:1599, bg:'#8C7B6B', sil:'trousers', img:'/photo-1742472471415-d07eb913371d', tags:['cargo','shorts','streetwear','relaxed','everyday']},
@@ -62,7 +62,7 @@ const PRODUCTS = [
   {id:20, name:'Color-Block Sweatshirt', brand:'Ader Error', brandType:'International', category:'Outerwear', price:3799, bg:'#A9B4C0', sil:'hoodie', img:'/photo-1601754664414-aa3e4f42e6d4', tags:['sweatshirt','minimal','graphic','everyday']},
   {id:21, name:'Typography Tech Jacket', brand:'thisisneverthat', brandType:'International', category:'Outerwear', price:3299, bg:'#8C7B6B', sil:'jacket', img:'/photo-1771310972847-dbda0c860cab', tags:['jacket','streetwear','relaxed','everyday']},
   {id:22, name:'Y2K Oversized Denim', brand:'We11done', brandType:'International', category:'Bottoms', price:3599, bg:'#A9B4C0', sil:'trousers', img:'/photo-1746399565178-4ff950f81b45', tags:['denim','trousers','oversized','streetwear']},
-  {id:23, name:'Asymmetric Knit Top', brand:'Andersson Bell', brandType:'International', category:'Tops', price:2999, bg:'#D9A5A0', sil:'tee', img:'/photo-1625910513394-ea511bed44ca', tags:['knit','fitted','minimal','date night','event']},
+  {id:23, name:'Asymmetric Knit Top', brand:'Andersson Bell', brandType:'International', category:'Tops', price:2999, bg:'#D9A5A0', sil:'tee', img:'/photo-1625910513394-ea511bed44ca', tags:['knit','fitted','minimal','date night','event','office']},
   {id:24, name:'8-Ball Graphic Tee', brand:'Stüssy', brandType:'International', category:'Tops', price:1999, bg:'#3B3A36', sil:'tee', img:'/photo-1544441892-715e8df46144', tags:['tee','graphic','streetwear','relaxed','everyday']},
   {id:25, name:'Detroit Chore Jacket', brand:'Carhartt WIP', brandType:'International', category:'Outerwear', price:3199, bg:'#8C7B6B', sil:'jacket', img:'/photo-1771310961705-c8b34eddbe9e', tags:['jacket','streetwear','relaxed','everyday']},
   {id:26, name:'Classic Logo Cap', brand:'Stüssy', brandType:'International', category:'Accessories', price:1499, bg:'#D8CBB8', sil:'cap', img:'/photo-1622445272054-ef281b3b8639', tags:['cap','streetwear','everyday']},
@@ -73,14 +73,14 @@ const PRODUCTS = [
      logos or branding on the garments. ---- */
   {id:27, name:'Floral Wrap Midi Dress', brand:'Global Desi', brandType:'Homegrown', category:'Dresses', price:1799, bg:'#D9A5A0', sil:'dress', dept:'Women', img:'/photo-1583316174775-bd6dc0e9f298', tags:['dress','fitted','date night','event','relaxed']},
   {id:28, name:'Block-Print Kurta Set', brand:'W for Woman', brandType:'Homegrown', category:'Ethnic', price:1999, bg:'#C97B63', sil:'dress', dept:'Women', img:'/photo-1741847639057-b51a25d42892', tags:['ethnic','kurta','relaxed','everyday','festive']},
-  {id:29, name:'High-Rise Straight Jeans', brand:'Only', brandType:'International', category:'Bottoms', price:1999, bg:'#A9B4C0', sil:'trousers', dept:'Women', img:'/photo-1475178626620-a4d074967452', tags:['denim','trousers','fitted','everyday','minimal']},
-  {id:30, name:'Pleated Satin Blouse', brand:'Vero Moda', brandType:'International', category:'Tops', price:1599, bg:'#D8CBB8', sil:'tee', dept:'Women', img:'/photo-1546102597-4ac3be10560e', tags:['top','blouse','fitted','minimal','date night','event']},
+  {id:29, name:'High-Rise Straight Jeans', brand:'Only', brandType:'International', category:'Bottoms', price:1999, bg:'#A9B4C0', sil:'trousers', dept:'Women', img:'/photo-1475178626620-a4d074967452', tags:['denim','trousers','fitted','everyday','minimal','office']},
+  {id:30, name:'Pleated Satin Blouse', brand:'Vero Moda', brandType:'International', category:'Tops', price:1599, bg:'#D8CBB8', sil:'tee', dept:'Women', img:'/photo-1546102597-4ac3be10560e', tags:['top','blouse','fitted','minimal','date night','event','office']},
   {id:31, name:'Strappy Block Heels', brand:'Mochi', brandType:'Homegrown', category:'Footwear', price:1799, bg:'#E3D5C0', sil:'sneaker', dept:'Women', img:'/photo-1457972899686-77aec5e247ce', tags:['heels','event','date night']},
   {id:32, name:'Gold-Plated Drop Earrings', brand:'Accessorize', brandType:'International', category:'Accessories', price:799, bg:'#D8CBB8', sil:'bag', dept:'Women', img:'/photo-1758995115682-1452a1a9e35b', tags:['jewellery','minimal','date night','event','festive']},
   {id:33, name:'Zari-Embroidered Saree', brand:'Biba', brandType:'Homegrown', category:'Ethnic', price:2999, bg:'#C97B63', sil:'dress', dept:'Women', img:'/photo-1769500804057-ca1391bf4617', tags:['ethnic','saree','festive','event']},
   {id:34, name:'Matching Denim Co-ord Set', brand:'Newme', brandType:'Homegrown', category:'Co-ords', price:2299, bg:'#A9B4C0', sil:'jacket', dept:'Women', img:'/photo-1756865271059-af17c35f368d', tags:['denim','co-ord','streetwear','everyday','relaxed']},
   {id:35, name:'Classic White Sneaker', brand:'Forever New', brandType:'International', category:'Footwear', price:2199, bg:'#E3D5C0', sil:'sneaker', dept:'Women', img:'/photo-1535463861654-838685c8e158', tags:['sneaker','minimal','everyday']},
-  {id:36, name:'Structured Blazer', brand:'Mango', brandType:'International', category:'Outerwear', price:2799, bg:'#D9A5A0', sil:'jacket', dept:'Women', img:'/photo-1571513722275-4b41940f54b8', tags:['blazer','fitted','minimal','event','everyday']},
+  {id:36, name:'Structured Blazer', brand:'Mango', brandType:'International', category:'Outerwear', price:2799, bg:'#D9A5A0', sil:'jacket', dept:'Women', img:'/photo-1571513722275-4b41940f54b8', tags:['blazer','fitted','minimal','event','everyday','office']},
 ];
 
 const SIZES_APPAREL = ['XS','S','M','L','XL'];
@@ -161,6 +161,7 @@ function renderHome(){
   renderGrid('grid-women', PRODUCTS.filter(p=>p.dept==='Women').slice(0,8));
   renderGrid('grid-homegrown', PRODUCTS.filter(p=>p.brandType==='Homegrown').slice(0,8));
   renderGrid('grid-international', PRODUCTS.filter(p=>p.brandType==='International').slice(0,8));
+  renderGrid('grid-office', PRODUCTS.filter(p=>p.tags.includes('office')).slice(0,8));
   const brandCount = new Set(PRODUCTS.map(p=>p.brand)).size;
   const pieceCountEl = document.getElementById('statPieces');
   const brandCountEl = document.getElementById('statBrands');
@@ -179,7 +180,8 @@ function matchesSearch(p, q){
 function renderShop(){
   let list = PRODUCTS.filter(p=>{
     const byBrand = currentFilter === 'all' || p.brandType === currentFilter ||
-      (currentFilter === 'Women' && p.dept === 'Women');
+      (currentFilter === 'Women' && p.dept === 'Women') ||
+      (currentFilter === 'Office' && p.tags.includes('office'));
     const byCat = currentCategory === 'all' || p.category === currentCategory;
     const bySearch = matchesSearch(p, currentSearch);
     return byBrand && byCat && bySearch;
@@ -492,7 +494,8 @@ function computeBodyProfile(heightCm, weightKg){
   const colorNotes = {
     minimal: 'Stick to a tight, monochrome palette — black, ink, and stone — for a clean, elongating line.',
     streetwear: 'One contrast colour-block against a relaxed silhouette reads intentional, not busy.',
-    boho: 'Warm, earthy tones — rust, olive, terracotta — suit relaxed, flowing fits best.'
+    boho: 'Warm, earthy tones — rust, olive, terracotta — suit relaxed, flowing fits best.',
+    office: 'Keep the base tailored and neutral — navy, ink, camel — then let one accessory (a belt, a bold shoe, statement jewellery) do the personality, rather than the whole outfit.'
   };
 
   return {
