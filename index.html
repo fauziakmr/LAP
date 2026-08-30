@@ -33,7 +33,7 @@
       <div class="header-actions">
         <div class="search-wrap">
           <svg class="search-icon" width="16" height="16" viewBox="0 0 16 16"><circle cx="7" cy="7" r="5.2" stroke="currentColor" stroke-width="1.4" fill="none"/><line x1="11" y1="11" x2="15" y2="15" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-          <input type="text" id="searchInput" placeholder="Search — e.g. black oversized tee" autocomplete="off">
+          <input type="text" id="searchInput" placeholder="What are you looking for?" autocomplete="off">
           <button class="search-clear" id="searchClear" aria-label="Clear search">&times;</button>
           <div class="search-drop" id="searchDrop"></div>
         </div>
@@ -61,7 +61,7 @@
       <div class="hero-inner">
         <p class="eyebrow">A curated edit, not a catalogue</p>
         <h1>See it.<br>Try it.<br><span class="strike">Doubt it.</span> Decide — in 10.</h1>
-        <p class="hero-sub">LAP hand-picks homegrown and international labels worth your time, shows you the real garment with zero filters, and lets you try everything on at your door before you decide to keep it.</p>
+        <p class="hero-sub">Other platforms show you 20,000 products and call that choice. LAP picks the eight you'd actually wear, builds the outfit, and tells you what looks good on you — real garment, zero filters, try it at your door before you decide.</p>
         <div class="hero-cta-row">
           <button class="btn btn-primary" data-nav="shop" data-filter="all">Shop the edit</button>
           <button class="btn btn-ghost" data-nav="how">How Try‑At‑Door works</button>
@@ -79,23 +79,57 @@
       </div>
     </section>
 
-    <!-- ================= WAITLIST BANNER ================= -->
-    <section class="waitlist-banner">
-      <div class="waitlist-banner-inner">
-        <div class="waitlist-copy">
-          <p class="eyebrow eyebrow-invert">Not live yet — but almost</p>
-          <h2>Be the first through the door.</h2>
-          <p class="waitlist-sub">LAP hasn't launched delivery yet. Join the list and you'll get first access, founding-member perks, and the first Try‑At‑Door slots in your pincode — before anyone else.</p>
-        </div>
-        <form class="waitlist-form waitlist-form-hero" id="heroWaitlistForm">
-          <div class="waitlist-fields">
-            <input type="text" name="name" placeholder="First name" autocomplete="given-name">
-            <input type="email" name="email" placeholder="you@email.com" autocomplete="email" required>
-            <button class="btn btn-primary" type="submit">Join the waitlist</button>
-          </div>
-          <p class="waitlist-msg" aria-live="polite"></p>
-        </form>
+    <!-- ================= AESTHETIC EDITS ================= -->
+    <section class="edits">
+      <div class="edits-head">
+        <p class="eyebrow">Discover, don't scroll</p>
+        <h2>We already did the scrolling for you.</h2>
+        <p class="edits-sub">Eight aesthetic-led edits, not eight thousand results. Pick a vibe — every piece in it is already chosen.</p>
       </div>
+      <div class="edits-grid">
+        <div class="edit-tile" data-nav="shop" data-edit="tokyo-after-dark">
+          <img src="https://images.unsplash.com/photo-1578768079052-aa76e52ff62e?auto=format&fit=crop&w=700&q=75" alt="Tokyo After Dark edit" loading="lazy">
+          <div class="edit-tile-caption"><p class="edit-tile-eyebrow">4 pieces</p><h3>Tokyo After Dark</h3></div>
+        </div>
+        <div class="edit-tile" data-nav="shop" data-edit="off-duty">
+          <img src="https://images.unsplash.com/photo-1771310961705-c8b34eddbe9e?auto=format&fit=crop&w=700&q=75" alt="Off-Duty edit" loading="lazy">
+          <div class="edit-tile-caption"><p class="edit-tile-eyebrow">4 pieces</p><h3>Off-Duty</h3></div>
+        </div>
+        <div class="edit-tile" data-nav="shop" data-edit="9-5-good">
+          <img src="https://images.unsplash.com/photo-1546102597-4ac3be10560e?auto=format&fit=crop&w=700&q=75" alt="9 to 5 But Make It Good edit" loading="lazy">
+          <div class="edit-tile-caption"><p class="edit-tile-eyebrow">4 pieces</p><h3>9–5, But Make It Good</h3></div>
+        </div>
+        <div class="edit-tile" data-nav="shop" data-edit="clean-fit">
+          <img src="https://images.unsplash.com/photo-1689044611227-3267fabaf76a?auto=format&fit=crop&w=700&q=75" alt="The Clean Fit edit" loading="lazy">
+          <div class="edit-tile-caption"><p class="edit-tile-eyebrow">4 pieces</p><h3>The Clean Fit</h3></div>
+        </div>
+        <div class="edit-tile" data-nav="shop" data-edit="indie-sleaze">
+          <img src="https://images.unsplash.com/photo-1576871337674-ce7245cdc53c?auto=format&fit=crop&w=700&q=75" alt="Indie Sleaze edit" loading="lazy">
+          <div class="edit-tile-caption"><p class="edit-tile-eyebrow">4 pieces</p><h3>Indie Sleaze</h3></div>
+        </div>
+        <div class="edit-tile" data-nav="shop" data-edit="desi-remix">
+          <img src="https://images.unsplash.com/photo-1769500804057-ca1391bf4617?auto=format&fit=crop&w=700&q=75" alt="Desi Remix edit" loading="lazy">
+          <div class="edit-tile-caption"><p class="edit-tile-eyebrow">4 pieces</p><h3>Desi Remix</h3></div>
+        </div>
+        <div class="edit-tile" data-nav="shop" data-edit="date-night">
+          <img src="https://images.unsplash.com/photo-1583316174775-bd6dc0e9f298?auto=format&fit=crop&w=700&q=75" alt="Date Night, Decoded edit" loading="lazy">
+          <div class="edit-tile-caption"><p class="edit-tile-eyebrow">4 pieces</p><h3>Date Night, Decoded</h3></div>
+        </div>
+        <div class="edit-tile" data-nav="shop" data-edit="under-2000">
+          <img src="https://images.unsplash.com/photo-1475178626620-a4d074967452?auto=format&fit=crop&w=700&q=75" alt="Under ₹2,000 edit" loading="lazy">
+          <div class="edit-tile-caption"><p class="edit-tile-eyebrow">Priced right</p><h3>Under ₹2,000</h3></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SHOP THE LOOK ================= -->
+    <section class="looks">
+      <div class="edits-head">
+        <p class="eyebrow">We found the fit</p>
+        <h2>Shop the look, not the guesswork</h2>
+        <p class="edits-sub">You shouldn't have to imagine how to style a product. Here's the whole outfit, already put together, already priced.</p>
+      </div>
+      <div class="looks-grid" id="looks-grid"></div>
     </section>
 
     <!-- ================= TRUST / VALUE PROPS ================= -->
@@ -164,6 +198,79 @@
       </div>
     </section>
 
+    <!-- ================= BRAND SPOTLIGHT ================= -->
+    <section class="collection brand-spotlight">
+      <div class="collection-head">
+        <div>
+          <p class="eyebrow">Brands you haven't discovered yet</p>
+          <h2>Small labels. Big fits.</h2>
+        </div>
+      </div>
+      <p class="brand-disclaimer">Editorial picks from LAP's own curated catalogue — LAP is not affiliated with, endorsed by, or partnered with these labels.</p>
+      <div class="product-grid">
+        <div class="product-card brand-card" data-nav="shop" data-brand="Bonkers Corner">
+          <div class="product-art" style="background:#3B3A36">
+            <img class="product-photo" src="https://images.unsplash.com/photo-1564557287817-3785e38ec1f5?auto=format&fit=crop&w=800&q=75" alt="Bonkers Corner">
+          </div>
+          <div class="product-info">
+            <div class="p-brand">Bonkers Corner</div>
+            <div class="p-name">Streetwear staples without the noise.</div>
+            <div class="brand-card-cta">Shop the brand →</div>
+          </div>
+        </div>
+        <div class="product-card brand-card" data-nav="shop" data-brand="Snitch">
+          <div class="product-art" style="background:#D8CBB8">
+            <img class="product-photo" src="https://images.unsplash.com/photo-1625910513413-c23b8bb81cba?auto=format&fit=crop&w=800&q=75" alt="Snitch">
+          </div>
+          <div class="product-info">
+            <div class="p-brand">Snitch</div>
+            <div class="p-name">Sharp, relaxed, everyday menswear.</div>
+            <div class="brand-card-cta">Shop the brand →</div>
+          </div>
+        </div>
+        <div class="product-card brand-card" data-nav="shop" data-brand="CommonGround">
+          <div class="product-art" style="background:#D9A5A0">
+            <img class="product-photo" src="https://images.unsplash.com/photo-1602100685024-c052aed5975a?auto=format&fit=crop&w=800&q=75" alt="CommonGround">
+          </div>
+          <div class="product-info">
+            <div class="p-brand">CommonGround</div>
+            <div class="p-name">Everyday urban basics, done quietly well.</div>
+            <div class="brand-card-cta">Shop the brand →</div>
+          </div>
+        </div>
+        <div class="product-card brand-card" data-nav="shop" data-brand="Veirdo">
+          <div class="product-art" style="background:#A9B4C0">
+            <img class="product-photo" src="https://images.unsplash.com/photo-1718252540558-7b383b52642e?auto=format&fit=crop&w=800&q=75" alt="Veirdo">
+          </div>
+          <div class="product-info">
+            <div class="p-brand">Veirdo</div>
+            <div class="p-name">Wear your weird — streetwear that doesn't take itself seriously.</div>
+            <div class="brand-card-cta">Shop the brand →</div>
+          </div>
+        </div>
+        <div class="product-card brand-card" data-nav="shop" data-brand="Bewakoof">
+          <div class="product-art" style="background:#D9A5A0">
+            <img class="product-photo" src="https://images.unsplash.com/photo-1609873814058-a8928924184a?auto=format&fit=crop&w=800&q=75" alt="Bewakoof">
+          </div>
+          <div class="product-info">
+            <div class="p-brand">Bewakoof</div>
+            <div class="p-name">India's original meme-to-merch, one witty tee at a time.</div>
+            <div class="brand-card-cta">Shop the brand →</div>
+          </div>
+        </div>
+        <div class="product-card brand-card" data-nav="shop" data-brand="Ader Error">
+          <div class="product-art" style="background:#A9B4C0">
+            <img class="product-photo" src="https://images.unsplash.com/photo-1601754664414-aa3e4f42e6d4?auto=format&fit=crop&w=800&q=75" alt="Ader Error">
+          </div>
+          <div class="product-info">
+            <div class="p-brand">Ader Error</div>
+            <div class="p-name">Color-blocked minimalism, out of Seoul.</div>
+            <div class="brand-card-cta">Shop the brand →</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="collection">
       <div class="collection-head">
         <div>
@@ -212,9 +319,9 @@
       <div class="style-teaser-inner">
         <div class="style-teaser-copy">
           <p class="eyebrow">LAP Style AI</p>
-          <h2>Don't search. Describe the vibe.</h2>
-          <p>Tell the Style Guide your occasion, your vibe, your fit — it builds a 3-piece edit from across every brand on LAP in seconds.</p>
-          <button class="btn btn-primary" id="openStyleFromHome">Try the Style Guide</button>
+          <h2>Your personal stylist, not a form.</h2>
+          <p>"What are we dressing you for?" A couple of quick questions later, LAP builds you a curated edit from across every brand on the platform — like a stylist would, not a filter menu.</p>
+          <button class="btn btn-primary" id="openStyleFromHome">Talk to the stylist</button>
         </div>
         <div class="style-teaser-art">
           <div class="style-chip">Everyday</div>
@@ -224,6 +331,25 @@
           <div class="style-chip">Boho</div>
           <div class="style-chip accent">Relaxed fit</div>
         </div>
+      </div>
+    </section>
+
+    <!-- ================= WAITLIST BANNER ================= -->
+    <section class="waitlist-banner">
+      <div class="waitlist-banner-inner">
+        <div class="waitlist-copy">
+          <p class="eyebrow eyebrow-invert">Coming soon</p>
+          <h2>Less scrolling. Better fits.</h2>
+          <p class="waitlist-sub">You won't dig through 20,000 products to find eight you'd actually wear. LAP already found the good stuff, already built the outfit, and already knows what looks good on you. Join the list to be first through the door when it goes live.</p>
+        </div>
+        <form class="waitlist-form waitlist-form-hero" id="heroWaitlistForm">
+          <div class="waitlist-fields">
+            <input type="text" name="name" placeholder="First name" autocomplete="given-name">
+            <input type="email" name="email" placeholder="you@email.com" autocomplete="email" required>
+            <button class="btn btn-primary" type="submit">Join the waitlist</button>
+          </div>
+          <p class="waitlist-msg" aria-live="polite"></p>
+        </form>
       </div>
     </section>
 
@@ -264,7 +390,7 @@
     <div class="product-grid wide" id="grid-shop"></div>
     <div class="empty-state" id="shopEmpty" hidden>
       <p>No matches for that search.</p>
-      <p class="muted">That's on purpose — LAP won't pad results with things that don't fit what you asked for. Try "jacket", "denim", or "sneaker".</p>
+      <p class="muted">That's on purpose — LAP won't pad results with things that don't fit what you asked for. Try describing the vibe instead: "date night," "under 2000," or "I don't know what I want."</p>
     </div>
   </section>
 
@@ -349,19 +475,19 @@
   <button class="icon-btn modal-close" id="closeStyle" aria-label="Close">&times;</button>
   <div class="style-modal-inner">
     <p class="eyebrow">LAP Style AI</p>
-    <h2 id="styleHeading">Build your edit</h2>
+    <h2 id="styleHeading">What are we dressing you for?</h2>
 
     <div class="style-quiz" id="styleQuiz">
-      <div class="quiz-q">
-        <p>Occasion?</p>
+      <div class="quiz-q" id="quizOccasion">
+        <p>What are we dressing you for?</p>
         <div class="quiz-opts" data-key="occasion">
           <button data-val="Everyday">Everyday</button>
           <button data-val="Date night">Date night</button>
           <button data-val="Event">Event</button>
         </div>
       </div>
-      <div class="quiz-q">
-        <p>Vibe?</p>
+      <div class="quiz-q" id="quizVibe" hidden>
+        <p>Got you. What's the vibe?</p>
         <div class="quiz-opts" data-key="vibe">
           <button data-val="Minimal">Minimal</button>
           <button data-val="Streetwear">Streetwear</button>
@@ -369,21 +495,23 @@
           <button data-val="Office">Office</button>
         </div>
       </div>
-      <div class="quiz-q">
-        <p>Your height &amp; weight — so we can suggest a fit and colours that work on you</p>
-        <div class="measure-row">
-          <div class="measure-field">
-            <input type="number" id="heightInput" placeholder="Height" min="120" max="220" inputmode="numeric">
-            <span>cm</span>
-          </div>
-          <div class="measure-field">
-            <input type="number" id="weightInput" placeholder="Weight" min="30" max="180" inputmode="numeric">
-            <span>kg</span>
+      <div id="quizFinal" hidden>
+        <div class="quiz-q">
+          <p>Last thing — height &amp; weight, so the fit actually fits you</p>
+          <div class="measure-row">
+            <div class="measure-field">
+              <input type="number" id="heightInput" placeholder="Height" min="120" max="220" inputmode="numeric">
+              <span>cm</span>
+            </div>
+            <div class="measure-field">
+              <input type="number" id="weightInput" placeholder="Weight" min="30" max="180" inputmode="numeric">
+              <span>kg</span>
+            </div>
           </div>
         </div>
+        <button class="btn btn-primary full" id="revealEdit" disabled>Reveal my edit</button>
+        <p class="style-disclaimer">Prototype note: this demo edit comes from simple rule-matching over LAP's catalogue tags plus a basic height/weight rule-of-thumb — not a live AI model or real styling advice.</p>
       </div>
-      <button class="btn btn-primary full" id="revealEdit" disabled>Reveal my edit</button>
-      <p class="style-disclaimer">Prototype note: this demo edit comes from simple rule-matching over LAP's catalogue tags plus a basic height/weight rule-of-thumb — not a live AI model or real styling advice.</p>
     </div>
 
     <div class="style-result" id="styleResult" hidden>
