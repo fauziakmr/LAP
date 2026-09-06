@@ -33,7 +33,10 @@ function contrastStroke(hex){
    generic stock shots, not the brands' own product photography. Used
    here as visual stand-ins on this concept prototype. ---------- */
 const IMG_BASE = 'https://images.unsplash.com';
-function productImg(p, w){ return `${IMG_BASE}${p.img}?auto=format&fit=crop&w=${w||800}&q=75`; }
+function productImg(p, w){
+  if(p.img.indexOf('img/') === 0 || p.img.indexOf('http') === 0) return p.img;
+  return `${IMG_BASE}${p.img}?auto=format&fit=crop&w=${w||800}&q=75`;
+}
 
 /* ---------- CATALOGUE ----------
    Real brand names used for demo/curation flavor on this concept
@@ -92,6 +95,43 @@ const PRODUCTS = [
   {id:39, name:'Structured Blazer', brand:'Aritzia', brandType:'International', category:'Outerwear', price:3999, bg:'#D9A5A0', sil:'jacket', dept:'Women', img:'/photo-1761661769192-e2315b08717a', tags:['blazer','tailored','office','event','statement']},
   {id:40, name:'Ballet Flats', brand:'Charles & Keith', brandType:'International', category:'Footwear', price:2299, bg:'#E3D5C0', sil:'sneaker', dept:'Women', img:'/photo-1457972899686-77aec5e247ce', tags:['flats','minimal','date night','office','everyday']},
   {id:41, name:'Low-Rise Jean — Y2K Revival', brand:'We11done', brandType:'International', category:'Bottoms', price:2999, bg:'#3B3A36', sil:'trousers', dept:'Women', img:'/photo-1787527969253-94c4caf4415f', tags:['denim','skinny','indie sleaze','nostalgia','y2k']},
+
+  /* ---- LAP EDIT — original candid editorial photography, shot for the
+     Aesthetic Edits below. No real-world brand affiliation; each entry is
+     the complete look exactly as styled and photographed, not a single
+     garment on a plain background. Priced as a full outfit. ---- */
+  {id:42, name:'Oversized Charcoal Leather Jacket, Golden Hour', brand:'LAP Edit', brandType:'LAP Edit', category:'Looks', price:6499, bg:'#2B2A27', sil:'jacket', img:'img/generated/tokyo-after-dark-01.jpg', tags:['jacket','oversized','tokyo','leather','denim','relaxed','statement']},
+  {id:43, name:'Black Leather Biker + White Tee', brand:'LAP Edit', brandType:'LAP Edit', category:'Looks', price:5999, bg:'#2B2A27', sil:'jacket', img:'img/generated/tokyo-after-dark-02.jpg', tags:['jacket','leather','tokyo','denim','streetwear','statement']},
+  {id:44, name:'Cropped Biker Jacket, Alley Edit', brand:'LAP Edit', brandType:'LAP Edit', category:'Looks', price:5799, bg:'#2B2A27', sil:'jacket', img:'img/generated/tokyo-after-dark-03.jpg', tags:['jacket','leather','tokyo','tailored','statement']},
+  {id:45, name:'Brown Leather Trench, Paris Street', brand:'LAP Edit', brandType:'LAP Edit', category:'Looks', price:7299, bg:'#5B4636', sil:'jacket', img:'img/generated/tokyo-after-dark-04.jpg', tags:['jacket','trench','leather','tokyo','statement','event']},
+
+  {id:46, name:'Cream Cable-Knit + Wide-Leg Denim', brand:'LAP Edit', brandType:'LAP Edit', category:'Looks', price:3999, bg:'#D8CBB8', sil:'tee', img:'img/generated/off-duty-01.jpg', tags:['knit','denim','off-duty','relaxed','everyday','clean']},
+  {id:47, name:'Denim-on-Denim, Off-Duty Edit', brand:'LAP Edit', brandType:'LAP Edit', category:'Looks', price:3599, bg:'#A9B4C0', sil:'jacket', img:'img/generated/off-duty-02.jpg', tags:['denim','jacket','off-duty','relaxed','everyday','streetwear']},
+  {id:48, name:'Utility Overshirt + Sweatpants', brand:'LAP Edit', brandType:'LAP Edit', category:'Looks', price:3299, bg:'#5A5F4B', sil:'jacket', img:'img/generated/off-duty-03.jpg', tags:['overshirt','utility','off-duty','relaxed','everyday','streetwear']},
+
+  {id:49, name:'Relaxed Tan Blazer, Boardroom Edit', brand:'LAP Edit', brandType:'LAP Edit', category:'Looks', price:5499, bg:'#C9B79C', sil:'jacket', img:'img/generated/nine-to-five-01.jpg', tags:['blazer','tailored','office','minimal','9-5']},
+  {id:50, name:'Knit Vest + Crisp Shirt, Desk-to-Drinks', brand:'LAP Edit', brandType:'LAP Edit', category:'Looks', price:4299, bg:'#2B2A27', sil:'jacket', img:'img/generated/nine-to-five-02.jpg', tags:['vest','shirt','tailored','office','minimal','9-5']},
+  {id:51, name:'Emerald Sweater Vest, Lobby Edit', brand:'LAP Edit', brandType:'LAP Edit', category:'Looks', price:4599, bg:'#3C5A45', sil:'jacket', img:'img/generated/nine-to-five-03.jpg', tags:['vest','shirt','tailored','office','minimal','9-5']},
+
+  {id:52, name:'Cream Knit + White Wide-Leg, Clean Fit', brand:'LAP Edit', brandType:'LAP Edit', category:'Looks', price:4199, bg:'#EDE6D8', sil:'tee', img:'img/generated/clean-fit-01.jpg', tags:['knit','minimal','clean fit','monochrome','everyday']},
+  {id:53, name:'Black Turtleneck + Grey Trouser', brand:'LAP Edit', brandType:'LAP Edit', category:'Looks', price:3899, bg:'#26262A', sil:'tee', img:'img/generated/clean-fit-02.jpg', tags:['turtleneck','minimal','clean fit','monochrome','office']},
+  {id:54, name:'Dusty-Blue Linen Shirt, Clean Fit', brand:'LAP Edit', brandType:'LAP Edit', category:'Looks', price:3499, bg:'#8C9AAE', sil:'tee', img:'img/generated/clean-fit-03.jpg', tags:['shirt','linen','minimal','clean fit','everyday']},
+
+  {id:55, name:'Block-Print Kurta Layer, Desi Remix', brand:'LAP Edit', brandType:'LAP Edit', category:'Ethnic', price:3799, dept:'Women', bg:'#EDE3CF', sil:'dress', img:'img/generated/desi-remix-01.jpg', tags:['kurta','ethnic','desi remix','fusion','festive']},
+  {id:56, name:'Bandhani Co-ord, Rooftop Edit', brand:'LAP Edit', brandType:'LAP Edit', category:'Ethnic', price:3299, dept:'Women', bg:'#B4573A', sil:'dress', img:'img/generated/desi-remix-02.jpg', tags:['co-ord','bandhani','ethnic','desi remix','festive']},
+  {id:57, name:'Shirt-Dress + Embroidered Dupatta', brand:'LAP Edit', brandType:'LAP Edit', category:'Ethnic', price:2999, dept:'Women', bg:'#EDE6D8', sil:'dress', img:'img/generated/desi-remix-03.jpg', tags:['dress','dupatta','ethnic','desi remix','fusion','everyday']},
+
+  {id:58, name:'Emerald Satin Slip, Golden Hour', brand:'LAP Edit', brandType:'LAP Edit', category:'Dresses', price:4499, dept:'Women', bg:'#274A3B', sil:'dress', img:'img/generated/date-night-01.jpg', tags:['dress','slip','satin','date night','event']},
+  {id:59, name:'Black Wrap Dress, Restaurant Edit', brand:'LAP Edit', brandType:'LAP Edit', category:'Dresses', price:4199, dept:'Women', bg:'#1E1E1E', sil:'dress', img:'img/generated/date-night-02.jpg', tags:['dress','wrap','date night','event','statement']},
+  {id:60, name:'Burgundy Satin Top + Black Midi Skirt', brand:'LAP Edit', brandType:'LAP Edit', category:'Dresses', price:3999, dept:'Women', bg:'#5C2A32', sil:'dress', img:'img/generated/date-night-03.jpg', tags:['top','skirt','satin','date night','event']},
+
+  {id:61, name:'White Ribbed Tee + Straight Denim', brand:'LAP Edit', brandType:'LAP Edit', category:'Looks', price:1799, bg:'#EDE6D8', sil:'tee', img:'img/generated/under-2000-01.jpg', tags:['tee','denim','under 2000','everyday','clean']},
+  {id:62, name:'Tank + Cargo Pants, Everyday Edit', brand:'LAP Edit', brandType:'LAP Edit', category:'Looks', price:1699, bg:'#C9B79C', sil:'tee', img:'img/generated/under-2000-02.jpg', tags:['tank','cargo','under 2000','everyday','streetwear']},
+  {id:63, name:'Striped Top + Black Denim, Campus Edit', brand:'LAP Edit', brandType:'LAP Edit', category:'Looks', price:1599, bg:'#26262A', sil:'tee', img:'img/generated/under-2000-03.jpg', tags:['top','denim','under 2000','everyday','clean']},
+
+  {id:64, name:'Leather Biker + Graphic Tee, Party Edit', brand:'LAP Edit', brandType:'LAP Edit', category:'Looks', price:3799, bg:'#2B2A27', sil:'jacket', img:'img/generated/indie-sleaze-01.jpg', tags:['jacket','graphic','indie sleaze','nostalgia','denim']},
+  {id:65, name:'Metallic Slip + Oversized Hoodie', brand:'LAP Edit', brandType:'LAP Edit', category:'Looks', price:3299, bg:'#8A8D93', sil:'dress', img:'img/generated/indie-sleaze-02.jpg', tags:['dress','hoodie','indie sleaze','nostalgia','statement']},
+  {id:66, name:'Plaid Mini + Striped Socks, Dance Floor Edit', brand:'LAP Edit', brandType:'LAP Edit', category:'Looks', price:2799, bg:'#7A2A2A', sil:'dress', img:'img/generated/indie-sleaze-03.jpg', tags:['skirt','plaid','indie sleaze','nostalgia','statement']},
 ];
 
 const SIZES_APPAREL = ['XS','S','M','L','XL'];
@@ -105,13 +145,14 @@ function sizesFor(p){ return p.category === 'Footwear' ? SIZES_SHOE : SIZES_APPA
    literal: a human (well, this prototype's author) picked exactly
    these pieces for exactly this vibe. ---------- */
 const CURATED_EDITS = {
-  'tokyo-after-dark': [1,20,18,14,17,2],
-  'off-duty': [26,3,30,15,12],
-  '9-5-good': [39,28,29,27,40],
-  'clean-fit': [10,38,35,31,29],
-  'indie-sleaze': [13,25,41,20],
-  'desi-remix': [33,34,32,35,7],
-  'date-night': [36,37,35,27,40]
+  'tokyo-after-dark': [42,43,44,45],
+  'off-duty': [46,47,48],
+  '9-5-good': [49,50,51],
+  'clean-fit': [52,53,54],
+  'indie-sleaze': [64,65,66],
+  'desi-remix': [55,56,57],
+  'date-night': [58,59,60],
+  'under-2000': [61,62,63]
 };
 const EDIT_LABELS = {
   'tokyo-after-dark': 'Tokyo After Dark',
@@ -128,11 +169,11 @@ const LOOKS = [
   {key:'off-duty-look', label:'Look 03 — Off-Duty', ids:[26,12,3,15], heroId:26},
   {key:'date-night-look', label:'Look 04 — Date Night, Decoded', ids:[36,35,27,40], heroId:36}
 ];
-const CATEGORY_LABEL = {Outerwear:'Jacket', Tops:'Top', Bottoms:'Bottom', Footwear:'Shoes', Accessories:'Bag', Dresses:'Dress', Ethnic:'Ethnic', 'Co-ords':'Co-ord'};
+const CATEGORY_LABEL = {Outerwear:'Jacket', Tops:'Top', Bottoms:'Bottom', Footwear:'Shoes', Accessories:'Bag', Dresses:'Dress', Ethnic:'Ethnic', 'Co-ords':'Co-ord', Looks:'Complete Look'};
 
 function curatedProducts(key){
-  if(key === 'under-2000') return PRODUCTS.filter(p=>p.price<2000).sort((a,b)=>a.price-b.price).slice(0,8);
   if(CURATED_EDITS[key]) return CURATED_EDITS[key].map(id=>PRODUCTS.find(p=>p.id===id)).filter(Boolean);
+  if(key === 'under-2000') return PRODUCTS.filter(p=>p.price<2000).sort((a,b)=>a.price-b.price).slice(0,8);
   const look = LOOKS.find(l=>l.key===key);
   if(look) return look.ids.map(id=>PRODUCTS.find(p=>p.id===id)).filter(Boolean);
   return [];
