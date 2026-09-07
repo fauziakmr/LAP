@@ -132,6 +132,16 @@ const PRODUCTS = [
   {id:64, name:'Leather Biker + Graphic Tee, Party Edit', brand:'LAP Edit', brandType:'LAP Edit', category:'Looks', price:3799, bg:'#2B2A27', sil:'jacket', img:'img/generated/indie-sleaze-01.jpg', tags:['jacket','graphic','indie sleaze','nostalgia','denim']},
   {id:65, name:'Metallic Slip + Oversized Hoodie', brand:'LAP Edit', brandType:'LAP Edit', category:'Looks', price:3299, bg:'#8A8D93', sil:'dress', img:'img/generated/indie-sleaze-02.jpg', tags:['dress','hoodie','indie sleaze','nostalgia','statement']},
   {id:66, name:'Plaid Mini + Striped Socks, Dance Floor Edit', brand:'LAP Edit', brandType:'LAP Edit', category:'Looks', price:2799, bg:'#7A2A2A', sil:'dress', img:'img/generated/indie-sleaze-03.jpg', tags:['skirt','plaid','indie sleaze','nostalgia','statement']},
+
+  {id:67, name:'Merlot Chikankari Kurta + Floral Palazzo', brand:'LAP Edit', brandType:'LAP Edit', category:'Ethnic', price:3599, dept:'Women', bg:'#5C2A32', sil:'dress', img:'img/generated/desi-remix-04.jpg', tags:['kurta','chikankari','ethnic','desi remix','festive']},
+  {id:68, name:'Navy Tee + Wide-Leg Denim, Street Edit', brand:'LAP Edit', brandType:'LAP Edit', category:'Looks', price:2199, bg:'#1E2530', sil:'tee', img:'img/generated/clean-fit-04.jpg', tags:['tee','denim','clean fit','minimal','street']},
+  {id:69, name:'Chocolate Bomber + Straight Denim', brand:'LAP Edit', brandType:'LAP Edit', category:'Looks', price:3999, bg:'#3B2A22', sil:'jacket', img:'img/generated/off-duty-04.jpg', tags:['jacket','leather','off duty','oversized','street']},
+  {id:70, name:'Plum Button Cami + Straight Denim', brand:'LAP Edit', brandType:'LAP Edit', category:'Looks', price:1499, bg:'#4A2436', sil:'tee', img:'img/generated/under-2000-04.jpg', tags:['cami','denim','under 2000','haul','trial room']},
+  {id:71, name:'Checkerboard Crop Top + Denim', brand:'LAP Edit', brandType:'LAP Edit', category:'Looks', price:1399, bg:'#2A2224', sil:'tee', img:'img/generated/under-2000-05.jpg', tags:['crop top','denim','under 2000','haul','trial room']},
+  {id:72, name:'Cream Scalloped Crochet Top + Shorts', brand:'LAP Edit', brandType:'LAP Edit', category:'Looks', price:1299, bg:'#D9C9A8', sil:'tee', img:'img/generated/under-2000-06.jpg', tags:['crochet','shorts','under 2000','thrift','diy']},
+  {id:73, name:'Dusty Blue Knit Cami + Denim Shorts', brand:'LAP Edit', brandType:'LAP Edit', category:'Looks', price:1349, bg:'#7A93A8', sil:'tee', img:'img/generated/under-2000-07.jpg', tags:['knit','shorts','under 2000','thrift','diy']},
+  {id:74, name:'Merlot Kaftan Wrap Dress, Festive Edit', brand:'LAP Edit', brandType:'LAP Edit', category:'Dresses', price:4299, dept:'Women', bg:'#5C2226', sil:'dress', img:'img/generated/date-night-04.jpg', tags:['dress','kaftan','date night','festive','event']},
+  {id:75, name:'Sheer Mesh Top + Grey Cargo Trousers, Studio Edit', brand:'LAP Edit', brandType:'LAP Edit', category:'Looks', price:2499, bg:'#3A3A3E', sil:'tee', img:'img/generated/indie-sleaze-04.jpg', tags:['mesh','cargo','indie sleaze','statement','street']},
 ];
 
 const SIZES_APPAREL = ['XS','S','M','L','XL'];
@@ -146,13 +156,13 @@ function sizesFor(p){ return p.category === 'Footwear' ? SIZES_SHOE : SIZES_APPA
    these pieces for exactly this vibe. ---------- */
 const CURATED_EDITS = {
   'tokyo-after-dark': [42,43,44,45],
-  'off-duty': [46,47,48],
+  'off-duty': [46,47,48,69],
   '9-5-good': [49,50,51],
-  'clean-fit': [52,53,54],
-  'indie-sleaze': [64,65,66],
-  'desi-remix': [55,56,57],
-  'date-night': [58,59,60],
-  'under-2000': [61,62,63]
+  'clean-fit': [52,53,54,68],
+  'indie-sleaze': [64,65,66,75],
+  'desi-remix': [55,56,57,67],
+  'date-night': [58,59,60,74],
+  'under-2000': [61,62,63,70,71,72,73]
 };
 const EDIT_LABELS = {
   'tokyo-after-dark': 'Tokyo After Dark',
