@@ -46,55 +46,60 @@ function productImg(p, w){
    labels beyond the obvious five, and global reference brands —
    deliberately NOT a "Myntra with fewer products" catalogue. ---- */
 const PRODUCTS = [
-  /* ---- HOMEGROWN — Instagram-first / independent Indian labels ---- */
+  /* ---- INDEPENDENT INDIAN LABELS — real small D2C/designer labels, used
+     here purely as curation references for this concept prototype. LAP
+     has no affiliation, partnership or stocking relationship with any of
+     them. ---- */
   {id:1, name:'Oversized Utility Jacket', brand:'Garuda SS', brandType:'Homegrown', category:'Outerwear', price:4499, bg:'#2B2A27', sil:'jacket', img:'/photo-1462430638866-7ad892655344', tags:['jacket','oversized','streetwear','tokyo','relaxed','everyday','techwear']},
   {id:2, name:'Boxy Graphic Tee', brand:'Huemn', brandType:'Homegrown', category:'Tops', price:1599, bg:'#2B2A27', sil:'tee', img:'/photo-1689044611227-3267fabaf76a', tags:['tee','oversized','graphic','streetwear','everyday','clean','tokyo']},
-  {id:3, name:'Relaxed Wide-Leg Denim', brand:'Freakins', brandType:'Homegrown', category:'Bottoms', price:2299, bg:'#A9B4C0', sil:'trousers', img:'/photo-1608370946545-7d93571b5593', tags:['denim','wide-leg','relaxed','everyday','clean','minimal','off-duty']},
-  {id:4, name:'Unisex Camp Collar Shirt', brand:'Bluorng', brandType:'Homegrown', category:'Tops', price:1999, bg:'#D8CBB8', sil:'tee', img:'/photo-1739652398636-80c7ea73291e', tags:['shirt','relaxed','everyday','office','clean']},
+  {id:3, name:'Relaxed Wide-Leg Denim', brand:'Freakins', brandType:'Homegrown', category:'Bottoms', price:2299, bg:'#A9B4C0', sil:'trousers', img:'/photo-1608370946545-7d93571b5593', tags:['denim','wide-leg','relaxed','everyday','clean','minimal','off-duty','campus','coffee-run','travel']},
+  {id:4, name:'Unisex Camp Collar Shirt', brand:'Bluorng', brandType:'Homegrown', category:'Tops', price:1999, bg:'#D8CBB8', sil:'tee', img:'/photo-1739652398636-80c7ea73291e', tags:['shirt','relaxed','everyday','office','clean','casual-dinner','coffee-run']},
   {id:5, name:'Reworked Denim Trucker', brand:'Almost Gods', brandType:'Homegrown', category:'Outerwear', price:3799, bg:'#8C7B6B', sil:'jacket', img:'/photo-1600574691453-499962cc0611', tags:['jacket','upcycled','streetwear','relaxed','everyday']},
   {id:6, name:'Panel Carpenter Trousers', brand:'The Pant Project', brandType:'Homegrown', category:'Bottoms', price:2599, bg:'#8C7B6B', sil:'trousers', img:'/photo-1746591847547-200f313178c9', tags:['trousers','utility','relaxed','streetwear','everyday']},
   {id:7, name:'Tie-Dye Boxy Shirt', brand:'NorBlack NorWhite', brandType:'Homegrown', category:'Tops', price:2299, bg:'#C97B63', sil:'tee', img:'/photo-1638627433693-604671edcf66', tags:['shirt','tie-dye','streetwear','desi','festive','relaxed','boho']},
   {id:8, name:'Deconstructed Panel Trousers', brand:'Dhruv Kapoor', brandType:'Homegrown', category:'Bottoms', price:3999, bg:'#D8CBB8', sil:'trousers', img:'/photo-1762793193633-c26f3d34e710', tags:['trousers','tailored','event','office','statement']},
-  {id:9, name:'Structured Two-Way Blazer', brand:'Two Point Two', brandType:'Homegrown', category:'Outerwear', price:3499, bg:'#D8CBB8', sil:'jacket', img:'/photo-1748620754982-0b343a1f7784', tags:['blazer','tailored','office','event','minimal']},
-  {id:10, name:'Ribbed Seamless Top', brand:'Kica', brandType:'Homegrown', category:'Tops', price:1299, bg:'#D9A5A0', sil:'tee', img:'/photo-1592712148824-334083584cc1', tags:['top','fitted','minimal','everyday','clean']},
+  {id:9, name:'Structured Two-Way Blazer', brand:'Two Point Two', brandType:'Homegrown', category:'Outerwear', price:3499, bg:'#D8CBB8', sil:'jacket', img:'/photo-1748620754982-0b343a1f7784', tags:['blazer','tailored','office','event','minimal','first-day-at-work']},
+  {id:10, name:'Ribbed Seamless Top', brand:'Kica', brandType:'Homegrown', category:'Tops', price:1299, bg:'#D9A5A0', sil:'tee', img:'/photo-1592712148824-334083584cc1', tags:['top','fitted','minimal','everyday','clean','campus','coffee-run']},
   {id:11, name:'Gender-Fluid Utility Overshirt', brand:'BISKIT', brandType:'Homegrown', category:'Outerwear', price:2799, bg:'#8C7B6B', sil:'jacket', img:'/photo-1775443600272-3b66002f3771', tags:['overshirt','utility','relaxed','streetwear']},
-  {id:12, name:'Original Print Graphic Tee', brand:'CommonGround', brandType:'Homegrown', category:'Tops', price:1199, bg:'#2B2A27', sil:'tee', img:'/photo-1600871149968-44ccafa3b32a', tags:['tee','graphic','streetwear','everyday','clean']},
+  {id:12, name:'Original Print Graphic Tee', brand:'CommonGround', brandType:'Homegrown', category:'Tops', price:1199, bg:'#2B2A27', sil:'tee', img:'/photo-1600871149968-44ccafa3b32a', tags:['tee','graphic','streetwear','everyday','clean','campus','coffee-run']},
   {id:13, name:'Desi Grunge Graphic Tee', brand:'Veirdo', brandType:'Homegrown', category:'Tops', price:1299, bg:'#C97B63', sil:'tee', img:'/photo-1721637686340-de9f8cebda5a', tags:['tee','graphic','indie sleaze','streetwear','nostalgia']},
-  {id:14, name:'Canvas Shoulder Bag', brand:'Bluorng', brandType:'Homegrown', category:'Accessories', price:1699, bg:'#8C7B6B', sil:'bag', img:'/photo-1559563458-527698bf5295', tags:['bag','everyday','minimal','streetwear','tokyo']},
+  {id:14, name:'Canvas Shoulder Bag', brand:'Bluorng', brandType:'Homegrown', category:'Accessories', price:1699, bg:'#8C7B6B', sil:'bag', img:'/photo-1559563458-527698bf5295', tags:['bag','everyday','minimal','streetwear','tokyo','travel','coffee-run']},
   {id:15, name:'Retro Low-Top Sneaker', brand:'CommonGround', brandType:'Homegrown', category:'Footwear', price:2599, bg:'#E3D5C0', sil:'sneaker', img:'/photo-1560769629-975ec94e6a86', tags:['sneaker','retro','everyday','streetwear','off-duty']},
 
-  /* ---- INTERNATIONAL — Tokyo/Seoul streetwear + Western editorial-minimal reference labels ---- */
-  {id:16, name:'Camo Shark Full-Zip Hoodie', brand:'BAPE', brandType:'International', category:'Outerwear', price:4999, bg:'#2B2A27', sil:'hoodie', img:'/photo-1578768079052-aa76e52ff62e', tags:['hoodie','streetwear','graphic','oversized','tokyo','event']},
-  {id:17, name:'Ape Head Low-Top Sneaker', brand:'BAPE', brandType:'International', category:'Footwear', price:5999, bg:'#E3D5C0', sil:'sneaker', img:'/photo-1564518125914-014ebd5f0346', tags:['sneaker','streetwear','tokyo','event']},
-  {id:18, name:'Military Panel Cargo Trousers', brand:'WTAPS', brandType:'International', category:'Bottoms', price:3999, bg:'#8C7B6B', sil:'trousers', img:'/photo-1594035795072-3fcd236b7d83', tags:['cargo','trousers','streetwear','relaxed','tokyo']},
-  {id:19, name:'Heart Logo Boxy Tee', brand:'Comme des Garçons PLAY', brandType:'International', category:'Tops', price:3499, bg:'#D8CBB8', sil:'tee', img:'/photo-1594035795435-be3b09601d40', tags:['tee','minimal','graphic','tokyo','date night']},
-  {id:20, name:'Deconstructed Oversized Jacket', brand:'Undercover', brandType:'International', category:'Outerwear', price:5499, bg:'#2B2A27', sil:'jacket', img:'/photo-1663374723561-885d23959717', tags:['jacket','oversized','event','statement','tokyo','indie sleaze']},
-  {id:21, name:'Color-Block Boxy Sweatshirt', brand:'Ader Error', brandType:'International', category:'Outerwear', price:3799, bg:'#A9B4C0', sil:'hoodie', img:'/photo-1601754664414-aa3e4f42e6d4', tags:['sweatshirt','minimal','graphic','everyday','seoul']},
-  {id:22, name:'Typography Tech Overshirt', brand:'thisisneverthat', brandType:'International', category:'Outerwear', price:3299, bg:'#8C7B6B', sil:'jacket', img:'/photo-1771310972847-dbda0c860cab', tags:['overshirt','streetwear','relaxed','seoul','everyday']},
-  {id:23, name:'Barrel-Leg Washed Denim', brand:'We11done', brandType:'International', category:'Bottoms', price:3599, bg:'#A9B4C0', sil:'trousers', img:'/photo-1746399565178-4ff950f81b45', tags:['denim','barrel-leg','streetwear','seoul','everyday']},
-  {id:24, name:'Asymmetric Knit Top', brand:'Andersson Bell', brandType:'International', category:'Tops', price:2999, bg:'#D9A5A0', sil:'tee', img:'/photo-1625910513394-ea511bed44ca', tags:['knit','fitted','minimal','seoul','date night','office']},
-  {id:25, name:'8-Ball Graphic Tee', brand:'Stüssy', brandType:'International', category:'Tops', price:1999, bg:'#2B2A27', sil:'tee', img:'/photo-1721637635502-b0abaaa75edb', tags:['tee','graphic','streetwear','everyday','indie sleaze','nostalgia']},
-  {id:26, name:'Detroit Chore Jacket', brand:'Carhartt WIP', brandType:'International', category:'Outerwear', price:3199, bg:'#8C7B6B', sil:'jacket', img:'/photo-1608976198709-5e70a09b9ff0', tags:['jacket','chore','streetwear','everyday','off-duty']},
-  {id:27, name:'Structured Mini Shoulder Bag', brand:'JW PEI', brandType:'International', category:'Accessories', price:3299, bg:'#D9A5A0', sil:'bag', img:'/photo-1585488574745-5186ef0f1ddf', tags:['bag','structured','date night','event','minimal','office']},
-  {id:28, name:'Relaxed Straight Trousers', brand:'COS', brandType:'International', category:'Bottoms', price:4499, bg:'#D8CBB8', sil:'trousers', img:'/photo-1627130697816-4d71dbfe6a5b', tags:['trousers','minimal','office','clean','relaxed']},
-  {id:29, name:'Ribbed Baby Tee', brand:'Sporty & Rich', brandType:'International', category:'Tops', price:2199, bg:'#E3D5C0', sil:'tee', img:'/photo-1780566758129-3ec3b2f3b204', tags:['tee','fitted','minimal','clean','everyday','office']},
-  {id:30, name:'Canvas Tote', brand:'Baggu', brandType:'International', category:'Accessories', price:1899, bg:'#C97B63', sil:'bag', img:'/photo-1612902456551-333ac5afa26e', tags:['bag','everyday','minimal','canvas','off-duty']},
-  {id:31, name:'Retro Court Sneaker', brand:'Charles & Keith', brandType:'International', category:'Footwear', price:2999, bg:'#E3D5C0', sil:'sneaker', img:'/photo-1535463861654-838685c8e158', tags:['sneaker','minimal','everyday','retro','clean']},
+  /* ---- INTERNATIONAL EDIT — fashion you don't usually find in the Indian
+     shopping loop: Tokyo/Seoul streetwear and Western editorial-minimal
+     silhouettes as STYLE REFERENCE, not real-brand stock. Labelled 'Style
+     Inspo' / 'Editorial Pick' rather than naming the real labels these
+     looks are inspired by — LAP does not stock, sell or partner with any
+     specific brand here. ---- */
+  {id:16, name:'Camo Shark Full-Zip Hoodie', brand:'Editorial Pick', brandType:'International', category:'Outerwear', price:4999, bg:'#2B2A27', sil:'hoodie', img:'/photo-1578768079052-aa76e52ff62e', tags:['hoodie','streetwear','graphic','oversized','tokyo','event']},
+  {id:17, name:'Ape Head Low-Top Sneaker', brand:'Editorial Pick', brandType:'International', category:'Footwear', price:5999, bg:'#E3D5C0', sil:'sneaker', img:'/photo-1564518125914-014ebd5f0346', tags:['sneaker','streetwear','tokyo','event']},
+  {id:18, name:'Military Panel Cargo Trousers', brand:'Style Inspo', brandType:'International', category:'Bottoms', price:3999, bg:'#8C7B6B', sil:'trousers', img:'/photo-1594035795072-3fcd236b7d83', tags:['cargo','trousers','streetwear','relaxed','tokyo','concert','bold']},
+  {id:19, name:'Heart Logo Boxy Tee', brand:'Style Inspo', brandType:'International', category:'Tops', price:3499, bg:'#D8CBB8', sil:'tee', img:'/photo-1594035795435-be3b09601d40', tags:['tee','minimal','graphic','tokyo','date night','night-out','bold']},
+  {id:20, name:'Deconstructed Oversized Jacket', brand:'Editorial Pick', brandType:'International', category:'Outerwear', price:5499, bg:'#2B2A27', sil:'jacket', img:'/photo-1663374723561-885d23959717', tags:['jacket','oversized','event','statement','tokyo','indie sleaze']},
+  {id:21, name:'Color-Block Boxy Sweatshirt', brand:'Style Inspo', brandType:'International', category:'Outerwear', price:3799, bg:'#A9B4C0', sil:'hoodie', img:'/photo-1601754664414-aa3e4f42e6d4', tags:['sweatshirt','minimal','graphic','everyday','seoul']},
+  {id:22, name:'Typography Tech Overshirt', brand:'Style Inspo', brandType:'International', category:'Outerwear', price:3299, bg:'#8C7B6B', sil:'jacket', img:'/photo-1771310972847-dbda0c860cab', tags:['overshirt','streetwear','relaxed','seoul','everyday']},
+  {id:23, name:'Barrel-Leg Washed Denim', brand:'Style Inspo', brandType:'International', category:'Bottoms', price:3599, bg:'#A9B4C0', sil:'trousers', img:'/photo-1746399565178-4ff950f81b45', tags:['denim','barrel-leg','streetwear','seoul','everyday']},
+  {id:24, name:'Asymmetric Knit Top', brand:'Style Inspo', brandType:'International', category:'Tops', price:2999, bg:'#D9A5A0', sil:'tee', img:'/photo-1625910513394-ea511bed44ca', tags:['knit','fitted','minimal','seoul','date night','office']},
+  {id:25, name:'8-Ball Graphic Tee', brand:'Editorial Pick', brandType:'International', category:'Tops', price:1999, bg:'#2B2A27', sil:'tee', img:'/photo-1721637635502-b0abaaa75edb', tags:['tee','graphic','streetwear','everyday','indie sleaze','nostalgia','concert']},
+  {id:26, name:'Detroit Chore Jacket', brand:'Editorial Pick', brandType:'International', category:'Outerwear', price:3199, bg:'#8C7B6B', sil:'jacket', img:'/photo-1608976198709-5e70a09b9ff0', tags:['jacket','chore','streetwear','everyday','off-duty']},
+  {id:27, name:'Structured Mini Shoulder Bag', brand:'Style Inspo', brandType:'International', category:'Accessories', price:3299, bg:'#D9A5A0', sil:'bag', img:'/photo-1585488574745-5186ef0f1ddf', tags:['bag','structured','date night','event','minimal','office']},
+  {id:28, name:'Relaxed Straight Trousers', brand:'Style Inspo', brandType:'International', category:'Bottoms', price:4499, bg:'#D8CBB8', sil:'trousers', img:'/photo-1627130697816-4d71dbfe6a5b', tags:['trousers','minimal','office','clean','relaxed','first-day-at-work']},
+  {id:29, name:'Ribbed Baby Tee', brand:'Style Inspo', brandType:'International', category:'Tops', price:2199, bg:'#E3D5C0', sil:'tee', img:'/photo-1780566758129-3ec3b2f3b204', tags:['tee','fitted','minimal','clean','everyday','office']},
+  {id:30, name:'Canvas Tote', brand:'Style Inspo', brandType:'International', category:'Accessories', price:1899, bg:'#C97B63', sil:'bag', img:'/photo-1612902456551-333ac5afa26e', tags:['bag','everyday','minimal','canvas','off-duty','coffee-run','travel']},
+  {id:31, name:'Retro Court Sneaker', brand:'Style Inspo', brandType:'International', category:'Footwear', price:2999, bg:'#E3D5C0', sil:'sneaker', img:'/photo-1535463861654-838685c8e158', tags:['sneaker','minimal','everyday','retro','clean']},
 
-  /* ---- WOMEN'S EDIT / DESI REMIX — real brand names used for demo/curation
-     flavor on this concept prototype; LAP has no affiliation with these
-     labels. Photography is licensed editorial street-style, not the
-     brands' own product photography. ---- */
-  {id:32, name:'Draped Sari-Inspired Midi Dress', brand:'Raw Mango', brandType:'Homegrown', category:'Dresses', price:4299, bg:'#C97B63', sil:'dress', dept:'Women', img:'/photo-1769275061786-c33ab1a284c8', tags:['ethnic','dress','drape','festive','event','desi','boho']},
-  {id:33, name:'Wide-Leg Kurta Set', brand:'House of Masaba', brandType:'Homegrown', category:'Ethnic', price:2999, bg:'#C97B63', sil:'dress', dept:'Women', img:'/photo-1768478701507-24b1c8de2df0', tags:['ethnic','kurta','wide-leg','desi','everyday','festive','boho']},
-  {id:34, name:'Bandhani Print Boxy Shirt', brand:'NorBlack NorWhite', brandType:'Homegrown', category:'Tops', price:2199, bg:'#C97B63', sil:'tee', dept:'Women', img:'/photo-1765796513352-a52bcd0c1329', tags:['shirt','desi','print','relaxed','everyday']},
-  {id:35, name:'Silver Statement Jhumka Earrings', brand:'Studio Metallurgy', brandType:'Homegrown', category:'Accessories', price:899, bg:'#D8CBB8', sil:'bag', dept:'Women', img:'/photo-1535632787350-4e68ef0ac584', tags:['jewellery','silver','minimal','date night','desi']},
-  {id:36, name:'Structured Slip Midi Dress', brand:'Reformation', brandType:'International', category:'Dresses', price:3799, bg:'#D9A5A0', sil:'dress', dept:'Women', img:'/photo-1601677083135-5b8c8affad82', tags:['dress','slip','fitted','date night','minimal','event']},
-  {id:37, name:'Asymmetric Draped Dress', brand:'GANNI', brandType:'International', category:'Dresses', price:3299, bg:'#A9B4C0', sil:'dress', dept:'Women', img:'/photo-1692633190293-1295e9b68c63', tags:['dress','asymmetric','event','date night','statement']},
-  {id:38, name:'High-Rise Wide-Leg Jeans', brand:'Damson Madder', brandType:'International', category:'Bottoms', price:2799, bg:'#A9B4C0', sil:'trousers', dept:'Women', img:'/photo-1610241532145-96771e5088e8', tags:['denim','wide-leg','everyday','minimal','clean']},
-  {id:39, name:'Structured Blazer', brand:'Aritzia', brandType:'International', category:'Outerwear', price:3999, bg:'#D9A5A0', sil:'jacket', dept:'Women', img:'/photo-1761661769192-e2315b08717a', tags:['blazer','tailored','office','event','statement']},
-  {id:40, name:'Ballet Flats', brand:'Charles & Keith', brandType:'International', category:'Footwear', price:2299, bg:'#E3D5C0', sil:'sneaker', dept:'Women', img:'/photo-1457972899686-77aec5e247ce', tags:['flats','minimal','date night','office','everyday']},
-  {id:41, name:'Low-Rise Jean — Y2K Revival', brand:'We11done', brandType:'International', category:'Bottoms', price:2999, bg:'#3B3A36', sil:'trousers', dept:'Women', img:'/photo-1787527969253-94c4caf4415f', tags:['denim','skinny','indie sleaze','nostalgia','y2k']},
+  /* ---- WOMEN'S EDIT / DESI REMIX ---- */
+  {id:32, name:'Draped Sari-Inspired Midi Dress', brand:'Raw Mango', brandType:'Homegrown', category:'Dresses', price:4299, dept:'Women', bg:'#C97B63', sil:'dress', img:'/photo-1769275061786-c33ab1a284c8', tags:['ethnic','dress','drape','festive','event','desi','boho']},
+  {id:33, name:'Wide-Leg Kurta Set', brand:'House of Masaba', brandType:'Homegrown', category:'Ethnic', price:2999, dept:'Women', bg:'#C97B63', sil:'dress', img:'/photo-1768478701507-24b1c8de2df0', tags:['ethnic','kurta','wide-leg','desi','everyday','festive','boho']},
+  {id:34, name:'Bandhani Print Boxy Shirt', brand:'NorBlack NorWhite', brandType:'Homegrown', category:'Tops', price:2199, dept:'Women', bg:'#C97B63', sil:'tee', img:'/photo-1765796513352-a52bcd0c1329', tags:['shirt','desi','print','relaxed','everyday']},
+  {id:35, name:'Silver Statement Jhumka Earrings', brand:'Studio Metallurgy', brandType:'Homegrown', category:'Accessories', price:899, dept:'Women', bg:'#D8CBB8', sil:'bag', img:'/photo-1535632787350-4e68ef0ac584', tags:['jewellery','silver','minimal','date night','desi']},
+  {id:36, name:'Structured Slip Midi Dress', brand:'Style Inspo', brandType:'International', category:'Dresses', price:3799, dept:'Women', bg:'#D9A5A0', sil:'dress', img:'/photo-1601677083135-5b8c8affad82', tags:['dress','slip','fitted','date night','minimal','event','casual-dinner']},
+  {id:37, name:'Asymmetric Draped Dress', brand:'Style Inspo', brandType:'International', category:'Dresses', price:3299, dept:'Women', bg:'#A9B4C0', sil:'dress', img:'/photo-1692633190293-1295e9b68c63', tags:['dress','asymmetric','event','date night','statement','casual-dinner','bold']},
+  {id:38, name:'High-Rise Wide-Leg Jeans', brand:'Style Inspo', brandType:'International', category:'Bottoms', price:2799, dept:'Women', bg:'#A9B4C0', sil:'trousers', img:'/photo-1610241532145-96771e5088e8', tags:['denim','wide-leg','everyday','minimal','clean']},
+  {id:39, name:'Structured Blazer', brand:'Style Inspo', brandType:'International', category:'Outerwear', price:3999, dept:'Women', bg:'#D9A5A0', sil:'jacket', img:'/photo-1761661769192-e2315b08717a', tags:['blazer','tailored','office','event','statement']},
+  {id:40, name:'Ballet Flats', brand:'Style Inspo', brandType:'International', category:'Footwear', price:2299, dept:'Women', bg:'#E3D5C0', sil:'sneaker', img:'/photo-1457972899686-77aec5e247ce', tags:['flats','minimal','date night','office','everyday']},
+  {id:41, name:'Low-Rise Jean — Y2K Revival', brand:'Style Inspo', brandType:'International', category:'Bottoms', price:2999, dept:'Women', bg:'#3B3A36', sil:'trousers', img:'/photo-1787527969253-94c4caf4415f', tags:['denim','skinny','indie sleaze','nostalgia','y2k','night-out']},
 
   /* ---- LAP EDIT — original candid editorial photography, shot for the
      Aesthetic Edits below. No real-world brand affiliation; each entry is
@@ -104,61 +109,60 @@ const PRODUCTS = [
   {id:43, name:'Black Leather Biker + White Tee', brand:'Blacklane', brandType:'Homegrown', category:'Looks', price:5999, bg:'#2B2A27', sil:'jacket', img:'img/generated/tokyo-after-dark-02.jpg', tags:['jacket','leather','tokyo','denim','streetwear','statement']},
   {id:44, name:'Cropped Biker Jacket, Alley Edit', brand:'Blacklane', brandType:'Homegrown', category:'Looks', price:5799, bg:'#2B2A27', sil:'jacket', img:'img/generated/tokyo-after-dark-03.jpg', tags:['jacket','leather','tokyo','tailored','statement']},
   {id:45, name:'Brown Leather Trench, Paris Street', brand:'Blacklane', brandType:'Homegrown', category:'Looks', price:7299, bg:'#5B4636', sil:'jacket', img:'img/generated/tokyo-after-dark-04.jpg', tags:['jacket','trench','leather','tokyo','statement','event']},
-
   {id:46, name:'Cream Cable-Knit + Wide-Leg Denim', brand:'Weekend Theory', brandType:'Homegrown', category:'Looks', price:3999, bg:'#D8CBB8', sil:'tee', img:'img/generated/off-duty-01.jpg', tags:['knit','denim','off-duty','relaxed','everyday','clean']},
   {id:47, name:'Denim-on-Denim, Off-Duty Edit', brand:'Weekend Theory', brandType:'Homegrown', category:'Looks', price:3599, bg:'#A9B4C0', sil:'jacket', img:'img/generated/off-duty-02.jpg', tags:['denim','jacket','off-duty','relaxed','everyday','streetwear']},
   {id:48, name:'Utility Overshirt + Sweatpants', brand:'Weekend Theory', brandType:'Homegrown', category:'Looks', price:3299, bg:'#5A5F4B', sil:'jacket', img:'img/generated/off-duty-03.jpg', tags:['overshirt','utility','off-duty','relaxed','everyday','streetwear']},
-
-  {id:49, name:'Relaxed Tan Blazer, Boardroom Edit', brand:'Deskside', brandType:'Homegrown', category:'Looks', price:5499, bg:'#C9B79C', sil:'jacket', img:'img/generated/nine-to-five-01.jpg', tags:['blazer','tailored','office','minimal','9-5']},
-  {id:50, name:'Knit Vest + Crisp Shirt, Desk-to-Drinks', brand:'Deskside', brandType:'Homegrown', category:'Looks', price:4299, bg:'#2B2A27', sil:'jacket', img:'img/generated/nine-to-five-02.jpg', tags:['vest','shirt','tailored','office','minimal','9-5']},
-  {id:51, name:'Emerald Sweater Vest, Lobby Edit', brand:'Deskside', brandType:'Homegrown', category:'Looks', price:4599, bg:'#3C5A45', sil:'jacket', img:'img/generated/nine-to-five-03.jpg', tags:['vest','shirt','tailored','office','minimal','9-5']},
-
+  {id:49, name:'Relaxed Tan Blazer, Boardroom Edit', brand:'Deskside', brandType:'Homegrown', category:'Looks', price:5499, bg:'#C9B79C', sil:'jacket', img:'img/generated/nine-to-five-01.jpg', tags:['blazer','tailored','office','minimal','9-5','first-day-at-work']},
+  {id:50, name:'Knit Vest + Crisp Shirt, Desk-to-Drinks', brand:'Deskside', brandType:'Homegrown', category:'Looks', price:4299, bg:'#2B2A27', sil:'jacket', img:'img/generated/nine-to-five-02.jpg', tags:['vest','shirt','tailored','office','minimal','9-5','first-day-at-work']},
+  {id:51, name:'Emerald Sweater Vest, Lobby Edit', brand:'Deskside', brandType:'Homegrown', category:'Looks', price:4599, bg:'#3C5A45', sil:'jacket', img:'img/generated/nine-to-five-03.jpg', tags:['vest','shirt','tailored','office','minimal','9-5','first-day-at-work']},
   {id:52, name:'Cream Knit + White Wide-Leg, Clean Fit', brand:'Plainsight', brandType:'Homegrown', category:'Looks', price:4199, bg:'#EDE6D8', sil:'tee', img:'img/generated/clean-fit-01.jpg', tags:['knit','minimal','clean fit','monochrome','everyday']},
   {id:53, name:'Black Turtleneck + Grey Trouser', brand:'Plainsight', brandType:'Homegrown', category:'Looks', price:3899, bg:'#26262A', sil:'tee', img:'img/generated/clean-fit-02.jpg', tags:['turtleneck','minimal','clean fit','monochrome','office']},
   {id:54, name:'Dusty-Blue Linen Shirt, Clean Fit', brand:'Plainsight', brandType:'Homegrown', category:'Looks', price:3499, bg:'#8C9AAE', sil:'tee', img:'img/generated/clean-fit-03.jpg', tags:['shirt','linen','minimal','clean fit','everyday']},
-
   {id:55, name:'Block-Print Kurta Layer, Desi Remix', brand:'Rangrez House', brandType:'Homegrown', category:'Ethnic', price:3799, dept:'Women', bg:'#EDE3CF', sil:'dress', img:'img/generated/desi-remix-01.jpg', tags:['kurta','ethnic','desi remix','fusion','festive']},
-  {id:56, name:'Bandhani Co-ord, Rooftop Edit', brand:'Rangrez House', brandType:'Homegrown', category:'Ethnic', price:3299, dept:'Women', bg:'#B4573A', sil:'dress', img:'img/generated/desi-remix-02.jpg', tags:['co-ord','bandhani','ethnic','desi remix','festive']},
+  {id:56, name:'Bandhani Co-ord, Rooftop Edit', brand:'Rangrez House', brandType:'Homegrown', category:'Ethnic', price:3299, dept:'Women', bg:'#B4573A', sil:'dress', img:'img/generated/desi-remix-02.jpg', tags:['co-ord','bandhani','ethnic','desi remix','festive','bold']},
   {id:57, name:'Shirt-Dress + Embroidered Dupatta', brand:'Rangrez House', brandType:'Homegrown', category:'Ethnic', price:2999, dept:'Women', bg:'#EDE6D8', sil:'dress', img:'img/generated/desi-remix-03.jpg', tags:['dress','dupatta','ethnic','desi remix','fusion','everyday']},
-
-  {id:58, name:'Emerald Satin Slip, Golden Hour', brand:'Afterglow', brandType:'Homegrown', category:'Dresses', price:4499, dept:'Women', bg:'#274A3B', sil:'dress', img:'img/generated/date-night-01.jpg', tags:['dress','slip','satin','date night','event']},
-  {id:59, name:'Black Wrap Dress, Restaurant Edit', brand:'Afterglow', brandType:'Homegrown', category:'Dresses', price:4199, dept:'Women', bg:'#1E1E1E', sil:'dress', img:'img/generated/date-night-02.jpg', tags:['dress','wrap','date night','event','statement']},
-  {id:60, name:'Burgundy Satin Top + Black Midi Skirt', brand:'Afterglow', brandType:'Homegrown', category:'Dresses', price:3999, dept:'Women', bg:'#5C2A32', sil:'dress', img:'img/generated/date-night-03.jpg', tags:['top','skirt','satin','date night','event']},
-
+  {id:58, name:'Emerald Satin Slip, Golden Hour', brand:'Afterglow', brandType:'Homegrown', category:'Dresses', price:4499, dept:'Women', bg:'#274A3B', sil:'dress', img:'img/generated/date-night-01.jpg', tags:['dress','slip','satin','date night','event','casual-dinner','night-out']},
+  {id:59, name:'Black Wrap Dress, Restaurant Edit', brand:'Afterglow', brandType:'Homegrown', category:'Dresses', price:4199, dept:'Women', bg:'#1E1E1E', sil:'dress', img:'img/generated/date-night-02.jpg', tags:['dress','wrap','date night','event','statement','casual-dinner','night-out']},
+  {id:60, name:'Burgundy Satin Top + Black Midi Skirt', brand:'Afterglow', brandType:'Homegrown', category:'Dresses', price:3999, dept:'Women', bg:'#5C2A32', sil:'dress', img:'img/generated/date-night-03.jpg', tags:['top','skirt','satin','date night','event','casual-dinner']},
   {id:61, name:'White Ribbed Tee + Straight Denim', brand:'Loose Change', brandType:'Homegrown', category:'Looks', price:1799, bg:'#EDE6D8', sil:'tee', img:'img/generated/under-2000-01.jpg', tags:['tee','denim','under 2000','everyday','clean']},
   {id:62, name:'Tank + Cargo Pants, Everyday Edit', brand:'Loose Change', brandType:'Homegrown', category:'Looks', price:1699, bg:'#C9B79C', sil:'tee', img:'img/generated/under-2000-02.jpg', tags:['tank','cargo','under 2000','everyday','streetwear']},
-  {id:63, name:'Striped Top + Black Denim, Campus Edit', brand:'Loose Change', brandType:'Homegrown', category:'Looks', price:1599, bg:'#26262A', sil:'tee', img:'img/generated/under-2000-03.jpg', tags:['top','denim','under 2000','everyday','clean']},
-
-  {id:64, name:'Leather Biker + Graphic Tee, Party Edit', brand:'Static Youth', brandType:'Homegrown', category:'Looks', price:3799, bg:'#2B2A27', sil:'jacket', img:'img/generated/indie-sleaze-01.jpg', tags:['jacket','graphic','indie sleaze','nostalgia','denim']},
-  {id:65, name:'Metallic Slip + Oversized Hoodie', brand:'Static Youth', brandType:'Homegrown', category:'Looks', price:3299, bg:'#8A8D93', sil:'dress', img:'img/generated/indie-sleaze-02.jpg', tags:['dress','hoodie','indie sleaze','nostalgia','statement']},
-  {id:66, name:'Plaid Mini + Striped Socks, Dance Floor Edit', brand:'Static Youth', brandType:'Homegrown', category:'Looks', price:2799, bg:'#7A2A2A', sil:'dress', img:'img/generated/indie-sleaze-03.jpg', tags:['skirt','plaid','indie sleaze','nostalgia','statement']},
-
+  {id:63, name:'Striped Top + Black Denim, Campus Edit', brand:'Loose Change', brandType:'Homegrown', category:'Looks', price:1599, bg:'#26262A', sil:'tee', img:'img/generated/under-2000-03.jpg', tags:['top','denim','under 2000','everyday','clean','campus']},
+  {id:64, name:'Leather Biker + Graphic Tee, Party Edit', brand:'Static Youth', brandType:'Homegrown', category:'Looks', price:3799, bg:'#2B2A27', sil:'jacket', img:'img/generated/indie-sleaze-01.jpg', tags:['jacket','graphic','indie sleaze','nostalgia','denim','night-out','concert']},
+  {id:65, name:'Metallic Slip + Oversized Hoodie', brand:'Static Youth', brandType:'Homegrown', category:'Looks', price:3299, bg:'#8A8D93', sil:'dress', img:'img/generated/indie-sleaze-02.jpg', tags:['dress','hoodie','indie sleaze','nostalgia','statement','night-out','concert']},
+  {id:66, name:'Plaid Mini + Striped Socks, Dance Floor Edit', brand:'Static Youth', brandType:'Homegrown', category:'Looks', price:2799, bg:'#7A2A2A', sil:'dress', img:'img/generated/indie-sleaze-03.jpg', tags:['skirt','plaid','indie sleaze','nostalgia','statement','night-out','concert']},
   {id:67, name:'Merlot Chikankari Kurta + Floral Palazzo', brand:'Rangrez House', brandType:'Homegrown', category:'Ethnic', price:3599, dept:'Women', bg:'#5C2A32', sil:'dress', img:'img/generated/desi-remix-04.jpg', tags:['kurta','chikankari','ethnic','desi remix','festive']},
   {id:68, name:'Navy Tee + Wide-Leg Denim, Street Edit', brand:'Plainsight', brandType:'Homegrown', category:'Looks', price:2199, bg:'#1E2530', sil:'tee', img:'img/generated/clean-fit-04.jpg', tags:['tee','denim','clean fit','minimal','street']},
-  {id:69, name:'Chocolate Bomber + Straight Denim', brand:'Weekend Theory', brandType:'Homegrown', category:'Looks', price:3999, bg:'#3B2A22', sil:'jacket', img:'img/generated/off-duty-04.jpg', tags:['jacket','leather','off duty','oversized','street']},
+  {id:69, name:'Chocolate Bomber + Straight Denim', brand:'Weekend Theory', brandType:'Homegrown', category:'Looks', price:3999, bg:'#3B2A22', sil:'jacket', img:'img/generated/off-duty-04.jpg', tags:['jacket','leather','off-duty','oversized','street']},
   {id:70, name:'Plum Button Cami + Straight Denim', brand:'Loose Change', brandType:'Homegrown', category:'Looks', price:1499, bg:'#4A2436', sil:'tee', img:'img/generated/under-2000-04.jpg', tags:['cami','denim','under 2000','haul','trial room']},
   {id:71, name:'Checkerboard Crop Top + Denim', brand:'Loose Change', brandType:'Homegrown', category:'Looks', price:1399, bg:'#2A2224', sil:'tee', img:'img/generated/under-2000-05.jpg', tags:['crop top','denim','under 2000','haul','trial room']},
   {id:72, name:'Cream Scalloped Crochet Top + Shorts', brand:'Loose Change', brandType:'Homegrown', category:'Looks', price:1299, bg:'#D9C9A8', sil:'tee', img:'img/generated/under-2000-06.jpg', tags:['crochet','shorts','under 2000','thrift','diy']},
   {id:73, name:'Dusty Blue Knit Cami + Denim Shorts', brand:'Loose Change', brandType:'Homegrown', category:'Looks', price:1349, bg:'#7A93A8', sil:'tee', img:'img/generated/under-2000-07.jpg', tags:['knit','shorts','under 2000','thrift','diy']},
   {id:74, name:'Merlot Kaftan Wrap Dress, Festive Edit', brand:'Afterglow', brandType:'Homegrown', category:'Dresses', price:4299, dept:'Women', bg:'#5C2226', sil:'dress', img:'img/generated/date-night-04.jpg', tags:['dress','kaftan','date night','festive','event']},
-  {id:75, name:'Sheer Mesh Top + Grey Cargo Trousers, Studio Edit', brand:'Static Youth', brandType:'Homegrown', category:'Looks', price:2499, bg:'#3A3A3E', sil:'tee', img:'img/generated/indie-sleaze-04.jpg', tags:['mesh','cargo','indie sleaze','statement','street']},
+  {id:75, name:'Sheer Mesh Top + Grey Cargo Trousers, Studio Edit', brand:'Static Youth', brandType:'Homegrown', category:'Looks', price:2499, bg:'#3A3A3E', sil:'tee', img:'img/generated/indie-sleaze-04.jpg', tags:['mesh','cargo','indie sleaze','statement','street','concert','night-out']},
 
-  /* ---- MEN'S EDIT + AFFORDABLE INTERNATIONAL/HOMEGROWN STAPLES ----
-     Real, widely-known-in-India brand names paired with real, freely
-     licensed Unsplash photography that genuinely matches each brand's
-     look — same demo/curation convention as the catalogue above, not
-     AI-generated. Added to give Footwear and Tops real depth, start
-     a real Men's department, and keep International anchored in
-     brands people actually recognise and can afford. ---- */
-  {id:76, name:'Sportswear Low-Top Sneaker', brand:'Nike', brandType:'International', category:'Footwear', price:4995, bg:'#EDE6D8', sil:'sneaker', img:'/photo-1726200334415-d43c2b3e55ea', tags:['sneaker','sporty','streetwear','everyday']},
-  {id:77, name:'Marathon Running Shoe', brand:'Campus', brandType:'Homegrown', category:'Footwear', price:1499, bg:'#D8CBB8', sil:'sneaker', img:'/photo-1724921194807-c0d17dc7cfe4', tags:['sneaker','sports','everyday','budget','under 3000']},
-  {id:78, name:'Leather Slide Sandal', brand:'Woodland', brandType:'International', category:'Footwear', price:1999, dept:'Men', bg:'#C9B79C', sil:'sneaker', img:'/photo-1613662632164-7f2b081a5b46', tags:['sandal','casual','men','outdoor','everyday']},
-  {id:79, name:"Men's Crew Neck Comfort Fit Cotton Tee", brand:'U.S. Polo Assn.', brandType:'International', category:'Tops', price:899, dept:'Men', bg:'#1E2530', sil:'tee', img:'/photo-1574180566232-aaad1b5b8450', tags:['tee','basic','men','everyday','budget','under 3000']},
-  {id:80, name:"Men's Slim Fit Oxford Shirt", brand:'H&M', brandType:'International', category:'Tops', price:1699, dept:'Men', bg:'#D8CBB8', sil:'tee', img:'/photo-1627401632925-a4c565d08a80', tags:['shirt','office','men','everyday','clean']},
-  {id:81, name:'Ribbed Knit Top', brand:'Zara', brandType:'International', category:'Tops', price:1999, dept:'Women', bg:'#D9A5A0', sil:'tee', img:'/photo-1785273751841-793118ec1c9b', tags:['top','ribbed','minimal','date night','everyday','under 3000']},
-  {id:82, name:'511 Slim Fit Jeans', brand:"Levi's", brandType:'International', category:'Bottoms', price:2999, dept:'Men', bg:'#3B3A36', sil:'trousers', img:'/photo-1555689502-c4b22d76c56f', tags:['jeans','denim','men','everyday','streetwear']},
-  {id:83, name:'Tapered Chino Trousers', brand:'Uniqlo', brandType:'International', category:'Bottoms', price:1990, dept:'Men', bg:'#C9B79C', sil:'trousers', img:'/photo-1584865288642-42078afe6942', tags:['trousers','chino','men','office','everyday','under 3000']},
-  {id:84, name:"Men's Bomber Jacket", brand:'Roadster', brandType:'Homegrown', category:'Outerwear', price:2299, dept:'Men', bg:'#5B4636', sil:'jacket', img:'/photo-1627637454030-5ddd536e06e5', tags:['jacket','bomber','men','streetwear','everyday']},
+  /* ---- MEN'S EDIT + AFFORDABLE STAPLES ----
+     Budget-friendly basics that anchor the Men's department and the
+     Complete Looks under ₹3,000. Labelled 'LAP Edit' / 'Style Inspo' —
+     not real-brand stock; see the note on INTERNATIONAL EDIT above. ---- */
+  {id:76, name:'Sportswear Low-Top Sneaker', brand:'Editorial Pick', brandType:'International', category:'Footwear', price:4995, bg:'#EDE6D8', sil:'sneaker', img:'/photo-1726200334415-d43c2b3e55ea', tags:['sneaker','sporty','streetwear','everyday']},
+  {id:77, name:'Marathon Running Shoe', brand:'LAP Edit', brandType:'Homegrown', category:'Footwear', price:1499, bg:'#D8CBB8', sil:'sneaker', img:'/photo-1724921194807-c0d17dc7cfe4', tags:['sneaker','sports','everyday','budget','under 3000','campus','coffee-run']},
+  {id:78, name:'Leather Slide Sandal', brand:'Editorial Pick', brandType:'International', category:'Footwear', price:1999, dept:'Men', bg:'#C9B79C', sil:'sneaker', img:'/photo-1613662632164-7f2b081a5b46', tags:['sandal','casual','men','outdoor','everyday']},
+  {id:79, name:"Men's Crew Neck Comfort Fit Cotton Tee", brand:'LAP Edit', brandType:'International', category:'Tops', price:899, dept:'Men', bg:'#1E2530', sil:'tee', img:'/photo-1574180566232-aaad1b5b8450', tags:['tee','basic','men','everyday','budget','under 3000','campus','first-day-at-work']},
+  {id:80, name:"Men's Slim Fit Oxford Shirt", brand:'Style Inspo', brandType:'International', category:'Tops', price:1699, dept:'Men', bg:'#D8CBB8', sil:'tee', img:'/photo-1627401632925-a4c565d08a80', tags:['shirt','office','men','everyday','clean','travel','first-day-at-work']},
+  {id:81, name:'Ribbed Knit Top', brand:'Style Inspo', brandType:'International', category:'Tops', price:1999, dept:'Women', bg:'#D9A5A0', sil:'tee', img:'/photo-1785273751841-793118ec1c9b', tags:['top','ribbed','minimal','date night','everyday','under 3000','casual-dinner']},
+  {id:82, name:'511 Slim Fit Jeans', brand:'Style Inspo', brandType:'International', category:'Bottoms', price:2999, dept:'Men', bg:'#3B3A36', sil:'trousers', img:'/photo-1555689502-c4b22d76c56f', tags:['jeans','denim','men','everyday','streetwear']},
+  {id:83, name:'Tapered Chino Trousers', brand:'Style Inspo', brandType:'International', category:'Bottoms', price:1990, dept:'Men', bg:'#C9B79C', sil:'trousers', img:'/photo-1584865288642-42078afe6942', tags:['trousers','chino','men','office','everyday','under 3000','campus','travel','first-day-at-work']},
+  {id:84, name:"Men's Bomber Jacket", brand:'LAP Edit', brandType:'Homegrown', category:'Outerwear', price:2299, dept:'Men', bg:'#5B4636', sil:'jacket', img:'/photo-1627637454030-5ddd536e06e5', tags:['jacket','bomber','men','streetwear','everyday']},
+
+  /* ---- FOOTWEAR + ACCESSORIES DEPTH ----
+     Added so Footwear and Accessories read as real categories, not an
+     empty prototype shelf, and so Complete Looks can hit a real shoe or
+     accessory at a real price. ---- */
+  {id:85, name:'Tan Bit Loafer', brand:'LAP Edit', brandType:'Homegrown', category:'Footwear', price:2199, dept:'Men', bg:'#2A2A3B', sil:'sneaker', img:'/photo-1616406432452-07bc5938759d', tags:['loafer','office','first-day-at-work','smart-casual','everyday','campus']},
+  {id:86, name:'Structured Mini Satchel', brand:'Style Inspo', brandType:'International', category:'Accessories', price:1799, bg:'#B9AAB0', sil:'bag', img:'/photo-1605733513597-a8f8341084e6', tags:['bag','structured','office','first-day-at-work','everyday','statement']},
+  {id:87, name:'Classic Square Sunglasses', brand:'LAP Edit', brandType:'Homegrown', category:'Accessories', price:699, bg:'#E8714A', sil:'bag', img:'/photo-1610136649349-0f646f318053', tags:['sunglasses','travel','bold','everyday','coffee-run','under 3000']},
+  {id:88, name:'Tan Suede Ankle Boot', brand:'LAP Edit', brandType:'Homegrown', category:'Footwear', price:2499, dept:'Women', bg:'#D9C2A6', sil:'sneaker', img:'/photo-1605733160314-4fc7dac4bb16', tags:['boots','travel','statement','night-out','everyday']},
+  {id:89, name:'Classic Baseball Cap', brand:'LAP Edit', brandType:'Homegrown', category:'Accessories', price:499, bg:'#3B3A36', sil:'bag', img:'/photo-1785336472737-78291368800d', tags:['cap','street','campus','everyday','budget','under 3000','coffee-run']},
 ];
 
 const SIZES_APPAREL = ['XS','S','M','L','XL'];
@@ -166,11 +170,14 @@ const SIZES_SHOE = ['UK6','UK7','UK8','UK9','UK10'];
 
 function sizesFor(p){ return p.category === 'Footwear' ? SIZES_SHOE : SIZES_APPAREL; }
 
-/* ---------- AESTHETIC EDITS + SHOP THE LOOK ----------
-   Hand-curated by product id — not algorithmic, not tag-scored.
-   This is the "we already did the scrolling for you" promise made
-   literal: a human (well, this prototype's author) picked exactly
-   these pieces for exactly this vibe. ---------- */
+/* ---------- MORE CURATED EDITS (editorial mood boards) ----------
+   Hand-curated by product id — not algorithmic, not tag-scored. Each
+   entry here is ONE already-photographed complete outfit (a single
+   SKU — see the "LAP EDIT" products above), used for editorial /
+   "Trending Now" discovery. For the interactive, piece-by-piece
+   COMPLETE LOOKS feature (open a product, remove a piece, see the
+   total), see the LOOKS array below instead — that's the real
+   "shop the look" product, this is the moodboard. ---------- */
 const CURATED_EDITS = {
   'tokyo-after-dark': [42,43,44,45],
   'off-duty': [46,47,48,69],
@@ -190,17 +197,78 @@ const EDIT_LABELS = {
   'desi-remix': 'Desi Remix',
   'date-night': 'Date Night, Decoded'
 };
-/* Shop the Look bundles — kept deliberately under ~₹3,000 a look.
-   LAP's buyer is a college/early-career 20-something on a real budget,
-   not the 5% who can drop ₹13,000 on a "Friday office" fit — so these
-   pull from the catalogue's cheapest working pieces, not the designer
-   shelf. Every image below is a real, bright, loads-every-time photo. */
+
+/* ---------- COMPLETE LOOKS ----------
+   LAP's actual core feature: real, separate, shoppable pieces
+   (top + bottom + shoes + accessory) bundled into one outfit with an
+   itemised breakdown and an honest total — not one single-SKU photo.
+   Open any piece on its own, or shop the whole look. Spans occasions
+   (campus, coffee run, off-duty, first day at work, date night,
+   casual dinner, travel, night out, concert) and price tiers — most
+   land under ₹3,000, a few run higher where the occasion calls for
+   it, and every total here is the real sum of real listed prices. */
 const LOOKS = [
-  {key:'campus-ready', label:'Look 01 — Campus Ready, Under ₹3,000', ids:[79,83], heroId:79},
-  {key:'off-duty-budget', label:'Look 02 — Off-Duty, Priced Right', ids:[12,77], heroId:12},
-  {key:'office-budget', label:'Look 03 — 9-to-5, Priced Right', ids:[10,83], heroId:10},
-  {key:'date-night-budget', label:'Look 04 — Date Night, Decoded', ids:[81,35], heroId:81}
+  {key:'campus-college', label:'Campus Ready — College Fit', ids:[79,83], heroId:79, mood:'campus'},
+  {key:'coffee-run-w', label:'Coffee Run — Top + Shades', ids:[10,87], heroId:10, mood:'coffee-run'},
+  {key:'coffee-run-cap', label:'Everyday Campus — Tee + Cap', ids:[12,89], heroId:12, mood:'campus'},
+  {key:'off-duty-budget', label:'Off-Duty, Priced Right', ids:[12,77], heroId:12, mood:'off-duty'},
+  {key:'weekend-mens', label:'Weekend Fit — Men\'s Off-Duty', ids:[79,78], heroId:79, mood:'off-duty'},
+  {key:'first-day-women', label:'First Day at Work — Women\'s Fit', ids:[81,83], heroId:81, mood:'first-day-at-work'},
+  {key:'office-budget', label:'9-to-5, Priced Right', ids:[10,77], heroId:10, mood:'first-day-at-work'},
+  {key:'date-night-budget', label:'Date Night, Decoded', ids:[81,35], heroId:81, mood:'date-night'},
+  {key:'casual-dinner', label:'Casual Dinner, Dressed Up', ids:[4,35], heroId:4, mood:'casual-dinner'},
+  {key:'travel-light', label:'Travel Light — Carry-On Fit', ids:[12,89,87], heroId:12, mood:'travel'},
+  {key:'night-out-budget', label:'Night Out — Denim & Grit', ids:[13,89], heroId:13, mood:'night-out'},
+  {key:'first-day-men', label:'First Day at Work — Men\'s Fit', ids:[80,83], heroId:80, mood:'first-day-at-work'},
+  {key:'concert-fit', label:'Concert Night — Graphic & Grit', ids:[2,3], heroId:2, mood:'concert'},
+  {key:'travel-mens', label:'Travel Fit — Men\'s Carry-On', ids:[79,83,87], heroId:79, mood:'travel'},
 ];
+
+function lookTotal(look){
+  return look.ids.reduce((s,id)=>{ const p = PRODUCTS.find(x=>x.id===id); return s + (p?p.price:0); }, 0);
+}
+function priceTier(total){
+  if(total <= 1500) return 'under1500';
+  if(total <= 2000) return 'under2000';
+  if(total <= 3000) return 'under3000';
+  return 'over3000';
+}
+const TIER_LABEL = {under1500:'Under ₹1,500', under2000:'Under ₹2,000', under3000:'Under ₹3,000', over3000:'Priced for the occasion'};
+
+/* ---------- SHOP BY MOOD ----------
+   Discovery by feeling/occasion rather than product name — the
+   brief: someone should be able to arrive saying "I have a date" or
+   "I want something under ₹3,000" and find their way in from there. */
+const MOODS = [
+  {key:'off-duty', label:'Off Duty', img:'img/generated/off-duty-01.jpg'},
+  {key:'date-night', label:'Date Night', img:'img/generated/date-night-01.jpg'},
+  {key:'campus', label:'Campus', img:'img/generated/under-2000-03.jpg'},
+  {key:'night-out', label:'Night Out', img:'img/generated/indie-sleaze-01.jpg'},
+  {key:'coffee-run', label:'Coffee Run', img:'https://images.unsplash.com/photo-1600871149968-44ccafa3b32a?auto=format&fit=crop&w=400&q=70'},
+  {key:'minimal', label:'Minimal', img:'img/generated/clean-fit-01.jpg'},
+  {key:'street', label:'Street', img:'img/generated/tokyo-after-dark-02.jpg'},
+  {key:'travel', label:'Travel', img:'https://images.unsplash.com/photo-1584865288642-42078afe6942?auto=format&fit=crop&w=400&q=70'},
+  {key:'bold', label:'Bold', img:'img/generated/indie-sleaze-03.jpg'},
+  {key:'casual-dinner', label:'Casual Dinner', img:'img/generated/date-night-04.jpg'}
+];
+function matchesMood(p, moodKey){
+  if(moodKey === 'street') return p.tags.includes('street') || p.tags.includes('streetwear');
+  if(moodKey === 'date-night') return p.tags.includes('date night');
+  return p.tags.includes(moodKey);
+}
+
+/* ---------- FASHION GUIDE ----------
+   Styling guidance that leads straight into shopping, not a generic
+   blog — each card resolves to a real filtered shop view or look. */
+const GUIDES = [
+  {title:'Build a Full Look Under ₹3,000', teaser:'Every piece, one honest total — see how it adds up.', img:'img/generated/under-2000-01.jpg', nav:{type:'tier', value:'under3000'}},
+  {title:'What to Wear on a First Date', teaser:'Bright, not moody — and nowhere near ₹10,000.', img:'img/generated/date-night-01.jpg', nav:{type:'edit', value:'date-night'}},
+  {title:'How to Style Wide-Leg Jeans', teaser:'The one silhouette doing the most on Instagram right now.', img:'https://images.unsplash.com/photo-1608370946545-7d93571b5593?auto=format&fit=crop&w=600&q=75', nav:{type:'tag', value:'wide-leg'}},
+  {title:'What Shoes Go With Baggy Trousers', teaser:'Chunky, retro or minimal — the Footwear edit, decoded.', img:'https://images.unsplash.com/photo-1718802312963-daa58ede8736?auto=format&fit=crop&w=600&q=75', nav:{type:'cat', value:'Footwear'}},
+  {title:'What to Wear to College', teaser:'Comfortable enough for a 9am, sharp enough for the group photo.', img:'img/generated/under-2000-03.jpg', nav:{type:'mood', value:'campus'}},
+  {title:'One Jacket, Three Outfits', teaser:'Why a good overshirt earns its price tag faster than anything else.', img:'https://images.unsplash.com/photo-1600574691453-499962cc0611?auto=format&fit=crop&w=600&q=75', nav:{type:'cat', value:'Outerwear'}},
+];
+
 const CATEGORY_LABEL = {Outerwear:'Jacket', Tops:'Top', Bottoms:'Bottom', Footwear:'Shoes', Accessories:'Bag', Dresses:'Dress', Ethnic:'Ethnic', 'Co-ords':'Co-ord', Looks:'Complete Look'};
 
 function curatedProducts(key){
@@ -220,35 +288,52 @@ function curatedLabel(key){
 
 function lookCard(look){
   const items = look.ids.map(id=>PRODUCTS.find(p=>p.id===id)).filter(Boolean);
-  const total = items.reduce((s,p)=>s+p.price,0);
+  const total = lookTotal(look);
+  const tier = priceTier(total);
   const heroP = PRODUCTS.find(p=>p.id===look.heroId) || items[0];
   return `
-  <div class="look-card">
-    <div class="look-hero"><img src="${productImg(heroP,900)}" alt="${look.label}" loading="lazy"></div>
+  <div class="look-card" data-tier="${tier}">
+    <div class="look-hero"><img src="${productImg(heroP,900)}" alt="${look.label}" loading="lazy"><span class="look-tier-badge">${TIER_LABEL[tier]}</span></div>
     <div class="look-info">
-      <p class="eyebrow">Shop the look</p>
+      <p class="eyebrow">Complete look</p>
       <h3>${look.label}</h3>
       <ul class="look-items">
         ${items.map(p=>`<li><span class="look-item-tag">${CATEGORY_LABEL[p.category]||p.category}</span><span class="look-item-name">${p.name}</span><span class="look-item-price">${money(p.price)}</span></li>`).join('')}
       </ul>
       <div class="look-total"><span>Total</span><strong>${money(total)}</strong></div>
-      <button class="btn btn-primary full" data-nav="shop" data-edit="${look.key}">Shop the look →</button>
+      <button class="btn btn-primary full" data-nav="shop" data-edit="${look.key}">Shop this look →</button>
     </div>
   </div>`;
 }
 
+let currentLookTier = 'all';
 function renderLooks(){
   const el = document.getElementById('looks-grid');
   if(!el) return;
-  el.innerHTML = LOOKS.map(lookCard).join('');
+  const list = currentLookTier === 'all' ? LOOKS : LOOKS.filter(l=>priceTier(lookTotal(l)) === currentLookTier);
+  el.innerHTML = list.map(lookCard).join('') || `<p class="muted" style="grid-column:1/-1">No looks in this range yet — check back soon.</p>`;
+}
+const lookTierBar = document.getElementById('lookTierBar');
+if(lookTierBar){
+  lookTierBar.addEventListener('click', (e)=>{
+    const chip = e.target.closest('.chip');
+    if(!chip) return;
+    lookTierBar.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+    chip.classList.add('active');
+    currentLookTier = chip.dataset.tier;
+    renderLooks();
+  });
 }
 
 /* ---------- STATE ---------- */
 let cart = []; // {id, size, qty}
+let wishlist = new Set();
 let currentFilter = 'all';
 let currentCategory = 'all';
 let currentSearch = '';
 let currentEdit = null;
+let currentMood = null;
+let currentTag = null;
 let quizAnswers = {occasion:null, vibe:null};
 let measurements = {heightCm:null, weightKg:null};
 let timerInterval = null;
@@ -258,12 +343,15 @@ function money(n){ return '₹' + n.toLocaleString('en-IN'); }
 
 function productCard(p){
   const tagClass = p.brandType === 'International' ? 'intl' : 'home';
+  const saved = wishlist.has(p.id);
   return `
   <div class="product-card" data-id="${p.id}">
     <div class="product-art" style="background:${p.bg}">
       <span class="product-tag ${tagClass}">${p.brandType}</span>
+      <button class="wishlist-btn ${saved?'active':''}" data-wish="${p.id}" aria-label="Save to wishlist">${saved?'♥':'♡'}</button>
       <img class="product-photo" src="${productImg(p,800)}" alt="${p.name} — ${p.brand}" loading="lazy">
       <span class="product-nofilter">No filter</span>
+      <button class="quick-add-btn" data-quickadd="${p.id}">+ Quick add</button>
     </div>
     <div class="product-info">
       <div class="p-brand">${p.brand}</div>
@@ -278,7 +366,28 @@ function renderGrid(containerId, list){
   if(!el) return;
   el.innerHTML = list.map(productCard).join('') || '';
   el.querySelectorAll('.product-card').forEach(card=>{
-    card.addEventListener('click', ()=>openPDP(parseInt(card.dataset.id)));
+    card.addEventListener('click', (e)=>{
+      if(e.target.closest('[data-wish]') || e.target.closest('[data-quickadd]')) return;
+      openPDP(parseInt(card.dataset.id));
+    });
+  });
+  el.querySelectorAll('[data-wish]').forEach(btn=>{
+    btn.addEventListener('click', (e)=>{
+      e.stopPropagation();
+      const id = parseInt(btn.dataset.wish);
+      if(wishlist.has(id)){ wishlist.delete(id); btn.classList.remove('active'); btn.textContent = '♡'; }
+      else { wishlist.add(id); btn.classList.add('active'); btn.textContent = '♥'; }
+    });
+  });
+  el.querySelectorAll('[data-quickadd]').forEach(btn=>{
+    btn.addEventListener('click', (e)=>{
+      e.stopPropagation();
+      const id = parseInt(btn.dataset.quickadd);
+      const p = PRODUCTS.find(x=>x.id===id);
+      const defaultSize = sizesFor(p)[Math.floor(sizesFor(p).length/2)];
+      addToCart(id, defaultSize);
+      openCart();
+    });
   });
 }
 
@@ -292,14 +401,39 @@ function showView(name){
 }
 
 document.addEventListener('click', (e)=>{
+  const scrollEl = e.target.closest('[data-scroll]');
+  if(scrollEl){
+    e.preventDefault();
+    const target = document.getElementById(scrollEl.dataset.scroll);
+    if(target){ showView('home'); target.scrollIntoView({behavior:'smooth', block:'start'}); }
+    document.getElementById('mainNav').classList.remove('mobile-open');
+    return;
+  }
+
   const navEl = e.target.closest('[data-nav]');
   if(!navEl) return;
   e.preventDefault();
   const nav = navEl.dataset.nav;
   if(nav === 'style'){ openStyleModal(); document.getElementById('mainNav').classList.remove('mobile-open'); return; }
+  if(nav === 'looks-tier'){
+    showView('home');
+    const tier = navEl.dataset.tier || 'all';
+    const bar = document.getElementById('lookTierBar');
+    if(bar){
+      bar.querySelectorAll('.chip').forEach(c=>c.classList.toggle('active', c.dataset.tier === tier));
+    }
+    currentLookTier = tier;
+    renderLooks();
+    const target = document.getElementById('complete-looks');
+    if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
+    document.getElementById('mainNav').classList.remove('mobile-open');
+    return;
+  }
   if(nav === 'shop'){
-    currentCategory = 'all';
+    currentCategory = navEl.dataset.cat || 'all';
     currentSearch = '';
+    currentMood = null;
+    currentTag = null;
     document.getElementById('searchInput').value = '';
     if(navEl.dataset.edit){
       currentEdit = navEl.dataset.edit;
@@ -309,6 +443,14 @@ document.addEventListener('click', (e)=>{
       currentFilter = 'all';
       currentSearch = navEl.dataset.brand;
       document.getElementById('searchInput').value = navEl.dataset.brand;
+    } else if(navEl.dataset.mood){
+      currentEdit = null;
+      currentFilter = 'all';
+      currentMood = navEl.dataset.mood;
+    } else if(navEl.dataset.tag){
+      currentEdit = null;
+      currentFilter = 'all';
+      currentTag = navEl.dataset.tag;
     } else {
       currentEdit = null;
       currentFilter = navEl.dataset.filter || 'all';
@@ -327,6 +469,8 @@ document.getElementById('menuBtn').addEventListener('click', ()=>{
 function renderHome(){
   renderGrid('grid-women', PRODUCTS.filter(p=>p.dept==='Women').slice(0,8));
   renderGrid('grid-men', PRODUCTS.filter(p=>p.dept==='Men').slice(0,8));
+  renderGrid('grid-footwear', PRODUCTS.filter(p=>p.category==='Footwear').slice(0,8));
+  renderGrid('grid-accessories', PRODUCTS.filter(p=>p.category==='Accessories').slice(0,8));
   renderGrid('grid-homegrown', PRODUCTS.filter(p=>p.brandType==='Homegrown').slice(0,8));
   renderGrid('grid-international', PRODUCTS.filter(p=>p.brandType==='International').slice(0,8));
   renderGrid('grid-office', PRODUCTS.filter(p=>p.tags.includes('office')).slice(0,8));
@@ -335,20 +479,91 @@ function renderHome(){
   const brandCountEl = document.getElementById('statBrands');
   if(pieceCountEl) pieceCountEl.textContent = PRODUCTS.length;
   if(brandCountEl) brandCountEl.textContent = brandCount;
+  renderMoods();
+  renderGuides();
 }
 
-/* ---------- SHOP / SEARCH RESULTS ---------- */
+function renderMoods(){
+  const el = document.getElementById('mood-grid');
+  if(!el) return;
+  el.innerHTML = MOODS.map(m=>`
+    <button class="mood-tile" data-nav="shop" data-mood="${m.key}">
+      <img src="${m.img}" alt="${m.label}" loading="lazy">
+      <span>${m.label}</span>
+    </button>`).join('');
+}
+
+function renderGuides(){
+  const el = document.getElementById('guide-grid');
+  if(!el) return;
+  el.innerHTML = GUIDES.map(g=>{
+    let attrs = 'data-nav="shop"';
+    if(g.nav.type === 'tier') attrs = `data-nav="looks-tier" data-tier="${g.nav.value}"`;
+    else if(g.nav.type === 'edit') attrs += ` data-edit="${g.nav.value}"`;
+    else if(g.nav.type === 'tag') attrs += ` data-tag="${g.nav.value}"`;
+    else if(g.nav.type === 'cat') attrs += ` data-cat="${g.nav.value}"`;
+    else if(g.nav.type === 'mood') attrs += ` data-mood="${g.nav.value}"`;
+    return `
+    <div class="guide-card" ${attrs}>
+      <img src="${g.img}" alt="${g.title}" loading="lazy">
+      <div class="guide-card-body">
+        <h3>${g.title}</h3>
+        <p>${g.teaser}</p>
+        <span class="guide-card-cta">Shop the edit →</span>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+/* ---------- SHOP / SEARCH RESULTS ----------
+   A few hand-written intent rules sit in front of the plain keyword
+   match, so phrases like "outfit under 3000" or "date night outfit"
+   resolve to something useful instead of a literal (and empty)
+   substring search — mocked intent understanding, not a real NLP
+   model, but it makes the search bar feel like it gets fashion. */
+function smartSearchFilter(q){
+  const s = q.toLowerCase();
+  const budgetMatch = s.match(/under\s*₹?\s*(\d{3,5})/);
+  if(budgetMatch){
+    const cap = parseInt(budgetMatch[1], 10);
+    return p => p.price <= cap;
+  }
+  const intents = [
+    [/date\s*night/, p=>p.tags.includes('date night')],
+    [/college|campus/, p=>p.tags.includes('campus')],
+    [/wide[\s-]?leg|baggy/, p=>p.tags.includes('wide-leg') || p.tags.includes('relaxed')],
+    [/oversized|boxy/, p=>p.tags.includes('oversized')],
+    [/office|first.day/, p=>p.tags.includes('office') || p.tags.includes('first-day-at-work')],
+    [/streetwear|street/, p=>p.tags.includes('streetwear') || p.tags.includes('street')],
+    [/travel/, p=>p.tags.includes('travel')],
+    [/coffee/, p=>p.tags.includes('coffee-run')],
+    [/night\s*out|party|concert/, p=>p.tags.includes('night-out') || p.tags.includes('concert')],
+    [/footwear|shoes|sneaker/, p=>p.category === 'Footwear'],
+    [/minimal|clean/, p=>p.tags.includes('minimal')]
+  ];
+  for(const [re, fn] of intents){
+    if(re.test(s)) return fn;
+  }
+  return null;
+}
+
 function matchesSearch(p, q){
   if(!q) return true;
-  q = q.toLowerCase();
-  return p.name.toLowerCase().includes(q) || p.brand.toLowerCase().includes(q) ||
-         p.category.toLowerCase().includes(q) || p.tags.some(t=>t.includes(q));
+  const intentFn = smartSearchFilter(q);
+  if(intentFn) return intentFn(p);
+  const ql = q.toLowerCase();
+  return p.name.toLowerCase().includes(ql) || p.brand.toLowerCase().includes(ql) ||
+         p.category.toLowerCase().includes(ql) || p.tags.some(t=>t.includes(ql));
 }
 
 function renderShop(){
   let list;
   if(currentEdit){
     list = curatedProducts(currentEdit);
+  } else if(currentMood){
+    list = PRODUCTS.filter(p=>matchesMood(p, currentMood));
+  } else if(currentTag){
+    list = PRODUCTS.filter(p=>p.tags.includes(currentTag));
   } else {
     list = PRODUCTS.filter(p=>{
       const byBrand = currentFilter === 'all' || p.brandType === currentFilter ||
@@ -367,9 +582,16 @@ function renderShop(){
 
   const eyebrow = document.getElementById('shopEyebrow');
   const title = document.getElementById('shopTitle');
+  const moodLabel = currentMood ? (MOODS.find(m=>m.key===currentMood)||{}).label : null;
   if(currentEdit){
     eyebrow.textContent = 'The Edit';
     title.textContent = curatedLabel(currentEdit);
+  } else if(currentMood){
+    eyebrow.textContent = 'Shop by mood';
+    title.textContent = moodLabel || 'The Mood';
+  } else if(currentTag){
+    eyebrow.textContent = 'Shop the guide';
+    title.textContent = currentTag.charAt(0).toUpperCase() + currentTag.slice(1);
   } else if(currentSearch){
     eyebrow.textContent = 'Search results';
     title.textContent = `“${currentSearch}”`;
@@ -392,6 +614,8 @@ document.getElementById('shopFilters').addEventListener('click', (e)=>{
   const chip = e.target.closest('.chip');
   if(!chip) return;
   currentEdit = null;
+  currentMood = null;
+  currentTag = null;
   currentCategory = chip.dataset.cat;
   renderShop();
 });
@@ -435,6 +659,8 @@ function commitSearch(){
   currentFilter = 'all';
   currentCategory = 'all';
   currentEdit = null;
+  currentMood = null;
+  currentTag = null;
   searchDrop.classList.remove('show');
   renderShop();
   showView('shop');
@@ -455,12 +681,14 @@ document.addEventListener('click', (e)=>{
    unchanged. ---------- */
 const SEARCH_PROMPTS = [
   'What are you looking for?',
-  'I need a first-day-at-work outfit',
-  'Something like this',
+  'Outfit under ₹3,000',
+  'College outfit',
+  'Date night outfit',
+  'Black oversized shirt',
+  'Baggy jeans',
+  'Shoes for wide-leg trousers',
   'I want Tokyo streetwear',
-  'Something under ₹2,000',
   'I have a date tonight',
-  'I want to look expensive',
   "I don't know what I want"
 ];
 let searchPromptIdx = 0;
@@ -474,7 +702,18 @@ setInterval(()=>{
 function openPDP(id){
   const p = PRODUCTS.find(x=>x.id===id);
   if(!p) return;
-  const related = PRODUCTS.filter(x=>x.id!==p.id && x.category===p.category).slice(0,3);
+  // Prefer pieces LAP has actually bundled this product into (a real
+  // Complete Look), so "Complete the look" answers "what do I wear
+  // this with" with an intentional pairing — not just same-category
+  // filler.
+  const ownLook = LOOKS.find(l=>l.ids.includes(p.id));
+  let related = ownLook
+    ? ownLook.ids.filter(i=>i!==p.id).map(i=>PRODUCTS.find(x=>x.id===i)).filter(Boolean)
+    : [];
+  if(related.length < 3){
+    const fillers = PRODUCTS.filter(x=>x.id!==p.id && x.category===p.category && !related.includes(x));
+    related = related.concat(fillers).slice(0,3);
+  }
   const sizes = sizesFor(p);
 
   document.getElementById('pdpWrap').innerHTML = `
@@ -507,7 +746,7 @@ function openPDP(id){
 
       <div class="tad-box">
         <h4>🚪 Try‑At‑Door eligible</h4>
-        <p>Arrives in ~10 minutes to serviceable pincodes. Your rider waits at the door while you try it on — keep it or hand it straight back, no pickup request needed.</p>
+        <p>Delivered in 15–20 minutes to serviceable pincodes. Your rider waits at the door for up to 10 minutes while you try it on — keep it or hand it straight back, no pickup request needed.</p>
       </div>
 
       <div class="complete-look">
@@ -575,7 +814,7 @@ function renderDrawer(){
   }
 
   etaEl.hidden = false;
-  etaEl.textContent = '● Arriving in ~9 minutes to 560034';
+  etaEl.textContent = '● Arriving in 15–20 minutes to 560034';
 
   let subtotal = 0;
   itemsEl.innerHTML = cart.map((c,idx)=>{
@@ -843,7 +1082,7 @@ document.querySelectorAll('.waitlist-form').forEach(form=>{
       if(FORMSPREE_ENDPOINT.includes('YOUR_FORM_ID')){
         // Endpoint not configured yet — save locally so the demo still works end-to-end.
         const saved = JSON.parse(localStorage.getItem('lap_waitlist') || '[]');
-        saved.push({name:data.get('name')||'', email, at:new Date().toISOString()});
+        saved.push({name:data.get('name')||'', email, city:data.get('city')||'', at:new Date().toISOString()});
         localStorage.setItem('lap_waitlist', JSON.stringify(saved));
       } else {
         await fetch(FORMSPREE_ENDPOINT, {
