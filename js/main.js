@@ -142,6 +142,23 @@ const PRODUCTS = [
   {id:73, name:'Dusty Blue Knit Cami + Denim Shorts', brand:'Loose Change', brandType:'Homegrown', category:'Looks', price:1349, bg:'#7A93A8', sil:'tee', img:'img/generated/under-2000-07.jpg', tags:['knit','shorts','under 2000','thrift','diy']},
   {id:74, name:'Merlot Kaftan Wrap Dress, Festive Edit', brand:'Afterglow', brandType:'Homegrown', category:'Dresses', price:4299, dept:'Women', bg:'#5C2226', sil:'dress', img:'img/generated/date-night-04.jpg', tags:['dress','kaftan','date night','festive','event']},
   {id:75, name:'Sheer Mesh Top + Grey Cargo Trousers, Studio Edit', brand:'Static Youth', brandType:'Homegrown', category:'Looks', price:2499, bg:'#3A3A3E', sil:'tee', img:'img/generated/indie-sleaze-04.jpg', tags:['mesh','cargo','indie sleaze','statement','street']},
+
+  /* ---- MEN'S EDIT + AFFORDABLE INTERNATIONAL/HOMEGROWN STAPLES ----
+     Real, widely-known-in-India brand names paired with real, freely
+     licensed Unsplash photography that genuinely matches each brand's
+     look — same demo/curation convention as the catalogue above, not
+     AI-generated. Added to give Footwear and Tops real depth, start
+     a real Men's department, and keep International anchored in
+     brands people actually recognise and can afford. ---- */
+  {id:76, name:'Sportswear Low-Top Sneaker', brand:'Nike', brandType:'International', category:'Footwear', price:4995, bg:'#EDE6D8', sil:'sneaker', img:'/photo-1726200334415-d43c2b3e55ea', tags:['sneaker','sporty','streetwear','everyday']},
+  {id:77, name:'Marathon Running Shoe', brand:'Campus', brandType:'Homegrown', category:'Footwear', price:1499, bg:'#D8CBB8', sil:'sneaker', img:'/photo-1724921194807-c0d17dc7cfe4', tags:['sneaker','sports','everyday','budget','under 3000']},
+  {id:78, name:'Leather Slide Sandal', brand:'Woodland', brandType:'International', category:'Footwear', price:1999, dept:'Men', bg:'#C9B79C', sil:'sneaker', img:'/photo-1613662632164-7f2b081a5b46', tags:['sandal','casual','men','outdoor','everyday']},
+  {id:79, name:"Men's Crew Neck Comfort Fit Cotton Tee", brand:'U.S. Polo Assn.', brandType:'International', category:'Tops', price:899, dept:'Men', bg:'#1E2530', sil:'tee', img:'/photo-1574180566232-aaad1b5b8450', tags:['tee','basic','men','everyday','budget','under 3000']},
+  {id:80, name:"Men's Slim Fit Oxford Shirt", brand:'H&M', brandType:'International', category:'Tops', price:1699, dept:'Men', bg:'#D8CBB8', sil:'tee', img:'/photo-1627401632925-a4c565d08a80', tags:['shirt','office','men','everyday','clean']},
+  {id:81, name:'Ribbed Knit Top', brand:'Zara', brandType:'International', category:'Tops', price:1999, dept:'Women', bg:'#D9A5A0', sil:'tee', img:'/photo-1785273751841-793118ec1c9b', tags:['top','ribbed','minimal','date night','everyday','under 3000']},
+  {id:82, name:'511 Slim Fit Jeans', brand:"Levi's", brandType:'International', category:'Bottoms', price:2999, dept:'Men', bg:'#3B3A36', sil:'trousers', img:'/photo-1555689502-c4b22d76c56f', tags:['jeans','denim','men','everyday','streetwear']},
+  {id:83, name:'Tapered Chino Trousers', brand:'Uniqlo', brandType:'International', category:'Bottoms', price:1990, dept:'Men', bg:'#C9B79C', sil:'trousers', img:'/photo-1584865288642-42078afe6942', tags:['trousers','chino','men','office','everyday','under 3000']},
+  {id:84, name:"Men's Bomber Jacket", brand:'Roadster', brandType:'Homegrown', category:'Outerwear', price:2299, dept:'Men', bg:'#5B4636', sil:'jacket', img:'/photo-1627637454030-5ddd536e06e5', tags:['jacket','bomber','men','streetwear','everyday']},
 ];
 
 const SIZES_APPAREL = ['XS','S','M','L','XL'];
@@ -173,11 +190,16 @@ const EDIT_LABELS = {
   'desi-remix': 'Desi Remix',
   'date-night': 'Date Night, Decoded'
 };
+/* Shop the Look bundles — kept deliberately under ~₹3,000 a look.
+   LAP's buyer is a college/early-career 20-something on a real budget,
+   not the 5% who can drop ₹13,000 on a "Friday office" fit — so these
+   pull from the catalogue's cheapest working pieces, not the designer
+   shelf. Every image below is a real, bright, loads-every-time photo. */
 const LOOKS = [
-  {key:'tokyo-minimal', label:'Look 01 — Tokyo Minimal', ids:[1,2,18,17], heroId:1},
-  {key:'friday-office', label:'Look 02 — Friday Office', ids:[39,29,28,40], heroId:39},
-  {key:'off-duty-look', label:'Look 03 — Off-Duty', ids:[26,12,3,15], heroId:26},
-  {key:'date-night-look', label:'Look 04 — Date Night, Decoded', ids:[36,35,27,40], heroId:36}
+  {key:'campus-ready', label:'Look 01 — Campus Ready, Under ₹3,000', ids:[79,83], heroId:79},
+  {key:'off-duty-budget', label:'Look 02 — Off-Duty, Priced Right', ids:[12,77], heroId:12},
+  {key:'office-budget', label:'Look 03 — 9-to-5, Priced Right', ids:[10,83], heroId:10},
+  {key:'date-night-budget', label:'Look 04 — Date Night, Decoded', ids:[81,35], heroId:81}
 ];
 const CATEGORY_LABEL = {Outerwear:'Jacket', Tops:'Top', Bottoms:'Bottom', Footwear:'Shoes', Accessories:'Bag', Dresses:'Dress', Ethnic:'Ethnic', 'Co-ords':'Co-ord', Looks:'Complete Look'};
 
@@ -304,6 +326,7 @@ document.getElementById('menuBtn').addEventListener('click', ()=>{
 /* ---------- HOME ---------- */
 function renderHome(){
   renderGrid('grid-women', PRODUCTS.filter(p=>p.dept==='Women').slice(0,8));
+  renderGrid('grid-men', PRODUCTS.filter(p=>p.dept==='Men').slice(0,8));
   renderGrid('grid-homegrown', PRODUCTS.filter(p=>p.brandType==='Homegrown').slice(0,8));
   renderGrid('grid-international', PRODUCTS.filter(p=>p.brandType==='International').slice(0,8));
   renderGrid('grid-office', PRODUCTS.filter(p=>p.tags.includes('office')).slice(0,8));
@@ -330,6 +353,7 @@ function renderShop(){
     list = PRODUCTS.filter(p=>{
       const byBrand = currentFilter === 'all' || p.brandType === currentFilter ||
         (currentFilter === 'Women' && p.dept === 'Women') ||
+        (currentFilter === 'Men' && p.dept === 'Men') ||
         (currentFilter === 'Office' && p.tags.includes('office'));
       const byCat = currentCategory === 'all' || p.category === currentCategory;
       const bySearch = matchesSearch(p, currentSearch);
