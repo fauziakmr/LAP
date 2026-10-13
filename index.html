@@ -22,14 +22,21 @@
       <a href="#" class="logo" data-nav="home">LAP</a>
 
       <nav class="main-nav" id="mainNav">
-        <a href="#" data-nav="shop" data-filter="all">Shop All</a>
         <a href="#" data-nav="shop" data-filter="Women">Women</a>
         <a href="#" data-nav="shop" data-filter="Men">Men</a>
+        <a href="#" data-nav="trending">New &amp; Trending</a>
+        <a href="#" data-nav="looks-tier" data-tier="all">Complete Looks</a>
         <a href="#" data-nav="shop" data-filter="International">International</a>
         <a href="#" data-nav="shop" data-cat="Footwear">Footwear</a>
-        <a href="#" data-scroll="fashion-guide">Fashion Guide</a>
-        <a href="#" data-nav="style">Style AI</a>
-        <a href="#" data-nav="how">Try‑At‑Door</a>
+        <a href="#" data-nav="shop" data-cat="Accessories">Accessories</a>
+        <div class="nav-dropdown">
+          <a href="#" data-scroll="fashion-guide">Explore</a>
+          <div class="nav-dropdown-menu">
+            <a href="#" data-scroll="fashion-guide">Fashion Guide</a>
+            <a href="#" data-scroll="shop-by-mood">Shop by Mood</a>
+            <a href="#" data-nav="style">Style AI</a>
+          </div>
+        </div>
       </nav>
 
       <div class="header-actions">
@@ -40,8 +47,17 @@
           <div class="search-drop" id="searchDrop"></div>
         </div>
 
-        <div class="delivery-pill" id="deliveryPill">
-          <span class="dot"></span> 15–20 min delivery · 560034
+        <div class="pincode-wrap">
+          <button class="delivery-pill" id="deliveryPill" type="button">
+            <span class="dot"></span> <span id="pincodeLabel">Enter pincode for delivery time</span>
+          </button>
+          <div class="pincode-pop" id="pincodePop">
+            <p>Delivery runs 15–20 minutes in supported locations. Enter your pincode to check.</p>
+            <form class="pincode-pop-row" id="pincodeForm">
+              <input type="text" id="pincodeInput" placeholder="6-digit pincode" inputmode="numeric" maxlength="6">
+              <button type="submit">Check</button>
+            </form>
+          </div>
         </div>
 
         <button class="icon-btn cart-btn" id="cartBtn" aria-label="Cart">
@@ -51,7 +67,7 @@
       </div>
     </div>
   </div>
-  <div class="promo-strip">Complete looks, real photos, zero filters — delivered in 15–20 minutes, with up to 10 minutes at your door to decide.</div>
+  <div class="promo-strip" id="promoStripText">Complete looks, honestly priced — delivered in 15–20 minutes in supported locations. Easy returns if something's not right.</div>
 </header>
 
 <main id="mainContent">
@@ -59,25 +75,85 @@
   <!-- ================= HOME VIEW ================= -->
   <section class="view" id="view-home">
 
+    <!-- ================= COMPACT CAMPAIGN HERO ================= -->
     <section class="hero">
       <div class="hero-inner">
         <p class="eyebrow">Complete looks, not endless scroll</p>
-        <h1>Your next fit.<br>Already figured out.</h1>
-        <p class="hero-sub">LAP doesn't show you 20,000 products and call that choice. It shows you the whole outfit — top, bottom, shoes, the lot — already put together and honestly priced, often under ₹3,000. Delivered in 15–20 minutes, with up to 10 minutes at your door to try it on before you decide.</p>
+        <h1>Good fits. Already figured out.</h1>
+        <p class="hero-sub">Discover complete outfits, find pieces that work together, and shop looks that fit your budget — most complete looks land under ₹3,000.</p>
         <div class="hero-cta-row">
           <button class="btn btn-primary" data-scroll="complete-looks">Shop Complete Looks</button>
-          <button class="btn btn-ghost" data-nav="how">See how delivery works</button>
+          <button class="btn btn-ghost" data-nav="trending">Explore New Arrivals</button>
         </div>
+        <p class="hero-delivery-note"><span class="dot"></span> 15–20 minute delivery in supported locations</p>
       </div>
       <div class="hero-media">
-        <img src="https://images.unsplash.com/photo-1616983848157-cc0a7a59f825?auto=format&fit=crop&w=1200&q=80" alt="Candid street style — the kind of outfit you'd screenshot off Instagram" loading="eager">
-        <span class="hero-media-tag">This week's edit — whole looks, not single products</span>
+        <img src="https://images.unsplash.com/photo-1616983848157-cc0a7a59f825?auto=format&fit=crop&w=1000&q=80" alt="Candid street style — the kind of outfit you'd screenshot off Instagram" loading="eager">
+        <span class="hero-media-tag">This week's edit</span>
       </div>
-      <div class="hero-stats">
-        <div class="stat"><strong id="statPieces">89</strong><span>pieces this drop — not 52,000</span></div>
-        <div class="stat"><strong>15–20 min</strong><span>delivered to your door</span></div>
-        <div class="stat"><strong>10 min</strong><span>to try it on once it's there</span></div>
-        <div class="stat"><strong id="statBrands">35</strong><span>labels, homegrown + international</span></div>
+    </section>
+
+    <!-- ================= FAST CATEGORY SHORTCUTS ================= -->
+    <section class="shortcut-strip">
+      <div class="shortcut-strip-inner">
+        <a href="#" class="shortcut-tile" data-nav="shop" data-filter="Women">
+          <div class="shortcut-tile-img"><img src="https://images.unsplash.com/photo-1769275061786-c33ab1a284c8?auto=format&fit=crop&w=200&q=70" alt="Women"></div>
+          <span>Women</span>
+        </a>
+        <a href="#" class="shortcut-tile" data-nav="shop" data-filter="Men">
+          <div class="shortcut-tile-img"><img src="https://images.unsplash.com/photo-1627401632925-a4c565d08a80?auto=format&fit=crop&w=200&q=70" alt="Men"></div>
+          <span>Men</span>
+        </a>
+        <a href="#" class="shortcut-tile" data-nav="shop" data-cat="Tops">
+          <div class="shortcut-tile-img"><img src="https://images.unsplash.com/photo-1689044611227-3267fabaf76a?auto=format&fit=crop&w=200&q=70" alt="Tops"></div>
+          <span>Tops</span>
+        </a>
+        <a href="#" class="shortcut-tile" data-nav="shop" data-cat="Bottoms">
+          <div class="shortcut-tile-img"><img src="https://images.unsplash.com/photo-1608370946545-7d93571b5593?auto=format&fit=crop&w=200&q=70" alt="Bottoms"></div>
+          <span>Bottoms</span>
+        </a>
+        <a href="#" class="shortcut-tile" data-nav="shop" data-cat="Dresses">
+          <div class="shortcut-tile-img"><img src="https://images.unsplash.com/photo-1601677083135-5b8c8affad82?auto=format&fit=crop&w=200&q=70" alt="Dresses"></div>
+          <span>Dresses</span>
+        </a>
+        <a href="#" class="shortcut-tile" data-nav="shop" data-cat="Footwear">
+          <div class="shortcut-tile-img"><img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=200&q=70" alt="Footwear"></div>
+          <span>Footwear</span>
+        </a>
+        <a href="#" class="shortcut-tile" data-nav="shop" data-cat="Accessories">
+          <div class="shortcut-tile-img"><img src="https://images.unsplash.com/photo-1559563458-527698bf5295?auto=format&fit=crop&w=200&q=70" alt="Accessories"></div>
+          <span>Accessories</span>
+        </a>
+        <a href="#" class="shortcut-tile" data-nav="trending">
+          <div class="shortcut-tile-img"><img src="img/generated/under-2000-01.jpg" alt="New Arrivals"></div>
+          <span>New Arrivals</span>
+        </a>
+        <a href="#" class="shortcut-tile" data-nav="looks-tier" data-tier="all">
+          <div class="shortcut-tile-img"><img src="img/generated/off-duty-01.jpg" alt="Complete Looks"></div>
+          <span>Complete Looks</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ================= SHOP BY BUDGET ================= -->
+    <section class="budget-section">
+      <div class="edits-head">
+        <p class="eyebrow">Shop by budget</p>
+        <h2>Pick your price, we'll handle the fit</h2>
+      </div>
+      <div class="budget-grid">
+        <button class="budget-tile" data-nav="shop" data-budget="999">
+          <div><div class="budget-tile-label">Under ₹999</div><div class="budget-tile-sub">Basics &amp; essentials</div></div>
+          <span class="budget-tile-arrow">→</span>
+        </button>
+        <button class="budget-tile" data-nav="shop" data-budget="1999">
+          <div><div class="budget-tile-label">Under ₹1,999</div><div class="budget-tile-sub">More of the catalogue</div></div>
+          <span class="budget-tile-arrow">→</span>
+        </button>
+        <button class="budget-tile accent" data-nav="looks-tier" data-tier="under3000">
+          <div><div class="budget-tile-label">Complete Looks Under ₹3,000</div><div class="budget-tile-sub">Whole outfit, one honest total</div></div>
+          <span class="budget-tile-arrow">→</span>
+        </button>
       </div>
     </section>
 
@@ -87,25 +163,25 @@
         <div class="promo-card promo-card-grad">
           <div class="promo-card-icon">⏱</div>
           <h3>15–20 Min Delivery</h3>
-          <p>Ordered now, at your door in 15–20 minutes where serviceable — then up to 10 minutes to try it on before you decide.</p>
-          <button class="btn btn-promo" data-nav="how">See how it works →</button>
+          <p>Ordered now, at your door in 15–20 minutes where serviceable.</p>
+          <button class="btn btn-promo" data-nav="shop" data-filter="all">Shop now →</button>
         </div>
         <div class="promo-card promo-card-violet">
           <div class="promo-card-icon">↩</div>
-          <h3>Zero Long Waits on Returns</h3>
-          <p>No pickup requests. No "agent assigned." No week of refund limbo. Hand it back at delivery and you're done.</p>
-          <button class="btn btn-promo-outline" data-nav="how">Our return promise →</button>
+          <h3>Easy Returns &amp; Exchanges</h3>
+          <p>Not right? Start a return or exchange from your orders in a couple of taps — no long pickup limbo.</p>
+          <button class="btn btn-promo-outline" data-nav="shop" data-filter="all">Shop with confidence →</button>
         </div>
         <div class="promo-card promo-card-light">
           <div class="promo-card-icon">✦</div>
           <h3>Complete Looks, Not Guesswork</h3>
-          <p>Every look here is the whole outfit — top, bottom, shoes — itemised and priced. Open any piece on its own, or take the whole thing.</p>
+          <p>Every look here is the whole outfit — top, bottom, shoes — itemised and priced. Take a piece on its own, or the whole thing.</p>
           <button class="btn btn-promo-dark" data-scroll="complete-looks">Shop complete looks →</button>
         </div>
         <div class="promo-card promo-card-dark">
           <div class="promo-card-icon">⌕</div>
           <h3>Curated, Not Catalogued</h3>
-          <p>A dozen relevant pieces beats twenty thousand irrelevant ones. We won't pad results just to look bigger.</p>
+          <p>Relevant pieces, not endless padding — more choice, still only what's actually worth showing you.</p>
           <button class="btn btn-promo" data-nav="shop" data-filter="all">Shop all pieces →</button>
         </div>
       </div>
@@ -136,7 +212,7 @@
           </div>
         </div>
       </div>
-      <div class="collection" style="padding-top:44px;">
+      <div class="collection" style="padding-top:28px;">
         <div class="collection-head">
           <div><p class="eyebrow">The Women's Edit</p><h2>Shop the edit</h2></div>
           <a href="#" class="view-all" data-nav="shop" data-filter="Women">View all →</a>
@@ -144,7 +220,7 @@
         <p class="brand-disclaimer">Some pieces are labelled with real, independent Indian labels as curation references for this concept prototype — LAP does not stock, sell, or claim any partnership with them.</p>
         <div class="product-grid" id="grid-women"></div>
       </div>
-      <div class="collection" style="padding-top:44px;">
+      <div class="collection" style="padding-top:28px;">
         <div class="collection-head">
           <div><p class="eyebrow">The Men's Edit</p><h2>Shop the edit</h2></div>
           <a href="#" class="view-all" data-nav="shop" data-filter="Men">View all →</a>
@@ -153,10 +229,20 @@
       </div>
     </section>
 
-    <!-- ================= TRENDING NOW ================= -->
+    <!-- ================= NEW & TRENDING SHELF ================= -->
+    <section class="trending-shelf" id="trending-shelf">
+      <div class="edits-head">
+        <p class="eyebrow">New &amp; trending</p>
+        <h2>Fresh in, already popular</h2>
+        <p class="edits-sub">A real shopping shelf, not just a mood board — prices and quick-add right where you're browsing.</p>
+      </div>
+      <div class="product-grid" id="grid-trending"></div>
+    </section>
+
+    <!-- ================= STYLED EDITS (mood boards) ================= -->
     <section class="edits">
       <div class="edits-head">
-        <p class="eyebrow">Trending now, not dated stock</p>
+        <p class="eyebrow">Already styled for you</p>
         <h2>We already did the scrolling for you.</h2>
         <p class="edits-sub">Wide-leg, oversized, boxy, co-ords, utility, relaxed tailoring, contemporary Indian fusion — current silhouettes, edited into looks. Pick a vibe — every piece in it is already chosen.</p>
       </div>
@@ -227,7 +313,7 @@
     </section>
 
     <!-- ================= SHOP BY MOOD ================= -->
-    <section class="mood-section">
+    <section class="mood-section" id="shop-by-mood">
       <div class="edits-head">
         <p class="eyebrow">Shop by how you're feeling</p>
         <h2>What's the occasion?</h2>
@@ -404,7 +490,7 @@
         <div class="waitlist-copy">
           <p class="eyebrow eyebrow-invert">Coming soon</p>
           <h2>Be first to try LAP</h2>
-          <p class="waitlist-sub">Complete looks, honestly priced, delivered in 15–20 minutes with time to try it on at your door. Join the list to be first through the door when it goes live in your city.</p>
+          <p class="waitlist-sub">Complete looks, honestly priced, delivered in 15–20 minutes in supported locations, with easy returns if something's not right. Join the list to be first through the door when it goes live in your city.</p>
         </div>
         <form class="waitlist-form waitlist-form-hero" id="heroWaitlistForm">
           <div class="waitlist-fields">
@@ -416,18 +502,6 @@
           <p class="waitlist-msg" aria-live="polite"></p>
         </form>
       </div>
-    </section>
-
-    <section class="how-teaser" id="how-anchor">
-      <p class="eyebrow">The LAP promise</p>
-      <h2>How Try‑At‑Door actually works</h2>
-      <div class="how-steps">
-        <div class="how-step"><span class="how-num">01</span><h3>Order</h3><p>Pick your size. No guesswork — every product page shows real fit notes, not just a size chart.</p></div>
-        <div class="how-step"><span class="how-num">02</span><h3>Arrives in 15–20 min</h3><p>Dark-store delivery in serviceable pincodes. Your rider carries the order to your door.</p></div>
-        <div class="how-step"><span class="how-num">03</span><h3>Try it on, they wait</h3><p>Your rider waits at the door for up to 10 minutes while you try it on — right there, in daylight, no filters.</p></div>
-        <div class="how-step"><span class="how-num">04</span><h3>Keep or return — instantly</h3><p>Don't love it? Hand it straight back. No pickup request, no waiting days for a refund to process.</p></div>
-      </div>
-      <button class="btn btn-ghost" data-nav="how">See the full walkthrough →</button>
     </section>
 
   </section>
@@ -464,58 +538,6 @@
     <div class="pdp-wrap" id="pdpWrap"></div>
   </section>
 
-  <!-- ================= HOW TRY-AT-DOOR WORKS (FULL) VIEW ================= -->
-  <section class="view" id="view-how" hidden>
-    <div class="how-full">
-      <p class="eyebrow">The LAP promise, in full</p>
-      <h1>Your return window starts at delivery — not after it.</h1>
-      <p class="how-full-sub">Every other platform makes you decide before you've touched the product, then punishes you with a week-long return process when it's wrong. LAP flips that: the trial happens live, at your door, and the decision is instant.</p>
-
-      <div class="compare-table">
-        <div class="compare-col">
-          <h3>The usual way</h3>
-          <ul>
-            <li>Decide from a photo — often filtered or over-lit</li>
-            <li>Item arrives days later</li>
-            <li>Doesn't fit or doesn't match → raise a return request</li>
-            <li>Wait for pickup to be "assigned"</li>
-            <li>Wait 3–7+ days for the pickup itself</li>
-            <li>Refund processes after the warehouse checks it</li>
-          </ul>
-        </div>
-        <div class="compare-col highlight">
-          <h3>LAP's way</h3>
-          <ul>
-            <li>Decide from real, unfiltered photos + fit notes</li>
-            <li>Item arrives in 15–20 minutes, where serviceable</li>
-            <li>Try it on with the rider waiting at your door for up to 10 minutes</li>
-            <li>Keep it, or hand it back on the spot</li>
-            <li>No pickup request. No "agent assigned." No waiting.</li>
-            <li>Refund initiated the moment it's handed back</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="timer-demo">
-        <p class="eyebrow">Try the decision window</p>
-        <h2>This is what it feels like at your door</h2>
-        <div class="timer-card">
-          <div class="timer-stage" id="timerStage">Stage: Order placed</div>
-          <div class="timer-display" id="timerDisplay">10:00</div>
-          <p class="timer-caption" id="timerCaption">Tap "Simulate delivery" to walk through it.</p>
-          <div class="timer-actions" id="timerActions">
-            <button class="btn btn-primary" id="timerAdvance">Simulate delivery →</button>
-          </div>
-          <div class="timer-decision" id="timerDecision" hidden>
-            <button class="btn btn-keep" id="btnKeep">Keep it</button>
-            <button class="btn btn-return" id="btnReturn">Return it now</button>
-          </div>
-          <div class="timer-result" id="timerResult" hidden></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
 </main>
 
 <!-- ================= CART DRAWER ================= -->
@@ -530,7 +552,7 @@
   <div class="drawer-footer" id="drawerFooter" hidden>
     <div class="drawer-subtotal"><span>Subtotal</span><strong id="drawerSubtotal">₹0</strong></div>
     <button class="btn btn-primary full" id="checkoutBtn">Checkout</button>
-    <p class="drawer-note">Try-At-Door decision window starts the moment this arrives.</p>
+    <p class="drawer-note">Easy returns and exchanges within 7 days.</p>
   </div>
 </aside>
 
@@ -606,7 +628,7 @@
     <div class="footer-col">
       <h4>LAP</h4>
       <a href="#" data-scroll="fashion-guide">Fashion Guide</a>
-      <a href="#" data-nav="how">Try‑At‑Door</a>
+      <a href="#" data-scroll="shop-by-mood">Shop by Mood</a>
       <a href="#" data-nav="style">Style AI</a>
       <a href="#">Sell on LAP</a>
     </div>
