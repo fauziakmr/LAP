@@ -1,7 +1,7 @@
 /* ============================================================
    LAP — prototype front-end. Fully client-side, no backend.
-   Everything here (catalogue, "Style AI", delivery timer) is
-   simulated for demo purposes.
+   Everything here (catalogue, search, "Style AI", checkout,
+   waitlist) is simulated / mocked for demo purposes.
 ============================================================ */
 
 /* ---------- SILHOUETTE LINE ART ---------- */
@@ -162,8 +162,35 @@ const PRODUCTS = [
   {id:86, name:'Structured Mini Satchel', brand:'Style Inspo', brandType:'International', category:'Accessories', price:1799, bg:'#B9AAB0', sil:'bag', img:'/photo-1605733513597-a8f8341084e6', tags:['bag','structured','office','first-day-at-work','everyday','statement']},
   {id:87, name:'Classic Square Sunglasses', brand:'LAP Edit', brandType:'Homegrown', category:'Accessories', price:699, bg:'#E8714A', sil:'bag', img:'/photo-1610136649349-0f646f318053', tags:['sunglasses','travel','bold','everyday','coffee-run','under 3000']},
   {id:88, name:'Tan Suede Ankle Boot', brand:'LAP Edit', brandType:'Homegrown', category:'Footwear', price:2499, dept:'Women', bg:'#D9C2A6', sil:'sneaker', img:'/photo-1605733160314-4fc7dac4bb16', tags:['boots','travel','statement','night-out','everyday']},
-  {id:89, name:'Classic Baseball Cap', brand:'LAP Edit', brandType:'Homegrown', category:'Accessories', price:499, bg:'#3B3A36', sil:'bag', img:'/photo-1785336472737-78291368800d', tags:['cap','street','campus','everyday','budget','under 3000','coffee-run']},
+  {id:89, name:'Classic Baseball Cap', brand:'LAP Edit', brandType:'Homegrown', category:'Accessories', price:499, bg:'#3B3A36', sil:'bag', img:'/photo-1785336472737-78291368800d', tags:['cap','street','campus','everyday','budget','under 3000','coffee-run','new']},
+
+  /* ---- AFFORDABLE STAPLES — "LAP Edit" originals, added so Under ₹999
+     and Under ₹1,999 are real, shoppable single-item collections (not
+     just a filter on the existing catalogue) and so Women's and Men's
+     grids both run deep enough for a 5-column shelf. Illustrative
+     prototype pricing throughout. ---- */
+  {id:90, name:'Basic Crew Neck Tee', brand:'LAP Edit', brandType:'Homegrown', category:'Tops', price:799, dept:'Women', bg:'#D8CBB8', sil:'tee', img:'/photo-1689044611227-3267fabaf76a', tags:['tee','basic','everyday','campus','coffee-run','under999','new']},
+  {id:91, name:'Ribbed Tank Top', brand:'LAP Edit', brandType:'Homegrown', category:'Tops', price:699, dept:'Women', bg:'#D9A5A0', sil:'tee', img:'/photo-1592712148824-334083584cc1', tags:['top','ribbed','minimal','everyday','coffee-run','under999','new']},
+  {id:92, name:"Men's Basic Crew Tee", brand:'LAP Edit', brandType:'Homegrown', category:'Tops', price:799, dept:'Men', bg:'#1E2530', sil:'tee', img:'/photo-1574180566232-aaad1b5b8450', tags:['tee','basic','everyday','campus','under999','new']},
+  {id:93, name:"Men's Classic Polo Tee", brand:'LAP Edit', brandType:'Homegrown', category:'Tops', price:999, dept:'Men', bg:'#2B2A27', sil:'tee', img:'/photo-1600871149968-44ccafa3b32a', tags:['tee','polo','everyday','campus','under999','new']},
+  {id:94, name:'Everyday Canvas Tote', brand:'LAP Edit', brandType:'Homegrown', category:'Accessories', price:599, bg:'#C97B63', sil:'bag', img:'/photo-1612902456551-333ac5afa26e', tags:['bag','everyday','travel','coffee-run','under999','new']},
+  {id:95, name:'Classic Flip Sandal', brand:'LAP Edit', brandType:'Homegrown', category:'Footwear', price:399, bg:'#C9B79C', sil:'sneaker', img:'/photo-1613662632164-7f2b081a5b46', tags:['sandal','everyday','travel','under999','new']},
+  {id:96, name:'Silver Stud Earrings', brand:'LAP Edit', brandType:'Homegrown', category:'Accessories', price:399, dept:'Women', bg:'#D8CBB8', sil:'bag', img:'/photo-1535632787350-4e68ef0ac584', tags:['jewellery','minimal','everyday','under999','new']},
+  {id:97, name:'Basic Ribbed Camisole', brand:'LAP Edit', brandType:'Homegrown', category:'Tops', price:549, dept:'Women', bg:'#E3D5C0', sil:'tee', img:'/photo-1780566758129-3ec3b2f3b204', tags:['top','ribbed','everyday','coffee-run','under999','new']},
+  {id:98, name:'Relaxed Fit Joggers', brand:'LAP Edit', brandType:'Homegrown', category:'Bottoms', price:1599, dept:'Men', bg:'#8C7B6B', sil:'trousers', img:'/photo-1746591847547-200f313178c9', tags:['joggers','relaxed','everyday','campus','under1999','new']},
+  {id:99, name:'Straight Fit Chino Shorts', brand:'LAP Edit', brandType:'Homegrown', category:'Bottoms', price:1399, dept:'Men', bg:'#C9B79C', sil:'trousers', img:'/photo-1584865288642-42078afe6942', tags:['shorts','chino','everyday','travel','under1999','new']},
+  {id:100, name:'Relaxed Palazzo Pants', brand:'LAP Edit', brandType:'Homegrown', category:'Bottoms', price:1699, dept:'Women', bg:'#A9B4C0', sil:'trousers', img:'/photo-1608370946545-7d93571b5593', tags:['palazzo','relaxed','everyday','campus','under1999','new']},
+  {id:101, name:'Printed Co-ord Top', brand:'LAP Edit', brandType:'Homegrown', category:'Tops', price:1799, dept:'Women', bg:'#C97B63', sil:'tee', img:'/photo-1765796513352-a52bcd0c1329', tags:['top','co-ord','desi','everyday','under1999','new']},
+  {id:102, name:'Canvas Low-Top Sneaker', brand:'LAP Edit', brandType:'Homegrown', category:'Footwear', price:1899, bg:'#E3D5C0', sil:'sneaker', img:'/photo-1560769629-975ec94e6a86', tags:['sneaker','streetwear','everyday','campus','under1999','new']},
+  {id:103, name:'Everyday Running Sneaker', brand:'LAP Edit', brandType:'Homegrown', category:'Footwear', price:1499, dept:'Men', bg:'#D8CBB8', sil:'sneaker', img:'/photo-1724921194807-c0d17dc7cfe4', tags:['sneaker','sports','everyday','under1999','new']},
+  {id:104, name:'Structured Crossbody Bag', brand:'LAP Edit', brandType:'Homegrown', category:'Accessories', price:1699, bg:'#B9AAB0', sil:'bag', img:'/photo-1559563458-527698bf5295', tags:['bag','office','everyday','under1999','new']},
+  {id:105, name:'Classic Aviator Sunglasses', brand:'LAP Edit', brandType:'Homegrown', category:'Accessories', price:999, bg:'#E8714A', sil:'bag', img:'/photo-1610136649349-0f646f318053', tags:['sunglasses','travel','everyday','under999','new']},
 ];
+
+/* Products carried on the "New & Trending" shelf — the new affordable
+   staples above, plus a handful of existing everyday favourites, so the
+   shelf reads as a real, dense shopping shelf rather than a thin preview. */
+const TRENDING_IDS = [90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,2,3,10,12,77,79,83,89];
 
 const SIZES_APPAREL = ['XS','S','M','L','XL'];
 const SIZES_SHOE = ['UK6','UK7','UK8','UK9','UK10'];
@@ -235,20 +262,26 @@ function priceTier(total){
 }
 const TIER_LABEL = {under1500:'Under ₹1,500', under2000:'Under ₹2,000', under3000:'Under ₹3,000', over3000:'Priced for the occasion'};
 
+/* ---------- SHOP BY BUDGET ----------
+   Single-item budget collections (distinct from the Complete Looks tier
+   filter above, which filters by whole-outfit total). Filtering is
+   always on the real listed price — never on a fabricated "from" price. */
+function matchesBudget(p, cap){ return p.price <= cap; }
+
 /* ---------- SHOP BY MOOD ----------
    Discovery by feeling/occasion rather than product name — the
    brief: someone should be able to arrive saying "I have a date" or
    "I want something under ₹3,000" and find their way in from there. */
 const MOODS = [
-  {key:'off-duty', label:'Off Duty', img:'img/generated/off-duty-01.jpg'},
-  {key:'date-night', label:'Date Night', img:'img/generated/date-night-01.jpg'},
   {key:'campus', label:'Campus', img:'img/generated/under-2000-03.jpg'},
-  {key:'night-out', label:'Night Out', img:'img/generated/indie-sleaze-01.jpg'},
+  {key:'date-night', label:'Date Night', img:'img/generated/date-night-01.jpg'},
   {key:'coffee-run', label:'Coffee Run', img:'https://images.unsplash.com/photo-1600871149968-44ccafa3b32a?auto=format&fit=crop&w=400&q=70'},
-  {key:'minimal', label:'Minimal', img:'img/generated/clean-fit-01.jpg'},
-  {key:'street', label:'Street', img:'img/generated/tokyo-after-dark-02.jpg'},
+  {key:'off-duty', label:'Weekend', img:'img/generated/off-duty-01.jpg'},
+  {key:'night-out', label:'Night Out', img:'img/generated/indie-sleaze-01.jpg'},
   {key:'travel', label:'Travel', img:'https://images.unsplash.com/photo-1584865288642-42078afe6942?auto=format&fit=crop&w=400&q=70'},
-  {key:'bold', label:'Bold', img:'img/generated/indie-sleaze-03.jpg'},
+  {key:'street', label:'Streetwear', img:'img/generated/tokyo-after-dark-02.jpg'},
+  {key:'everyday', label:'Everyday Fits', img:'img/generated/clean-fit-04.jpg'},
+  {key:'minimal', label:'Minimal', img:'img/generated/clean-fit-01.jpg'},
   {key:'casual-dinner', label:'Casual Dinner', img:'img/generated/date-night-04.jpg'}
 ];
 function matchesMood(p, moodKey){
@@ -334,9 +367,25 @@ let currentSearch = '';
 let currentEdit = null;
 let currentMood = null;
 let currentTag = null;
+let currentBudget = null;
 let quizAnswers = {occasion:null, vibe:null};
 let measurements = {heightCm:null, weightKg:null};
-let timerInterval = null;
+
+/* ---------- DELIVERY LOCATION (pincode) ----------
+   Never hard-coded: starts unset, shown as a plain "enter your pincode"
+   prompt. Only once the shopper enters one does the delivery promise
+   reference a place — and even then it's a prototype illustration, not
+   a real serviceability check. ---------- */
+let userPincode = null;
+
+function updateDeliveryUI(){
+  const pillText = document.getElementById('pincodeLabel');
+  const strip = document.getElementById('promoStripText');
+  if(pillText) pillText.textContent = userPincode ? `15–20 min to ${userPincode}` : 'Enter pincode for delivery time';
+  if(strip) strip.textContent = userPincode
+    ? `Complete looks, honestly priced — delivered in 15–20 minutes to ${userPincode}. Easy returns if something's not right.`
+    : `Complete looks, honestly priced — delivered in 15–20 minutes in supported locations. Easy returns if something's not right.`;
+}
 
 /* ---------- RENDER HELPERS ---------- */
 function money(n){ return '₹' + n.toLocaleString('en-IN'); }
@@ -350,7 +399,6 @@ function productCard(p){
       <span class="product-tag ${tagClass}">${p.brandType}</span>
       <button class="wishlist-btn ${saved?'active':''}" data-wish="${p.id}" aria-label="Save to wishlist">${saved?'♥':'♡'}</button>
       <img class="product-photo" src="${productImg(p,800)}" alt="${p.name} — ${p.brand}" loading="lazy">
-      <span class="product-nofilter">No filter</span>
       <button class="quick-add-btn" data-quickadd="${p.id}">+ Quick add</button>
     </div>
     <div class="product-info">
@@ -415,6 +463,13 @@ document.addEventListener('click', (e)=>{
   e.preventDefault();
   const nav = navEl.dataset.nav;
   if(nav === 'style'){ openStyleModal(); document.getElementById('mainNav').classList.remove('mobile-open'); return; }
+  if(nav === 'trending'){
+    showView('home');
+    const target = document.getElementById('trending-shelf');
+    if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
+    document.getElementById('mainNav').classList.remove('mobile-open');
+    return;
+  }
   if(nav === 'looks-tier'){
     showView('home');
     const tier = navEl.dataset.tier || 'all';
@@ -434,6 +489,7 @@ document.addEventListener('click', (e)=>{
     currentSearch = '';
     currentMood = null;
     currentTag = null;
+    currentBudget = null;
     document.getElementById('searchInput').value = '';
     if(navEl.dataset.edit){
       currentEdit = navEl.dataset.edit;
@@ -451,6 +507,10 @@ document.addEventListener('click', (e)=>{
       currentEdit = null;
       currentFilter = 'all';
       currentTag = navEl.dataset.tag;
+    } else if(navEl.dataset.budget){
+      currentEdit = null;
+      currentFilter = 'all';
+      currentBudget = parseInt(navEl.dataset.budget, 10);
     } else {
       currentEdit = null;
       currentFilter = navEl.dataset.filter || 'all';
@@ -467,13 +527,14 @@ document.getElementById('menuBtn').addEventListener('click', ()=>{
 
 /* ---------- HOME ---------- */
 function renderHome(){
-  renderGrid('grid-women', PRODUCTS.filter(p=>p.dept==='Women').slice(0,8));
-  renderGrid('grid-men', PRODUCTS.filter(p=>p.dept==='Men').slice(0,8));
-  renderGrid('grid-footwear', PRODUCTS.filter(p=>p.category==='Footwear').slice(0,8));
-  renderGrid('grid-accessories', PRODUCTS.filter(p=>p.category==='Accessories').slice(0,8));
-  renderGrid('grid-homegrown', PRODUCTS.filter(p=>p.brandType==='Homegrown').slice(0,8));
-  renderGrid('grid-international', PRODUCTS.filter(p=>p.brandType==='International').slice(0,8));
-  renderGrid('grid-office', PRODUCTS.filter(p=>p.tags.includes('office')).slice(0,8));
+  renderGrid('grid-trending', TRENDING_IDS.map(id=>PRODUCTS.find(p=>p.id===id)).filter(Boolean));
+  renderGrid('grid-women', PRODUCTS.filter(p=>p.dept==='Women').slice(0,15));
+  renderGrid('grid-men', PRODUCTS.filter(p=>p.dept==='Men').slice(0,15));
+  renderGrid('grid-footwear', PRODUCTS.filter(p=>p.category==='Footwear').slice(0,10));
+  renderGrid('grid-accessories', PRODUCTS.filter(p=>p.category==='Accessories').slice(0,10));
+  renderGrid('grid-homegrown', PRODUCTS.filter(p=>p.brandType==='Homegrown').slice(0,10));
+  renderGrid('grid-international', PRODUCTS.filter(p=>p.brandType==='International').slice(0,10));
+  renderGrid('grid-office', PRODUCTS.filter(p=>p.tags.includes('office')).slice(0,10));
   const brandCount = new Set(PRODUCTS.map(p=>p.brand)).size;
   const pieceCountEl = document.getElementById('statPieces');
   const brandCountEl = document.getElementById('statBrands');
@@ -481,6 +542,7 @@ function renderHome(){
   if(brandCountEl) brandCountEl.textContent = brandCount;
   renderMoods();
   renderGuides();
+  updateDeliveryUI();
 }
 
 function renderMoods(){
@@ -564,6 +626,8 @@ function renderShop(){
     list = PRODUCTS.filter(p=>matchesMood(p, currentMood));
   } else if(currentTag){
     list = PRODUCTS.filter(p=>p.tags.includes(currentTag));
+  } else if(currentBudget){
+    list = PRODUCTS.filter(p=>matchesBudget(p, currentBudget)).sort((a,b)=>a.price-b.price);
   } else {
     list = PRODUCTS.filter(p=>{
       const byBrand = currentFilter === 'all' || p.brandType === currentFilter ||
@@ -592,6 +656,9 @@ function renderShop(){
   } else if(currentTag){
     eyebrow.textContent = 'Shop the guide';
     title.textContent = currentTag.charAt(0).toUpperCase() + currentTag.slice(1);
+  } else if(currentBudget){
+    eyebrow.textContent = 'Shop by budget';
+    title.textContent = `Under ₹${currentBudget.toLocaleString('en-IN')}`;
   } else if(currentSearch){
     eyebrow.textContent = 'Search results';
     title.textContent = `“${currentSearch}”`;
@@ -616,6 +683,7 @@ document.getElementById('shopFilters').addEventListener('click', (e)=>{
   currentEdit = null;
   currentMood = null;
   currentTag = null;
+  currentBudget = null;
   currentCategory = chip.dataset.cat;
   renderShop();
 });
@@ -661,6 +729,7 @@ function commitSearch(){
   currentEdit = null;
   currentMood = null;
   currentTag = null;
+  currentBudget = null;
   searchDrop.classList.remove('show');
   renderShop();
   showView('shop');
@@ -733,7 +802,6 @@ function openPDP(id){
       <div class="p-brand-row"><span class="p-brand">${p.brand}</span></div>
       <h1>${p.name}</h1>
       <div class="pdp-price">${money(p.price)}</div>
-      <div class="no-filter-badge">● Shot unedited, on a real body — what you see is what arrives</div>
       <p class="pdp-desc">Part of LAP's curated ${p.category.toLowerCase()} edit. Fit notes from our team: true to size, ${p.tags.includes('relaxed') || p.tags.includes('oversized') ? 'runs relaxed through the body' : 'sits close through the body'} — size down if you prefer a fitted look.</p>
 
       <div class="size-row" id="sizeRow">
@@ -744,9 +812,9 @@ function openPDP(id){
         <button class="btn btn-primary full" id="addToBagBtn">Add to bag</button>
       </div>
 
-      <div class="tad-box">
-        <h4>🚪 Try‑At‑Door eligible</h4>
-        <p>Delivered in 15–20 minutes to serviceable pincodes. Your rider waits at the door for up to 10 minutes while you try it on — keep it or hand it straight back, no pickup request needed.</p>
+      <div class="delivery-return-note">
+        <p class="drn-line"><span class="dot"></span>${userPincode ? `Delivered in 15–20 minutes to ${userPincode}` : 'Delivered in 15–20 minutes in supported locations — enter your pincode to check'}</p>
+        <p class="drn-note">Easy exchanges and returns within 7 days if it's not right — no invented pickup guarantees, just a straightforward process.</p>
       </div>
 
       <div class="complete-look">
@@ -814,7 +882,7 @@ function renderDrawer(){
   }
 
   etaEl.hidden = false;
-  etaEl.textContent = '● Arriving in 15–20 minutes to 560034';
+  etaEl.textContent = userPincode ? `● Arriving in 15–20 minutes to ${userPincode}` : '● 15–20 min delivery — enter your pincode to confirm';
 
   let subtotal = 0;
   itemsEl.innerHTML = cart.map((c,idx)=>{
@@ -856,9 +924,15 @@ document.getElementById('closeCart').addEventListener('click', closeDrawer);
 document.getElementById('drawerOverlay').addEventListener('click', closeDrawer);
 
 document.getElementById('checkoutBtn').addEventListener('click', ()=>{
-  closeDrawer();
-  showView('how');
-  resetTimer();
+  const itemsEl = document.getElementById('drawerItems');
+  const footerEl = document.getElementById('drawerFooter');
+  const etaEl = document.getElementById('drawerEta');
+  const pin = userPincode ? userPincode : 'your location';
+  itemsEl.innerHTML = `<div class="drawer-empty">Order placed ✓<br>Arriving in 15–20 minutes to ${pin} (where serviceable).<br>Easy exchanges and returns within 7 days if something's not right.<br><br><em>Prototype checkout — no real payment or logistics behind this.</em></div>`;
+  footerEl.hidden = true;
+  etaEl.hidden = true;
+  cart = [];
+  updateCartCount();
 });
 
 /* ---------- STYLE AI MODAL ---------- */
@@ -987,73 +1061,35 @@ document.getElementById('restartQuiz').addEventListener('click', ()=>{
   document.getElementById('styleHeading').textContent = 'What are we dressing you for?';
 });
 
-/* ---------- TRY-AT-DOOR TIMER DEMO ---------- */
-const timerStageEl = document.getElementById('timerStage');
-const timerDisplayEl = document.getElementById('timerDisplay');
-const timerCaptionEl = document.getElementById('timerCaption');
-const timerActionsEl = document.getElementById('timerActions');
-const timerDecisionEl = document.getElementById('timerDecision');
-const timerResultEl = document.getElementById('timerResult');
-const timerAdvanceBtn = document.getElementById('timerAdvance');
-
-function fmt(sec){
-  const m = Math.floor(sec/60), s = sec%60;
-  return `${m}:${s.toString().padStart(2,'0')}`;
-}
-
-function resetTimer(){
-  clearInterval(timerInterval);
-  timerStageEl.textContent = 'Stage: Order placed';
-  timerDisplayEl.textContent = '10:00';
-  timerCaptionEl.textContent = 'Tap "Simulate delivery" to walk through it.';
-  timerActionsEl.hidden = false;
-  timerDecisionEl.hidden = true;
-  timerResultEl.hidden = true;
-  timerAdvanceBtn.textContent = 'Simulate delivery →';
-}
-
-timerAdvanceBtn.addEventListener('click', ()=>{
-  timerStageEl.textContent = 'Stage: Arrived — try it on';
-  timerCaptionEl.textContent = 'Your rider is waiting. Try it on, then decide.';
-  timerActionsEl.hidden = true;
-  timerDecisionEl.hidden = false;
-
-  let secondsLeft = 600; // 10:00
-  timerDisplayEl.textContent = fmt(secondsLeft);
-  clearInterval(timerInterval);
-  timerInterval = setInterval(()=>{
-    secondsLeft -= 10; // sped up for demo purposes
-    if(secondsLeft <= 0){
-      secondsLeft = 0;
-      clearInterval(timerInterval);
-      timerCaptionEl.textContent = "Still deciding? Take your time — we don't rush you off the clock.";
-    }
-    timerDisplayEl.textContent = fmt(secondsLeft);
-  }, 220);
-});
-
-function finishTimer(kind){
-  clearInterval(timerInterval);
-  timerDecisionEl.hidden = true;
-  timerResultEl.hidden = false;
-  if(kind==='keep'){
-    timerResultEl.className = 'timer-result keep';
-    timerResultEl.textContent = 'Kept ✓ — charged, no further action needed.';
-  } else {
-    timerResultEl.className = 'timer-result return';
-    timerResultEl.textContent = 'Returned ✓ — handed back at the door. Refund initiated instantly.';
+/* ---------- PINCODE ENTRY (header) ---------- */
+const pincodePill = document.getElementById('deliveryPill');
+const pincodePop = document.getElementById('pincodePop');
+if(pincodePill && pincodePop){
+  pincodePill.addEventListener('click', (e)=>{
+    e.stopPropagation();
+    pincodePop.classList.toggle('show');
+  });
+  document.addEventListener('click', (e)=>{
+    if(!e.target.closest('.pincode-pop') && !e.target.closest('#deliveryPill')) pincodePop.classList.remove('show');
+  });
+  const pincodeForm = document.getElementById('pincodeForm');
+  if(pincodeForm){
+    pincodeForm.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const input = document.getElementById('pincodeInput');
+      const val = (input.value || '').trim();
+      if(/^\d{6}$/.test(val)){
+        userPincode = val;
+        updateDeliveryUI();
+        renderDrawer();
+        pincodePop.classList.remove('show');
+      } else {
+        input.style.outline = '2px solid var(--return)';
+        setTimeout(()=>{ input.style.outline = 'none'; }, 900);
+      }
+    });
   }
-  timerStageEl.textContent = 'Stage: Decision complete';
-  const retryBtn = document.createElement('button');
-  retryBtn.className = 'btn btn-ghost';
-  retryBtn.style.marginTop = '14px';
-  retryBtn.textContent = 'Try it again';
-  retryBtn.addEventListener('click', ()=>{ retryBtn.remove(); resetTimer(); });
-  timerResultEl.after(retryBtn);
 }
-
-document.getElementById('btnKeep').addEventListener('click', ()=>finishTimer('keep'));
-document.getElementById('btnReturn').addEventListener('click', ()=>finishTimer('return'));
 
 /* ---------- WAITLIST ----------
    Wired to Formspree. NOTE for the LAP team: replace FORMSPREE_ENDPOINT
@@ -1108,4 +1144,3 @@ renderLooks();
 renderShop();
 updateCartCount();
 renderDrawer();
-resetTimer();
